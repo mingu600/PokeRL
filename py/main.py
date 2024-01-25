@@ -4,12 +4,9 @@ from constants import *
 from parse_utils import Move, Pokemon, Player, Side, Field, get_nth, get_mon, print_state
 
 
-
-
-
 if __name__ == '__main__':
 
-    #[p1 rating, p2 rating, tier]
+    # [p1 rating, p2 rating, tier]
     game_metadata = []
     player_names = {}
     players = {}
@@ -37,7 +34,8 @@ if __name__ == '__main__':
 
         # Move
         elif line[:3] == '|mo':
-            p_name, player, mon_name, move_name = get_mon(players, line, 'move')
+            p_name, player, mon_name, move_name = get_mon(
+                players, line, 'move')
             mon = player.team[mon_name]
             if move_name not in mon.moves:
                 mon.moves[move_name] = Move(move_name)
@@ -45,7 +43,5 @@ if __name__ == '__main__':
         # # Print for debug
         # elif line[:3] == '|tu':
         #     print_state(line, players)
-            
-
 
     print(random_team(players['p1'].team))

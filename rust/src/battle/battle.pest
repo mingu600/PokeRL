@@ -1,0 +1,63 @@
+EMPTY_LINE = _{ "|" ~ NEWLINE }
+
+username_prefix = _{ "|j|" }
+username        =  { (LETTER | NUMBER | PUNCTUATION | OTHER_SYMBOL)* }
+
+timestamp_prefix = _{ "|t:|" }
+timestamp        =  { ASCII_DIGIT+ }
+
+gametype_prefix = _{ "|gametype|" }
+gametype        =  { "singles" | "doubles" | "triples" | "multi" | "freeforall" }
+
+player_prefix = _{ "|player|" }
+player_rating =  { ASCII_DIGIT+ }
+player_index  =  { "p1" | "p2" | "p3" | "p4" }
+player_avatar =  { (LETTER | NUMBER | PUNCTUATION)+ }
+player        =  { player_index ~ "|" ~ username ~ "|" ~ player_avatar ~ "|" ~ player_rating }
+
+teamsize_prefix = _{ "|teamsize|" }
+teamsize        =  { player_index ~ "|" ~ ASCII_DIGIT }
+
+gen_prefix = _{ "|gen|" }
+gen        =  { ASCII_DIGIT+ }
+
+tier_prefix = _{ "|tier|" }
+tier_gen    =  { "[" ~ (ASCII_ALPHANUMERIC | SPACE_SEPARATOR)+ ~ "]" }
+tier        =  { (ASCII_ALPHANUMERIC | SPACE_SEPARATOR)+ }
+
+rated_prefix  = _{ "|rated|" }
+rated_message =  { ASCII_ALPHANUMERIC* }
+
+rule_prefix      = _{ "|rule|" }
+rule_name        =  { (LETTER | NUMBER | SPACE_SEPARATOR)+ }
+rule_description =  { (LETTER | NUMBER | PUNCTUATION | SPACE_SEPARATOR)* }
+
+team_preview_prefix       = _{ "|clearpoke" ~ NEWLINE }
+team_preview_suffix       = _{ "|teampreview" ~ NEWLINE }
+team_preview_poke_prefix  = _{ "|poke|" }
+poke_name                 =  { (LETTER | NUMBER | OTHER_SYMBOL | "-")+ }
+poke_level                =  { "L" ~ ASCII_DIGIT+ }
+poke_gender               =  { "M" | "F" }
+team_preview_poke_details =  { poke_name ~ ("," ~ SPACE_SEPARATOR* ~ poke_level)* ~ ("," ~ SPACE_SEPARATOR* ~ poke_gender)* }
+team_preview_poke_item    =  { "item" }
+team_preview_poke         =  { team_preview_poke_prefix ~ player_index ~ "|" ~ team_preview_poke_details ~ "|" ~ team_preview_poke_item* }
+team_preview              =  { team_preview_prefix ~ (team_preview_poke ~ NEWLINE+)* ~ team_preview_suffix }
+
+prelude_section = {
+    (username_prefix ~ username ~ NEWLINE)
+  | (timestamp_prefix ~ timestamp ~ NEWLINE)
+  | (gametype_prefix ~ gametype ~ NEWLINE)
+  | (player_prefix ~ player ~ NEWLINE)
+  | (teamsize_prefix ~ teamsize ~ NEWLINE)
+  | (gen_prefix ~ gen ~ NEWLINE)
+  | (tier_prefix ~ tier_gen ~ SPACE_SEPARATOR ~ tier ~ NEWLINE)
+  | (rated_prefix ~ rated_message ~ NEWLINE)
+  | (rule_prefix ~ rule_name ~ ": " ~ rule_description ~ NEWLINE)
+  | team_preview
+}
+
+prelude = { prelude_section+ ~ EMPTY_LINE }
+
+battle = _{ prelude ~ ANY* }
+
+file = _{ SOI ~ battle ~ EOI }

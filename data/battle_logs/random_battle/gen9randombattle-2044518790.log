@@ -1,0 +1,39 @@
+|j|☆maxter00
+|j|☆Anne Frankkkk
+|t:|1706272551
+|gametype|singles
+|player|p1|maxter00|265|1025
+|player|p2|Anne Frankkkk|hilbert|1078
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706272551
+|start
+|switch|p1a: Seviper|Seviper, L93, F|287/287
+|switch|p2a: Ariados|Ariados, L93, F|281/281
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Anne Frankkkk)
+|
+|t:|1706272568
+|move|p1a: Seviper|Knock Off|p2a: Ariados
+|-damage|p2a: Ariados|191/281
+|-enditem|p2a: Ariados|Focus Sash|[from] move: Knock Off|[of] p1a: Seviper
+|move|p2a: Ariados|Sticky Web|p1a: Seviper
+|-sidestart|p1: maxter00|move: Sticky Web
+|
+|upkeep
+|turn|2
+|-message|maxter00 forfeited.
+|
+|win|Anne Frankkkk
+|raw|maxter00's rating: 1025 &rarr; <strong>1013</strong><br />(-12 for losing)
+|raw|Anne Frankkkk's rating: 1078 &rarr; <strong>1102</strong><br />(+24 for winning)
+|l|☆maxter00
+|player|p1|

@@ -1,0 +1,222 @@
+|j|☆Guhan67
+|j|☆PrathamLDOE
+|t:|1706270793
+|gametype|singles
+|player|p1|Guhan67|falkner|1407
+|player|p2|PrathamLDOE|steven|1504
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706270793
+|start
+|switch|p1a: Arbok|Arbok, L87, F|246/246
+|switch|p2a: Iron Jugulis|Iron Jugulis, L78|275/275
+|-ability|p1a: Arbok|Intimidate|boost
+|-unboost|p2a: Iron Jugulis|atk|1
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by PrathamLDOE)
+|
+|t:|1706270807
+|move|p2a: Iron Jugulis|Earth Power|p1a: Arbok
+|-supereffective|p1a: Arbok
+|-damage|p1a: Arbok|108/246
+|move|p1a: Arbok|Knock Off|p2a: Iron Jugulis
+|-resisted|p2a: Iron Jugulis
+|-damage|p2a: Iron Jugulis|237/275
+|-enditem|p2a: Iron Jugulis|Choice Scarf|[from] move: Knock Off|[of] p1a: Arbok
+|
+|upkeep
+|turn|2
+|
+|t:|1706270817
+|move|p2a: Iron Jugulis|Earth Power|p1a: Arbok
+|-supereffective|p1a: Arbok
+|-damage|p1a: Arbok|0 fnt
+|faint|p1a: Arbok
+|
+|upkeep
+|
+|t:|1706270831
+|switch|p1a: Carbink|Carbink, L90|236/236
+|turn|3
+|
+|t:|1706270844
+|move|p2a: Iron Jugulis|Hydro Pump|p1a: Carbink
+|-supereffective|p1a: Carbink
+|-damage|p1a: Carbink|130/236
+|move|p1a: Carbink|Stealth Rock|p2a: Iron Jugulis
+|-sidestart|p2: PrathamLDOE|move: Stealth Rock
+|
+|-heal|p1a: Carbink|144/236|[from] item: Leftovers
+|upkeep
+|turn|4
+|
+|t:|1706270852
+|move|p2a: Iron Jugulis|Hydro Pump|p1a: Carbink|[miss]
+|-miss|p2a: Iron Jugulis|p1a: Carbink
+|move|p1a: Carbink|Moonblast|p2a: Iron Jugulis
+|-supereffective|p2a: Iron Jugulis
+|-damage|p2a: Iron Jugulis|67/275
+|-unboost|p2a: Iron Jugulis|spa|1
+|
+|-heal|p1a: Carbink|158/236|[from] item: Leftovers
+|upkeep
+|turn|5
+|
+|t:|1706270859
+|move|p2a: Iron Jugulis|Hydro Pump|p1a: Carbink|[miss]
+|-miss|p2a: Iron Jugulis|p1a: Carbink
+|move|p1a: Carbink|Moonblast|p2a: Iron Jugulis
+|-supereffective|p2a: Iron Jugulis
+|-damage|p2a: Iron Jugulis|0 fnt
+|faint|p2a: Iron Jugulis
+|-end|p2a: Iron Jugulis|Quark Drive|[silent]
+|
+|-heal|p1a: Carbink|172/236|[from] item: Leftovers
+|upkeep
+|
+|t:|1706270866
+|switch|p2a: Crawdaunt|Crawdaunt, L84, F|243/243
+|-damage|p2a: Crawdaunt|213/243|[from] Stealth Rock
+|turn|6
+|
+|t:|1706270870
+|move|p2a: Crawdaunt|Crabhammer|p1a: Carbink
+|-supereffective|p1a: Carbink
+|-crit|p1a: Carbink
+|-damage|p1a: Carbink|0 fnt
+|faint|p1a: Carbink
+|-damage|p2a: Crawdaunt|189/243|[from] item: Life Orb
+|
+|upkeep
+|
+|t:|1706270874
+|switch|p1a: Pelipper|Pelipper, L85, F|241/241
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Pelipper
+|turn|7
+|
+|t:|1706270882
+|switch|p2a: Luxray|Luxray, L88, F|284/284
+|-damage|p2a: Luxray|249/284|[from] Stealth Rock
+|move|p1a: Pelipper|Hurricane|p2a: Luxray
+|-resisted|p2a: Luxray
+|-damage|p2a: Luxray|190/284
+|
+|-weather|RainDance|[upkeep]
+|-status|p2a: Luxray|brn|[from] item: Flame Orb
+|upkeep
+|turn|8
+|
+|t:|1706270905
+|move|p2a: Luxray|Facade|p1a: Pelipper
+|-damage|p1a: Pelipper|76/241
+|move|p1a: Pelipper|Hydro Pump|p2a: Luxray
+|-damage|p2a: Luxray|13/284 brn
+|
+|-weather|RainDance|[upkeep]
+|-damage|p2a: Luxray|0 fnt|[from] brn
+|faint|p2a: Luxray
+|upkeep
+|
+|t:|1706270917
+|switch|p2a: Zangoose|Zangoose, L86, M|266/266
+|-damage|p2a: Zangoose|233/266|[from] Stealth Rock
+|turn|9
+|
+|t:|1706270925
+|move|p2a: Zangoose|Facade|p1a: Pelipper
+|-damage|p1a: Pelipper|0 fnt
+|faint|p1a: Pelipper
+|
+|-weather|RainDance|[upkeep]
+|-status|p2a: Zangoose|tox|[from] item: Toxic Orb
+|upkeep
+|
+|t:|1706270930
+|switch|p1a: Galvantula|Galvantula, L82, F|249/249
+|turn|10
+|
+|t:|1706270933
+|move|p1a: Galvantula|Sticky Web|p2a: Zangoose
+|-sidestart|p2: PrathamLDOE|move: Sticky Web
+|move|p2a: Zangoose|Facade|p1a: Galvantula
+|-damage|p1a: Galvantula|0 fnt
+|faint|p1a: Galvantula
+|
+|-weather|RainDance|[upkeep]
+|-damage|p2a: Zangoose|217/266 tox|[from] psn
+|upkeep
+|
+|t:|1706270945
+|switch|p1a: Staraptor|Staraptor, L79, F|263/263
+|turn|11
+|
+|t:|1706270950
+|move|p1a: Staraptor|Close Combat|p2a: Zangoose
+|-supereffective|p2a: Zangoose
+|-damage|p2a: Zangoose|0 fnt
+|-unboost|p1a: Staraptor|def|1
+|-unboost|p1a: Staraptor|spd|1
+|faint|p2a: Zangoose
+|
+|-weather|none
+|upkeep
+|
+|t:|1706270955
+|switch|p2a: Infernape|Infernape, L82, F|259/259
+|-damage|p2a: Infernape|227/259|[from] Stealth Rock
+|-activate|p2a: Infernape|move: Sticky Web
+|-unboost|p2a: Infernape|spe|1
+|turn|12
+|
+|t:|1706270982
+|-terastallize|p1a: Staraptor|Fighting
+|move|p1a: Staraptor|Close Combat|p2a: Infernape
+|-damage|p2a: Infernape|74/259
+|-unboost|p1a: Staraptor|def|1
+|-unboost|p1a: Staraptor|spd|1
+|move|p2a: Infernape|Flare Blitz|p1a: Staraptor
+|-crit|p1a: Staraptor
+|-damage|p1a: Staraptor|0 fnt
+|faint|p1a: Staraptor
+|-damage|p2a: Infernape|0 fnt|[from] Recoil
+|faint|p2a: Infernape
+|
+|upkeep
+|
+|t:|1706270991
+|switch|p2a: Crawdaunt|Crawdaunt, L84, F|189/243
+|switch|p1a: Grafaiai|Grafaiai, L86, F|249/249
+|-damage|p2a: Crawdaunt|159/243|[from] Stealth Rock
+|-activate|p2a: Crawdaunt|move: Sticky Web
+|-unboost|p2a: Crawdaunt|spe|1
+|turn|13
+|
+|t:|1706271002
+|move|p1a: Grafaiai|Knock Off|p2a: Crawdaunt
+|-resisted|p2a: Crawdaunt
+|-damage|p2a: Crawdaunt|122/243
+|-enditem|p2a: Crawdaunt|Life Orb|[from] move: Knock Off|[of] p1a: Grafaiai
+|move|p2a: Crawdaunt|Crabhammer|p1a: Grafaiai
+|-damage|p1a: Grafaiai|49/249
+|
+|upkeep
+|turn|14
+|
+|t:|1706271011
+|move|p2a: Crawdaunt|Aqua Jet|p1a: Grafaiai
+|-damage|p1a: Grafaiai|0 fnt
+|faint|p1a: Grafaiai
+|
+|win|PrathamLDOE
+|raw|Guhan67's rating: 1407 &rarr; <strong>1392</strong><br />(-15 for losing)
+|raw|PrathamLDOE's rating: 1504 &rarr; <strong>1519</strong><br />(+15 for winning)
+|l|☆Guhan67
+|player|p1|

@@ -1,0 +1,568 @@
+|j|☆drgnpkmnz
+|j|☆Assalot
+|t:|1706272001
+|gametype|singles
+|player|p1|drgnpkmnz|2|1570
+|player|p2|Assalot|swimmerf|1627
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706272001
+|start
+|switch|p1a: Pincurchin|Pincurchin, L97, F|250/250
+|switch|p2a: Tentacruel|Tentacruel, L85, F|275/275
+|-fieldstart|move: Electric Terrain|[from] ability: Electric Surge|[of] p1a: Pincurchin
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by drgnpkmnz)
+|
+|t:|1706272011
+|switch|p2a: Malamar|Malamar, L83, F|278/278
+|move|p1a: Pincurchin|Thunderbolt|p2a: Malamar
+|-damage|p2a: Malamar|113/278
+|
+|upkeep
+|turn|2
+|
+|t:|1706272025
+|switch|p2a: Abomasnow|Abomasnow, L86, M|295/295
+|-weather|Snow|[from] ability: Snow Warning|[of] p2a: Abomasnow
+|move|p1a: Pincurchin|Thunderbolt|p2a: Abomasnow
+|-resisted|p2a: Abomasnow
+|-damage|p2a: Abomasnow|244/295
+|
+|-weather|Snow|[upkeep]
+|upkeep
+|turn|3
+|
+|t:|1706272030
+|switch|p1a: Weezing|Weezing-Galar, L86, M|252/252
+|move|p2a: Abomasnow|Earthquake|p1a: Weezing
+|-immune|p1a: Weezing|[from] ability: Levitate
+|
+|-weather|Snow|[upkeep]
+|upkeep
+|turn|4
+|
+|t:|1706272047
+|switch|p2a: Vileplume|Vileplume, L87, M|272/272
+|move|p1a: Weezing|Gunk Shot|p2a: Vileplume
+|-damage|p2a: Vileplume|154/272
+|
+|-weather|Snow|[upkeep]
+|-heal|p2a: Vileplume|171/272|[from] item: Leftovers
+|upkeep
+|turn|5
+|
+|t:|1706272066
+|move|p1a: Weezing|Fire Blast|p2a: Vileplume
+|-supereffective|p2a: Vileplume
+|-damage|p2a: Vileplume|31/272
+|move|p2a: Vileplume|Strength Sap|p1a: Weezing
+|-unboost|p1a: Weezing|atk|1
+|-heal|p2a: Vileplume|235/272
+|
+|-weather|Snow|[upkeep]
+|-heal|p2a: Vileplume|252/272|[from] item: Leftovers
+|-fieldend|move: Electric Terrain
+|upkeep
+|turn|6
+|
+|t:|1706272085
+|switch|p1a: Chimecho|Chimecho, L94, F|293/293
+|move|p2a: Vileplume|Leech Seed|p1a: Chimecho
+|-start|p1a: Chimecho|move: Leech Seed
+|
+|-weather|none
+|-heal|p2a: Vileplume|269/272|[from] item: Leftovers
+|-damage|p1a: Chimecho|257/293|[from] Leech Seed|[of] p2a: Vileplume
+|-heal|p2a: Vileplume|272/272|[silent]
+|upkeep
+|turn|7
+|
+|t:|1706272095
+|switch|p2a: Malamar|Malamar, L83, F|113/278
+|move|p1a: Chimecho|Psychic Noise|p2a: Malamar
+|-immune|p2a: Malamar
+|
+|-heal|p1a: Chimecho|275/293|[from] item: Leftovers
+|-damage|p1a: Chimecho|239/293|[from] Leech Seed|[of] p2a: Malamar
+|-heal|p2a: Malamar|149/278|[silent]
+|upkeep
+|turn|8
+|
+|t:|1706272122
+|switch|p1a: Weezing|Weezing-Galar, L86, M|252/252
+|switch|p2a: Abomasnow|Abomasnow, L86, M|244/295
+|-weather|Snow|[from] ability: Snow Warning|[of] p2a: Abomasnow
+|
+|-weather|Snow|[upkeep]
+|upkeep
+|turn|9
+|
+|t:|1706272131
+|switch|p2a: Vileplume|Vileplume, L87, M|272/272
+|move|p1a: Weezing|Fire Blast|p2a: Vileplume
+|-supereffective|p2a: Vileplume
+|-damage|p2a: Vileplume|144/272
+|
+|-weather|Snow|[upkeep]
+|-heal|p2a: Vileplume|161/272|[from] item: Leftovers
+|upkeep
+|turn|10
+|inactive|drgnpkmnz has 120 seconds left.
+|
+|t:|1706272184
+|switch|p1a: Spidops|Spidops, L96, M|271/271
+|move|p2a: Vileplume|Strength Sap|p1a: Spidops
+|-unboost|p1a: Spidops|atk|1
+|-heal|p2a: Vileplume|272/272
+|
+|-weather|Snow|[upkeep]
+|upkeep
+|turn|11
+|
+|t:|1706272198
+|move|p2a: Vileplume|Leech Seed|p1a: Spidops
+|-start|p1a: Spidops|move: Leech Seed
+|move|p1a: Spidops|Sticky Web|p2a: Vileplume
+|-sidestart|p2: Assalot|move: Sticky Web
+|
+|-weather|Snow|[upkeep]
+|-damage|p1a: Spidops|238/271|[from] Leech Seed|[of] p2a: Vileplume
+|upkeep
+|turn|12
+|
+|t:|1706272206
+|move|p2a: Vileplume|Sludge Bomb|p1a: Spidops
+|-damage|p1a: Spidops|136/271
+|move|p1a: Spidops|Spikes|p2a: Vileplume
+|-sidestart|p2: Assalot|Spikes
+|
+|-weather|none
+|-damage|p1a: Spidops|103/271|[from] Leech Seed|[of] p2a: Vileplume
+|upkeep
+|turn|13
+|inactive|drgnpkmnz has 120 seconds left.
+|
+|t:|1706272212
+|move|p2a: Vileplume|Sludge Bomb|p1a: Spidops
+|-damage|p1a: Spidops|7/271
+|-status|p1a: Spidops|psn
+|move|p1a: Spidops|Spikes|p2a: Vileplume
+|-sidestart|p2: Assalot|Spikes
+|
+|-damage|p1a: Spidops|0 fnt|[from] Leech Seed|[of] p2a: Vileplume
+|faint|p1a: Spidops
+|upkeep
+|
+|t:|1706272216
+|switch|p1a: Chimecho|Chimecho, L94, F|239/293
+|turn|14
+|
+|t:|1706272224
+|move|p1a: Chimecho|Knock Off|p2a: Vileplume
+|-damage|p2a: Vileplume|216/272
+|-enditem|p2a: Vileplume|Leftovers|[from] move: Knock Off|[of] p1a: Chimecho
+|move|p2a: Vileplume|Leech Seed|p1a: Chimecho
+|-start|p1a: Chimecho|move: Leech Seed
+|
+|-heal|p1a: Chimecho|257/293|[from] item: Leftovers
+|-damage|p1a: Chimecho|221/293|[from] Leech Seed|[of] p2a: Vileplume
+|-heal|p2a: Vileplume|252/272|[silent]
+|upkeep
+|turn|15
+|inactive|drgnpkmnz has 120 seconds left.
+|
+|t:|1706272255
+|switch|p2a: Malamar|Malamar, L83, F|149/278
+|-activate|p2a: Malamar|move: Sticky Web
+|-boost|p2a: Malamar|spe|1
+|-damage|p2a: Malamar|103/278|[from] Spikes
+|move|p1a: Chimecho|Thunder Wave|p2a: Malamar
+|-status|p2a: Malamar|par
+|
+|-heal|p1a: Chimecho|239/293|[from] item: Leftovers
+|-damage|p1a: Chimecho|203/293|[from] Leech Seed|[of] p2a: Malamar
+|-heal|p2a: Malamar|139/278 par|[silent]
+|upkeep
+|turn|16
+|
+|t:|1706272270
+|switch|p1a: Weezing|Weezing-Galar, L86, M|252/252
+|move|p2a: Malamar|Rest|p2a: Malamar
+|-status|p2a: Malamar|slp|[from] move: Rest
+|-heal|p2a: Malamar|278/278 slp|[silent]
+|-enditem|p2a: Malamar|Chesto Berry|[eat]
+|-curestatus|p2a: Malamar|slp|[msg]
+|
+|upkeep
+|turn|17
+|
+|t:|1706272289
+|move|p2a: Malamar|Psycho Cut|p1a: Weezing
+|-supereffective|p1a: Weezing
+|-damage|p1a: Weezing|138/252
+|move|p1a: Weezing|Strange Steam|p2a: Malamar
+|-supereffective|p2a: Malamar
+|-damage|p2a: Malamar|90/278
+|
+|-heal|p1a: Weezing|153/252|[from] item: Leftovers
+|upkeep
+|turn|18
+|
+|t:|1706272304
+|-terastallize|p2a: Malamar|Steel
+|move|p2a: Malamar|Rest|p2a: Malamar
+|-status|p2a: Malamar|slp|[from] move: Rest
+|-heal|p2a: Malamar|278/278 slp|[silent]
+|move|p1a: Weezing|Strange Steam|p2a: Malamar
+|-resisted|p2a: Malamar
+|-damage|p2a: Malamar|224/278 slp
+|-start|p2a: Malamar|confusion
+|
+|-heal|p1a: Weezing|168/252|[from] item: Leftovers
+|upkeep
+|turn|19
+|
+|t:|1706272318
+|switch|p2a: Tentacruel|Tentacruel, L85, F|275/275
+|-activate|p2a: Tentacruel|move: Sticky Web
+|-unboost|p2a: Tentacruel|spe|1
+|-damage|p2a: Tentacruel|230/275|[from] Spikes
+|move|p1a: Weezing|Fire Blast|p2a: Tentacruel
+|-resisted|p2a: Tentacruel
+|-damage|p2a: Tentacruel|201/275
+|
+|-heal|p1a: Weezing|183/252|[from] item: Leftovers
+|-heal|p2a: Tentacruel|218/275|[from] item: Leftovers
+|upkeep
+|turn|20
+|inactive|Assalot has 120 seconds left.
+|
+|t:|1706272339
+|switch|p1a: Pincurchin|Pincurchin, L97, F|250/250
+|-fieldstart|move: Electric Terrain|[from] ability: Electric Surge|[of] p1a: Pincurchin
+|move|p2a: Tentacruel|Rapid Spin|p1a: Pincurchin
+|-damage|p1a: Pincurchin|224/250
+|-boost|p2a: Tentacruel|spe|1
+|-sideend|p2: Assalot|Spikes|[from] move: Rapid Spin|[of] p2a: Tentacruel
+|-sideend|p2: Assalot|Sticky Web|[from] move: Rapid Spin|[of] p2a: Tentacruel
+|
+|-heal|p2a: Tentacruel|235/275|[from] item: Leftovers
+|-heal|p1a: Pincurchin|239/250|[from] item: Leftovers
+|upkeep
+|turn|21
+|inactive|Assalot has 120 seconds left.
+|
+|t:|1706272351
+|switch|p2a: Abomasnow|Abomasnow, L86, M|244/295
+|-weather|Snow|[from] ability: Snow Warning|[of] p2a: Abomasnow
+|move|p1a: Pincurchin|Thunderbolt|p2a: Abomasnow
+|-resisted|p2a: Abomasnow
+|-damage|p2a: Abomasnow|195/295
+|
+|-weather|Snow|[upkeep]
+|-heal|p1a: Pincurchin|250/250|[from] item: Leftovers
+|upkeep
+|turn|22
+|
+|t:|1706272359
+|switch|p1a: Weezing|Weezing-Galar, L86, M|183/252
+|move|p2a: Abomasnow|Blizzard|p1a: Weezing
+|-damage|p1a: Weezing|54/252
+|
+|-weather|Snow|[upkeep]
+|-heal|p1a: Weezing|69/252|[from] item: Leftovers
+|upkeep
+|turn|23
+|
+|t:|1706272362
+|move|p2a: Abomasnow|Blizzard|p1a: Weezing
+|-damage|p1a: Weezing|0 fnt
+|faint|p1a: Weezing
+|
+|-weather|Snow|[upkeep]
+|upkeep
+|
+|t:|1706272366
+|switch|p1a: Lycanroc|Lycanroc-Midnight, L89, M|296/296
+|turn|24
+|
+|t:|1706272371
+|move|p1a: Lycanroc|Close Combat|p2a: Abomasnow
+|-supereffective|p2a: Abomasnow
+|-damage|p2a: Abomasnow|0 fnt
+|-unboost|p1a: Lycanroc|def|1
+|-unboost|p1a: Lycanroc|spd|1
+|faint|p2a: Abomasnow
+|-damage|p1a: Lycanroc|267/296|[from] item: Life Orb
+|
+|-weather|Snow|[upkeep]
+|-fieldend|move: Electric Terrain
+|upkeep
+|
+|t:|1706272385
+|switch|p2a: Tentacruel|Tentacruel, L85, F|235/275
+|turn|25
+|
+|t:|1706272388
+|switch|p1a: Pincurchin|Pincurchin, L97, F|250/250
+|-fieldstart|move: Electric Terrain|[from] ability: Electric Surge|[of] p1a: Pincurchin
+|move|p2a: Tentacruel|Surf|p1a: Pincurchin
+|-damage|p1a: Pincurchin|171/250
+|
+|-weather|none
+|-heal|p2a: Tentacruel|252/275|[from] item: Leftovers
+|-heal|p1a: Pincurchin|186/250|[from] item: Leftovers
+|upkeep
+|turn|26
+|
+|t:|1706272396
+|switch|p2a: Golem|Golem, L87, M|281/281
+|switch|p1a: Chimecho|Chimecho, L94, F|203/293
+|
+|-heal|p1a: Chimecho|221/293|[from] item: Leftovers
+|upkeep
+|turn|27
+|
+|t:|1706272406
+|move|p1a: Chimecho|Psychic Noise|p2a: Golem
+|-damage|p2a: Golem|170/281
+|-start|p2a: Golem|move: Heal Block
+|move|p2a: Golem|Rock Polish|p2a: Golem
+|-boost|p2a: Golem|spe|2
+|
+|-heal|p1a: Chimecho|239/293|[from] item: Leftovers
+|upkeep
+|turn|28
+|
+|t:|1706272413
+|move|p2a: Golem|Stone Edge|p1a: Chimecho
+|-damage|p1a: Chimecho|116/293
+|move|p1a: Chimecho|Psychic Noise|p2a: Golem
+|-damage|p2a: Golem|47/281
+|-fail|p2a: Golem|move: Heal Block
+|
+|-heal|p1a: Chimecho|134/293|[from] item: Leftovers
+|-end|p2a: Golem|move: Heal Block
+|upkeep
+|turn|29
+|
+|t:|1706272428
+|move|p2a: Golem|Explosion|p1a: Chimecho
+|-damage|p1a: Chimecho|0 fnt
+|faint|p2a: Golem
+|faint|p1a: Chimecho
+|
+|-fieldend|move: Electric Terrain
+|upkeep
+|
+|t:|1706272437
+|switch|p1a: Sceptile|Sceptile, L87, F|264/264
+|switch|p2a: Malamar|Malamar, L83, F, tera:Steel|224/278 slp
+|turn|30
+|
+|t:|1706272449
+|switch|p2a: Vileplume|Vileplume, L87, M|252/272
+|move|p1a: Sceptile|Swords Dance|p1a: Sceptile
+|-boost|p1a: Sceptile|atk|2
+|
+|upkeep
+|turn|31
+|
+|t:|1706272455
+|-terastallize|p1a: Sceptile|Rock
+|move|p1a: Sceptile|Rock Slide|p2a: Vileplume|[miss]
+|-miss|p1a: Sceptile|p2a: Vileplume
+|move|p2a: Vileplume|Sludge Bomb|p1a: Sceptile
+|-resisted|p1a: Sceptile
+|-damage|p1a: Sceptile|210/264
+|
+|upkeep
+|turn|32
+|
+|t:|1706272462
+|move|p1a: Sceptile|Rock Slide|p2a: Vileplume
+|-damage|p2a: Vileplume|53/272
+|-damage|p1a: Sceptile|184/264|[from] item: Life Orb
+|move|p2a: Vileplume|Strength Sap|p1a: Sceptile
+|-unboost|p1a: Sceptile|atk|1
+|-heal|p2a: Vileplume|272/272
+|
+|upkeep
+|turn|33
+|
+|t:|1706272469
+|move|p1a: Sceptile|Swords Dance|p1a: Sceptile
+|-boost|p1a: Sceptile|atk|2
+|move|p2a: Vileplume|Strength Sap|p1a: Sceptile
+|-unboost|p1a: Sceptile|atk|1
+|
+|upkeep
+|turn|34
+|
+|t:|1706272474
+|move|p1a: Sceptile|Rock Slide|p2a: Vileplume
+|-damage|p2a: Vileplume|61/272
+|-damage|p1a: Sceptile|158/264|[from] item: Life Orb
+|move|p2a: Vileplume|Giga Drain|p1a: Sceptile
+|-supereffective|p1a: Sceptile
+|-damage|p1a: Sceptile|0 fnt
+|-heal|p2a: Vileplume|140/272|[from] drain|[of] p1a: Sceptile
+|faint|p1a: Sceptile
+|
+|upkeep
+|
+|t:|1706272477
+|switch|p1a: Lycanroc|Lycanroc-Midnight, L89, M|267/296
+|turn|35
+|
+|t:|1706272480
+|move|p1a: Lycanroc|Stone Edge|p2a: Vileplume
+|-damage|p2a: Vileplume|0 fnt
+|faint|p2a: Vileplume
+|-damage|p1a: Lycanroc|238/296|[from] item: Life Orb
+|
+|upkeep
+|
+|t:|1706272484
+|switch|p2a: Malamar|Malamar, L83, F, tera:Steel|224/278 slp
+|turn|36
+|
+|t:|1706272487
+|move|p1a: Lycanroc|Close Combat|p2a: Malamar
+|-supereffective|p2a: Malamar
+|-damage|p2a: Malamar|0 fnt
+|-unboost|p1a: Lycanroc|def|1
+|-unboost|p1a: Lycanroc|spd|1
+|faint|p2a: Malamar
+|-damage|p1a: Lycanroc|209/296|[from] item: Life Orb
+|
+|upkeep
+|
+|t:|1706272494
+|switch|p2a: Tentacruel|Tentacruel, L85, F|252/275
+|turn|37
+|
+|t:|1706272499
+|switch|p1a: Pincurchin|Pincurchin, L97, F|186/250
+|-fieldstart|move: Electric Terrain|[from] ability: Electric Surge|[of] p1a: Pincurchin
+|move|p2a: Tentacruel|Surf|p1a: Pincurchin
+|-damage|p1a: Pincurchin|108/250
+|
+|-heal|p2a: Tentacruel|269/275|[from] item: Leftovers
+|-heal|p1a: Pincurchin|123/250|[from] item: Leftovers
+|upkeep
+|turn|38
+|
+|t:|1706272506
+|move|p2a: Tentacruel|Sludge Bomb|p1a: Pincurchin
+|-crit|p1a: Pincurchin
+|-damage|p1a: Pincurchin|14/250
+|move|p1a: Pincurchin|Recover|p1a: Pincurchin
+|-heal|p1a: Pincurchin|139/250
+|
+|-heal|p2a: Tentacruel|275/275|[from] item: Leftovers
+|-heal|p1a: Pincurchin|154/250|[from] item: Leftovers
+|upkeep
+|turn|39
+|
+|t:|1706272511
+|move|p2a: Tentacruel|Sludge Bomb|p1a: Pincurchin
+|-damage|p1a: Pincurchin|79/250
+|move|p1a: Pincurchin|Thunderbolt|p2a: Tentacruel
+|-supereffective|p2a: Tentacruel
+|-damage|p2a: Tentacruel|35/275
+|-status|p2a: Tentacruel|par
+|
+|-heal|p2a: Tentacruel|52/275 par|[from] item: Leftovers
+|-heal|p1a: Pincurchin|94/250|[from] item: Leftovers
+|upkeep
+|turn|40
+|
+|t:|1706272514
+|move|p2a: Tentacruel|Sludge Bomb|p1a: Pincurchin
+|-damage|p1a: Pincurchin|15/250
+|move|p1a: Pincurchin|Recover|p1a: Pincurchin
+|-heal|p1a: Pincurchin|140/250
+|
+|-heal|p2a: Tentacruel|69/275 par|[from] item: Leftovers
+|-heal|p1a: Pincurchin|155/250|[from] item: Leftovers
+|upkeep
+|turn|41
+|
+|t:|1706272518
+|move|p2a: Tentacruel|Sludge Bomb|p1a: Pincurchin
+|-damage|p1a: Pincurchin|82/250
+|move|p1a: Pincurchin|Recover|p1a: Pincurchin
+|-heal|p1a: Pincurchin|207/250
+|
+|-heal|p2a: Tentacruel|86/275 par|[from] item: Leftovers
+|-heal|p1a: Pincurchin|222/250|[from] item: Leftovers
+|-fieldend|move: Electric Terrain
+|upkeep
+|turn|42
+|
+|t:|1706272524
+|move|p2a: Tentacruel|Sludge Bomb|p1a: Pincurchin
+|-damage|p1a: Pincurchin|146/250
+|move|p1a: Pincurchin|Thunderbolt|p2a: Tentacruel
+|-supereffective|p2a: Tentacruel
+|-damage|p2a: Tentacruel|0 fnt
+|faint|p2a: Tentacruel
+|
+|-heal|p1a: Pincurchin|161/250|[from] item: Leftovers
+|upkeep
+|
+|t:|1706272529
+|switch|p2a: Kommo-o|Kommo-o, L78, M|245/245
+|turn|43
+|
+|t:|1706272536
+|move|p2a: Kommo-o|Clangorous Soul|p2a: Kommo-o
+|-boost|p2a: Kommo-o|atk|1
+|-boost|p2a: Kommo-o|def|1
+|-boost|p2a: Kommo-o|spa|1
+|-boost|p2a: Kommo-o|spd|1
+|-boost|p2a: Kommo-o|spe|1
+|-damage|p2a: Kommo-o|165/245
+|-enditem|p2a: Kommo-o|Throat Spray
+|-boost|p2a: Kommo-o|spa|1|[from] item: Throat Spray
+|move|p1a: Pincurchin|Scald|p2a: Kommo-o
+|-resisted|p2a: Kommo-o
+|-damage|p2a: Kommo-o|142/245
+|
+|-heal|p1a: Pincurchin|176/250|[from] item: Leftovers
+|upkeep
+|turn|44
+|
+|t:|1706272542
+|move|p2a: Kommo-o|Clanging Scales|p1a: Pincurchin
+|-damage|p1a: Pincurchin|0 fnt
+|faint|p1a: Pincurchin
+|-unboost|p2a: Kommo-o|def|1
+|
+|upkeep
+|
+|t:|1706272545
+|switch|p1a: Lycanroc|Lycanroc-Midnight, L89, M|209/296
+|turn|45
+|
+|t:|1706272550
+|move|p2a: Kommo-o|Close Combat|p1a: Lycanroc
+|-supereffective|p1a: Lycanroc
+|-damage|p1a: Lycanroc|0 fnt
+|-unboost|p2a: Kommo-o|def|1
+|-unboost|p2a: Kommo-o|spd|1
+|faint|p1a: Lycanroc
+|
+|win|Assalot
+|raw|drgnpkmnz's rating: 1592 &rarr; <strong>1574</strong><br />(-18 for losing)
+|raw|Assalot's rating: 1627 &rarr; <strong>1645</strong><br />(+18 for winning)

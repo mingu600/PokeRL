@@ -1,0 +1,359 @@
+|j|☆mathmanu
+|j|☆Swayu1904
+|t:|1706272103
+|gametype|singles
+|player|p1|mathmanu|firebreather|1016
+|player|p2|Swayu1904|101|1000
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706272103
+|start
+|switch|p1a: Sudowoodo|Sudowoodo, L93, F|281/281
+|switch|p2a: Regirock|Regirock, L86|278/278
+|turn|1
+|
+|t:|1706272112
+|move|p2a: Regirock|Thunder Wave|p1a: Sudowoodo
+|-status|p1a: Sudowoodo|par
+|move|p1a: Sudowoodo|Wood Hammer|p2a: Regirock
+|-supereffective|p2a: Regirock
+|-damage|p2a: Regirock|168/278
+|
+|-heal|p2a: Regirock|185/278|[from] item: Leftovers
+|upkeep
+|turn|2
+|
+|t:|1706272129
+|move|p2a: Regirock|Body Press|p1a: Sudowoodo
+|-supereffective|p1a: Sudowoodo
+|-damage|p1a: Sudowoodo|123/281 par
+|move|p1a: Sudowoodo|Earthquake|p2a: Regirock
+|-supereffective|p2a: Regirock
+|-damage|p2a: Regirock|101/278
+|
+|-heal|p2a: Regirock|118/278|[from] item: Leftovers
+|-heal|p1a: Sudowoodo|140/281 par|[from] item: Leftovers
+|upkeep
+|turn|3
+|
+|t:|1706272141
+|move|p2a: Regirock|Body Press|p1a: Sudowoodo
+|-supereffective|p1a: Sudowoodo
+|-damage|p1a: Sudowoodo|0 fnt
+|faint|p1a: Sudowoodo
+|
+|-heal|p2a: Regirock|135/278|[from] item: Leftovers
+|upkeep
+|
+|t:|1706272152
+|switch|p1a: Greedent|Greedent, L87, M|351/351
+|turn|4
+|
+|t:|1706272157
+|move|p2a: Regirock|Iron Defense|p2a: Regirock
+|-boost|p2a: Regirock|def|2
+|move|p1a: Greedent|Swords Dance|p1a: Greedent
+|-boost|p1a: Greedent|atk|2
+|
+|-heal|p2a: Regirock|152/278|[from] item: Leftovers
+|upkeep
+|turn|5
+|
+|t:|1706272168
+|move|p2a: Regirock|Iron Defense|p2a: Regirock
+|-boost|p2a: Regirock|def|2
+|move|p1a: Greedent|Swords Dance|p1a: Greedent
+|-boost|p1a: Greedent|atk|2
+|
+|-heal|p2a: Regirock|169/278|[from] item: Leftovers
+|upkeep
+|turn|6
+|
+|t:|1706272180
+|-terastallize|p2a: Regirock|Fighting
+|move|p2a: Regirock|Iron Defense|p2a: Regirock
+|-boost|p2a: Regirock|def|2
+|move|p1a: Greedent|Swords Dance|p1a: Greedent
+|-boost|p1a: Greedent|atk|2
+|
+|-heal|p2a: Regirock|186/278|[from] item: Leftovers
+|upkeep
+|turn|7
+|
+|t:|1706272194
+|-terastallize|p1a: Greedent|Ghost
+|move|p2a: Regirock|Stone Edge|p1a: Greedent
+|-damage|p1a: Greedent|252/351
+|move|p1a: Greedent|Earthquake|p2a: Regirock
+|-damage|p2a: Regirock|146/278
+|
+|-heal|p2a: Regirock|163/278|[from] item: Leftovers
+|upkeep
+|turn|8
+|
+|t:|1706272207
+|move|p2a: Regirock|Body Press|p1a: Greedent
+|-immune|p1a: Greedent
+|move|p1a: Greedent|Double-Edge|p2a: Regirock
+|-damage|p2a: Regirock|100/278
+|-damage|p1a: Greedent|231/351|[from] Recoil
+|
+|-heal|p2a: Regirock|117/278|[from] item: Leftovers
+|upkeep
+|turn|9
+|
+|t:|1706272220
+|move|p2a: Regirock|Thunder Wave|p1a: Greedent
+|-status|p1a: Greedent|par
+|cant|p1a: Greedent|par
+|
+|-heal|p2a: Regirock|134/278|[from] item: Leftovers
+|upkeep
+|turn|10
+|
+|t:|1706272230
+|move|p2a: Regirock|Stone Edge|p1a: Greedent|[miss]
+|-miss|p2a: Regirock|p1a: Greedent
+|move|p1a: Greedent|Double-Edge|p2a: Regirock
+|-damage|p2a: Regirock|73/278
+|-damage|p1a: Greedent|211/351 par|[from] Recoil
+|
+|-heal|p2a: Regirock|90/278|[from] item: Leftovers
+|upkeep
+|turn|11
+|
+|t:|1706272240
+|move|p2a: Regirock|Stone Edge|p1a: Greedent
+|-damage|p1a: Greedent|109/351 par
+|-enditem|p1a: Greedent|Sitrus Berry|[eat]
+|-heal|p1a: Greedent|196/351 par|[from] item: Sitrus Berry
+|-heal|p1a: Greedent|313/351 par|[from] ability: Cheek Pouch
+|move|p1a: Greedent|Double-Edge|p2a: Regirock
+|-damage|p2a: Regirock|21/278
+|-damage|p1a: Greedent|290/351 par|[from] Recoil
+|
+|-heal|p2a: Regirock|38/278|[from] item: Leftovers
+|upkeep
+|turn|12
+|
+|t:|1706272253
+|move|p2a: Regirock|Iron Defense|p2a: Regirock
+|-boost|p2a: Regirock|def|0
+|move|p1a: Greedent|Double-Edge|p2a: Regirock
+|-damage|p2a: Regirock|0 fnt
+|faint|p2a: Regirock
+|-damage|p1a: Greedent|277/351 par|[from] Recoil
+|
+|upkeep
+|
+|t:|1706272264
+|switch|p2a: Giratina|Giratina, L75|349/349
+|-ability|p2a: Giratina|Pressure
+|turn|13
+|
+|t:|1706272272
+|move|p2a: Giratina|Shadow Ball|p1a: Greedent
+|-supereffective|p1a: Greedent
+|-damage|p1a: Greedent|113/351 par
+|move|p1a: Greedent|Knock Off|p2a: Giratina
+|-supereffective|p2a: Giratina
+|-damage|p2a: Giratina|0 fnt
+|-enditem|p2a: Giratina|Chesto Berry|[from] move: Knock Off|[of] p1a: Greedent
+|faint|p2a: Giratina
+|
+|upkeep
+|
+|t:|1706272281
+|switch|p2a: Lanturn|Lanturn, L89, F|367/367
+|turn|14
+|
+|t:|1706272289
+|move|p2a: Lanturn|Ice Beam|p1a: Greedent
+|-damage|p1a: Greedent|18/351 par
+|move|p1a: Greedent|Double-Edge|p2a: Lanturn
+|-damage|p2a: Lanturn|0 fnt
+|faint|p2a: Lanturn
+|-damage|p1a: Greedent|0 fnt|[from] Recoil
+|faint|p1a: Greedent
+|
+|upkeep
+|
+|t:|1706272301
+|switch|p2a: Sandslash|Sandslash, L88, M|275/275
+|switch|p1a: Sneasler|Sneasler, L75, M|244/244
+|turn|15
+|
+|t:|1706272318
+|move|p1a: Sneasler|U-turn|p2a: Sandslash
+|-damage|p2a: Sandslash|215/275
+|-status|p2a: Sandslash|psn|[from] ability: Poison Touch|[of] p1a: Sneasler
+|
+|t:|1706272323
+|switch|p1a: Hydreigon|Hydreigon, L79, F|275/275|[from] U-turn
+|move|p2a: Sandslash|Swords Dance|p2a: Sandslash
+|-boost|p2a: Sandslash|atk|2
+|
+|-heal|p2a: Sandslash|232/275 psn|[from] item: Leftovers
+|-damage|p2a: Sandslash|198/275 psn|[from] psn
+|upkeep
+|turn|16
+|
+|t:|1706272342
+|move|p1a: Hydreigon|Flash Cannon|p2a: Sandslash
+|-damage|p2a: Sandslash|123/275 psn
+|move|p2a: Sandslash|Earthquake|p1a: Hydreigon
+|-immune|p1a: Hydreigon|[from] ability: Levitate
+|
+|-heal|p2a: Sandslash|140/275 psn|[from] item: Leftovers
+|-damage|p2a: Sandslash|106/275 psn|[from] psn
+|upkeep
+|turn|17
+|
+|t:|1706272353
+|switch|p2a: Camerupt|Camerupt, L90, F|272/272
+|move|p1a: Hydreigon|Flash Cannon|p2a: Camerupt
+|-resisted|p2a: Camerupt
+|-damage|p2a: Camerupt|239/272
+|
+|-heal|p2a: Camerupt|256/272|[from] item: Leftovers
+|upkeep
+|turn|18
+|
+|t:|1706272368
+|move|p1a: Hydreigon|Flash Cannon|p2a: Camerupt
+|-resisted|p2a: Camerupt
+|-damage|p2a: Camerupt|222/272
+|move|p2a: Camerupt|Will-O-Wisp|p1a: Hydreigon|[miss]
+|-miss|p2a: Camerupt|p1a: Hydreigon
+|
+|-heal|p2a: Camerupt|239/272|[from] item: Leftovers
+|upkeep
+|turn|19
+|
+|t:|1706272385
+|switch|p1a: Gouging Fire|Gouging Fire, L75|281/281
+|move|p2a: Camerupt|Fire Blast|p1a: Gouging Fire
+|-resisted|p1a: Gouging Fire
+|-damage|p1a: Gouging Fire|241/281
+|
+|-heal|p2a: Camerupt|256/272|[from] item: Leftovers
+|upkeep
+|turn|20
+|
+|t:|1706272398
+|move|p1a: Gouging Fire|Dragon Dance|p1a: Gouging Fire
+|-boost|p1a: Gouging Fire|atk|1
+|-boost|p1a: Gouging Fire|spe|1
+|move|p2a: Camerupt|Stealth Rock|p1a: Gouging Fire
+|-sidestart|p1: mathmanu|move: Stealth Rock
+|
+|-heal|p2a: Camerupt|272/272|[from] item: Leftovers
+|upkeep
+|turn|21
+|
+|t:|1706272410
+|move|p1a: Gouging Fire|Dragon Dance|p1a: Gouging Fire
+|-boost|p1a: Gouging Fire|atk|1
+|-boost|p1a: Gouging Fire|spe|1
+|move|p2a: Camerupt|Earthquake|p1a: Gouging Fire
+|-supereffective|p1a: Gouging Fire
+|-damage|p1a: Gouging Fire|19/281
+|
+|upkeep
+|turn|22
+|
+|t:|1706272435
+|move|p1a: Gouging Fire|Outrage|p2a: Camerupt
+|-damage|p2a: Camerupt|13/272
+|move|p2a: Camerupt|Earthquake|p1a: Gouging Fire
+|-supereffective|p1a: Gouging Fire
+|-crit|p1a: Gouging Fire
+|-damage|p1a: Gouging Fire|0 fnt
+|faint|p1a: Gouging Fire
+|-end|p1a: Gouging Fire|Protosynthesis|[silent]
+|
+|-heal|p2a: Camerupt|30/272|[from] item: Leftovers
+|upkeep
+|
+|t:|1706272450
+|switch|p1a: Sneasler|Sneasler, L75, M|244/244
+|-damage|p1a: Sneasler|229/244|[from] Stealth Rock
+|turn|23
+|
+|t:|1706272455
+|switch|p2a: Porygon2|Porygon2, L84|280/280
+|-ability|p2a: Porygon2|Download|boost
+|-boost|p2a: Porygon2|atk|1
+|move|p1a: Sneasler|U-turn|p2a: Porygon2
+|-damage|p2a: Porygon2|227/280
+|
+|t:|1706272461
+|switch|p1a: Rabsca|Rabsca, L90, F|281/281|[from] U-turn
+|
+|upkeep
+|turn|24
+|
+|t:|1706272469
+|move|p2a: Porygon2|Recover|p2a: Porygon2
+|-heal|p2a: Porygon2|280/280
+|move|p1a: Rabsca|Revival Blessing|p1a: Rabsca
+|
+|t:|1706272475
+|-heal|p1: Greedent|175/351|[from] move: Revival Blessing
+|
+|upkeep
+|turn|25
+|
+|t:|1706272480
+|move|p2a: Porygon2|Tri Attack|p1a: Rabsca
+|-damage|p1a: Rabsca|205/281
+|move|p1a: Rabsca|Bug Buzz|p2a: Porygon2
+|-crit|p2a: Porygon2
+|-damage|p2a: Porygon2|159/280
+|
+|upkeep
+|turn|26
+|
+|t:|1706272493
+|move|p2a: Porygon2|Discharge|p1a: Rabsca
+|-damage|p1a: Rabsca|154/281
+|move|p1a: Rabsca|Bug Buzz|p2a: Porygon2
+|-damage|p2a: Porygon2|77/280
+|
+|upkeep
+|turn|27
+|
+|t:|1706272501
+|move|p2a: Porygon2|Recover|p2a: Porygon2
+|-heal|p2a: Porygon2|217/280
+|move|p1a: Rabsca|Bug Buzz|p2a: Porygon2
+|-damage|p2a: Porygon2|133/280
+|
+|upkeep
+|turn|28
+|c|☆mathmanu|SALE PUTE TU JOUES HEALING SALOPE
+|l|☆mathmanu
+|player|p1|
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Swayu1904)
+|inactive|mathmanu has 30 seconds to reconnect!
+|l|☆Swayu1904
+|inactive|Swayu1904 disconnected and has a minute to reconnect!
+|player|p2|
+|inactive|mathmanu has 20 seconds to reconnect!
+|inactive|mathmanu has 15 seconds to reconnect!
+|inactive|mathmanu has 10 seconds to reconnect!
+|j|☆Swayu1904
+|inactive|Swayu1904 reconnected.
+|player|p2|Swayu1904|101
+|inactive|mathmanu has 5 seconds to reconnect!
+|-message|mathmanu lost due to inactivity.
+|
+|win|Swayu1904

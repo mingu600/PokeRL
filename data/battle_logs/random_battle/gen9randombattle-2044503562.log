@@ -1,0 +1,289 @@
+|j|☆nootie
+|j|☆ketchupash1234
+|t:|1706270676
+|gametype|singles
+|player|p1|nootie|cynthia-gen4|
+|player|p2|ketchupash1234|169|
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706270676
+|start
+|switch|p1a: Palossand|Palossand, L88, F|293/293
+|switch|p2a: Clefable|Clefable, L83, M|293/293
+|turn|1
+|
+|t:|1706270695
+|move|p2a: Clefable|Thunder Wave|p1a: Palossand
+|-immune|p1a: Palossand
+|move|p1a: Palossand|Sludge Bomb|p2a: Clefable
+|-supereffective|p2a: Clefable
+|-damage|p2a: Clefable|151/293
+|-status|p2a: Clefable|psn
+|
+|-heal|p2a: Clefable|169/293 psn|[from] item: Leftovers
+|-damage|p2a: Clefable|133/293 psn|[from] psn
+|upkeep
+|turn|2
+|
+|t:|1706270710
+|move|p2a: Clefable|Moonblast|p1a: Palossand
+|-damage|p1a: Palossand|190/293
+|move|p1a: Palossand|Sludge Bomb|p2a: Clefable
+|-supereffective|p2a: Clefable
+|-damage|p2a: Clefable|0 fnt
+|faint|p2a: Clefable
+|
+|-heal|p1a: Palossand|208/293|[from] item: Leftovers
+|upkeep
+|
+|t:|1706270729
+|switch|p2a: Zangoose|Zangoose, L86, F|266/266
+|turn|3
+|
+|t:|1706270743
+|move|p2a: Zangoose|Knock Off|p1a: Palossand
+|-supereffective|p1a: Palossand
+|-damage|p1a: Palossand|74/293
+|-enditem|p1a: Palossand|Leftovers|[from] move: Knock Off|[of] p2a: Zangoose
+|move|p1a: Palossand|Earth Power|p2a: Zangoose
+|-damage|p2a: Zangoose|127/266
+|
+|-status|p2a: Zangoose|tox|[from] item: Toxic Orb
+|upkeep
+|turn|4
+|
+|t:|1706270765
+|move|p2a: Zangoose|Knock Off|p1a: Palossand
+|-supereffective|p1a: Palossand
+|-damage|p1a: Palossand|0 fnt
+|faint|p1a: Palossand
+|
+|-damage|p2a: Zangoose|111/266 tox|[from] psn
+|upkeep
+|
+|t:|1706270784
+|switch|p1a: Brambleghast|Brambleghast, L88, M|240/240
+|turn|5
+|
+|t:|1706270793
+|move|p1a: Brambleghast|Strength Sap|p2a: Zangoose
+|-unboost|p2a: Zangoose|atk|1
+|move|p2a: Zangoose|Knock Off|p1a: Brambleghast
+|-supereffective|p1a: Brambleghast
+|-damage|p1a: Brambleghast|42/240
+|-enditem|p1a: Brambleghast|Leftovers|[from] move: Knock Off|[of] p2a: Zangoose
+|
+|-damage|p2a: Zangoose|79/266 tox|[from] psn
+|upkeep
+|turn|6
+|
+|t:|1706270805
+|move|p1a: Brambleghast|Strength Sap|p2a: Zangoose
+|-unboost|p2a: Zangoose|atk|1
+|-heal|p1a: Brambleghast|206/240
+|move|p2a: Zangoose|Knock Off|p1a: Brambleghast
+|-supereffective|p1a: Brambleghast
+|-damage|p1a: Brambleghast|108/240
+|
+|-damage|p2a: Zangoose|31/266 tox|[from] psn
+|upkeep
+|turn|7
+|
+|t:|1706270833
+|move|p1a: Brambleghast|Strength Sap|p2a: Zangoose
+|-unboost|p2a: Zangoose|atk|1
+|-heal|p1a: Brambleghast|231/240
+|move|p2a: Zangoose|Knock Off|p1a: Brambleghast
+|-supereffective|p1a: Brambleghast
+|-damage|p1a: Brambleghast|155/240
+|
+|-damage|p2a: Zangoose|0 fnt|[from] psn
+|faint|p2a: Zangoose
+|upkeep
+|
+|t:|1706270856
+|switch|p2a: Avalugg|Avalugg, L87, F|307/307
+|turn|8
+|
+|t:|1706270868
+|move|p1a: Brambleghast|Strength Sap|p2a: Avalugg
+|-unboost|p2a: Avalugg|atk|1
+|-heal|p1a: Brambleghast|240/240
+|move|p2a: Avalugg|Avalanche|p1a: Brambleghast
+|-supereffective|p1a: Brambleghast
+|-crit|p1a: Brambleghast
+|-damage|p1a: Brambleghast|0 fnt
+|faint|p1a: Brambleghast
+|
+|upkeep
+|
+|t:|1706270891
+|switch|p1a: Iron Leaves|Iron Leaves, L80|275/275
+|turn|9
+|
+|t:|1706270900
+|move|p1a: Iron Leaves|Close Combat|p2a: Avalugg
+|-supereffective|p2a: Avalugg
+|-damage|p2a: Avalugg|159/307
+|-unboost|p1a: Iron Leaves|def|1
+|-unboost|p1a: Iron Leaves|spd|1
+|move|p2a: Avalugg|Avalanche|p1a: Iron Leaves
+|-supereffective|p1a: Iron Leaves
+|-damage|p1a: Iron Leaves|0 fnt
+|faint|p1a: Iron Leaves
+|-end|p1a: Iron Leaves|Quark Drive|[silent]
+|
+|upkeep
+|
+|t:|1706270915
+|switch|p1a: Charizard|Charizard, L84, M|268/268
+|turn|10
+|
+|t:|1706270931
+|-terastallize|p1a: Charizard|Fire
+|move|p1a: Charizard|Focus Blast|p2a: Avalugg
+|-supereffective|p2a: Avalugg
+|-damage|p2a: Avalugg|0 fnt
+|faint|p2a: Avalugg
+|
+|upkeep
+|
+|t:|1706270944
+|switch|p2a: Quagsire|Quagsire, L84, F|297/297
+|turn|11
+|
+|t:|1706270956
+|switch|p1a: Comfey|Comfey, L86, F|228/228
+|move|p2a: Quagsire|Liquidation|p1a: Comfey
+|-damage|p1a: Comfey|144/228
+|
+|-heal|p1a: Comfey|158/228|[from] item: Leftovers
+|upkeep
+|turn|12
+|
+|t:|1706270975
+|move|p1a: Comfey|Giga Drain|p2a: Quagsire
+|-supereffective|p2a: Quagsire
+|-damage|p2a: Quagsire|33/297
+|-heal|p1a: Comfey|228/228|[from] drain|[of] p2a: Quagsire
+|move|p2a: Quagsire|Earthquake|p1a: Comfey
+|-damage|p1a: Comfey|135/228
+|
+|-heal|p1a: Comfey|149/228|[from] item: Leftovers
+|-heal|p2a: Quagsire|51/297|[from] item: Leftovers
+|upkeep
+|turn|13
+|
+|t:|1706271001
+|move|p1a: Comfey|Giga Drain|p2a: Quagsire
+|-supereffective|p2a: Quagsire
+|-damage|p2a: Quagsire|0 fnt
+|-heal|p1a: Comfey|175/228|[from] drain|[of] p2a: Quagsire
+|faint|p2a: Quagsire
+|
+|-heal|p1a: Comfey|189/228|[from] item: Leftovers
+|upkeep
+|
+|t:|1706271007
+|switch|p2a: Swampert|Swampert, L83, M|302/302
+|turn|14
+|
+|t:|1706271015
+|-terastallize|p2a: Swampert|Steel
+|move|p1a: Comfey|Giga Drain|p2a: Swampert
+|-resisted|p2a: Swampert
+|-damage|p2a: Swampert|287/302
+|-heal|p1a: Comfey|197/228|[from] drain|[of] p2a: Swampert
+|move|p2a: Swampert|Ice Beam|p1a: Comfey
+|-damage|p1a: Comfey|152/228
+|
+|-heal|p1a: Comfey|166/228|[from] item: Leftovers
+|upkeep
+|turn|15
+|
+|t:|1706271032
+|switch|p1a: Glastrier|Glastrier, L86|311/311
+|move|p2a: Swampert|Knock Off|p1a: Glastrier
+|-damage|p1a: Glastrier|255/311
+|-enditem|p1a: Glastrier|Choice Band|[from] move: Knock Off|[of] p2a: Swampert
+|
+|upkeep
+|turn|16
+|
+|t:|1706271050
+|move|p2a: Swampert|Earthquake|p1a: Glastrier
+|-damage|p1a: Glastrier|173/311
+|move|p1a: Glastrier|High Horsepower|p2a: Swampert
+|-supereffective|p2a: Swampert
+|-damage|p2a: Swampert|105/302
+|
+|upkeep
+|turn|17
+|
+|t:|1706271060
+|move|p2a: Swampert|Earthquake|p1a: Glastrier
+|-damage|p1a: Glastrier|97/311
+|move|p1a: Glastrier|High Horsepower|p2a: Swampert
+|-supereffective|p2a: Swampert
+|-damage|p2a: Swampert|0 fnt
+|faint|p2a: Swampert
+|-ability|p1a: Glastrier|Chilling Neigh|boost
+|-boost|p1a: Glastrier|atk|1
+|
+|upkeep
+|
+|t:|1706271068
+|switch|p2a: Golem|Golem-Alola, L92, M|297/297
+|turn|18
+|
+|t:|1706271090
+|move|p2a: Golem|Earthquake|p1a: Glastrier
+|-damage|p1a: Glastrier|0 fnt
+|faint|p1a: Glastrier
+|
+|upkeep
+|
+|t:|1706271101
+|switch|p1a: Comfey|Comfey, L86, F|166/228
+|turn|19
+|
+|t:|1706271106
+|move|p1a: Comfey|Calm Mind|p1a: Comfey
+|-boost|p1a: Comfey|spa|1
+|-boost|p1a: Comfey|spd|1
+|move|p2a: Golem|Earthquake|p1a: Comfey
+|-damage|p1a: Comfey|26/228
+|
+|-heal|p1a: Comfey|40/228|[from] item: Leftovers
+|upkeep
+|turn|20
+|
+|t:|1706271114
+|move|p1a: Comfey|Giga Drain|p2a: Golem
+|-supereffective|p2a: Golem
+|-damage|p2a: Golem|143/297
+|-heal|p1a: Comfey|117/228|[from] drain|[of] p2a: Golem
+|move|p2a: Golem|Earthquake|p1a: Comfey
+|-damage|p1a: Comfey|0 fnt
+|faint|p1a: Comfey
+|
+|upkeep
+|
+|t:|1706271125
+|switch|p1a: Charizard|Charizard, L84, M, tera:Fire|268/268
+|turn|21
+|
+|t:|1706271133
+|move|p1a: Charizard|Focus Blast|p2a: Golem
+|-supereffective|p2a: Golem
+|-damage|p2a: Golem|0 fnt
+|faint|p2a: Golem
+|
+|win|nootie

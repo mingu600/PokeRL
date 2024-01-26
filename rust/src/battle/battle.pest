@@ -1,50 +1,74 @@
-EMPTY_LINE = _{ "|" ~ NEWLINE }
+ANY_LINE                 =  { ((!NEWLINE ~ ANY)+ ~ NEWLINE) }
+EMPTY_LINE               = _{ "|" ~ NEWLINE }
+SHOWDOWN_NICKNAME_SYMBOL =  {
+    "{"
+  | "}"
+  | "<"
+  | ">"
+  | "?"
+  | ";"
+  | "'"
+  | "`"
+  | "!"
+  | "@"
+  | "#"
+  | "%"
+  | "^"
+  | "&"
+  | "-"
+}
 
-username_prefix = _{ "|j|" }
-username        =  { (LETTER | NUMBER | PUNCTUATION | OTHER_SYMBOL)* }
+join_prefix  = _{ "|j|" }
+leave_prefix = _{ "|l|" }
+username     =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION | OTHER_SYMBOL | "+")* }
 
 timestamp_prefix = _{ "|t:|" }
-timestamp        =  { ASCII_DIGIT+ }
+timestamp        =  { NUMBER+ }
 
 gametype_prefix = _{ "|gametype|" }
 gametype        =  { "singles" | "doubles" | "triples" | "multi" | "freeforall" }
 
 player_prefix = _{ "|player|" }
-player_rating =  { ASCII_DIGIT+ }
+player_rating =  { NUMBER+ }
 player_index  =  { "p1" | "p2" | "p3" | "p4" }
 player_avatar =  { (LETTER | NUMBER | PUNCTUATION)+ }
-player        =  { player_index ~ "|" ~ username ~ "|" ~ player_avatar ~ "|" ~ player_rating }
+player        =  { player_index ~ "|" ~ (username ~ "|")? ~ (player_avatar ~ "|"?)? ~ player_rating? }
 
 teamsize_prefix = _{ "|teamsize|" }
-teamsize        =  { player_index ~ "|" ~ ASCII_DIGIT }
+teamsize        =  { player_index ~ "|" ~ NUMBER }
 
 gen_prefix = _{ "|gen|" }
-gen        =  { ASCII_DIGIT+ }
+gen        =  { NUMBER+ }
 
 tier_prefix = _{ "|tier|" }
-tier_gen    =  { "[" ~ (ASCII_ALPHANUMERIC | SPACE_SEPARATOR)+ ~ "]" }
-tier        =  { (ASCII_ALPHANUMERIC | SPACE_SEPARATOR)+ }
+tier_gen    =  { "[" ~ (LETTER | NUMBER | SPACE_SEPARATOR)+ ~ "]" }
+tier        =  { (LETTER | NUMBER | SPACE_SEPARATOR)+ }
 
 rated_prefix  = _{ "|rated|" }
-rated_message =  { ASCII_ALPHANUMERIC* }
+rated_message =  { (LETTER | NUMBER | SPACE_SEPARATOR)* }
 
 rule_prefix      = _{ "|rule|" }
 rule_name        =  { (LETTER | NUMBER | SPACE_SEPARATOR)+ }
 rule_description =  { (LETTER | NUMBER | PUNCTUATION | SPACE_SEPARATOR)* }
 
-team_preview_prefix       = _{ "|clearpoke" ~ NEWLINE }
-team_preview_suffix       = _{ "|teampreview" ~ NEWLINE }
-team_preview_poke_prefix  = _{ "|poke|" }
-poke_name                 =  { (LETTER | NUMBER | OTHER_SYMBOL | "-")+ }
-poke_level                =  { "L" ~ ASCII_DIGIT+ }
-poke_gender               =  { "M" | "F" }
-team_preview_poke_details =  { poke_name ~ ("," ~ SPACE_SEPARATOR* ~ poke_level)* ~ ("," ~ SPACE_SEPARATOR* ~ poke_gender)* }
-team_preview_poke_item    =  { "item" }
-team_preview_poke         =  { team_preview_poke_prefix ~ player_index ~ "|" ~ team_preview_poke_details ~ "|" ~ team_preview_poke_item* }
-team_preview              =  { team_preview_prefix ~ (team_preview_poke ~ NEWLINE+)* ~ team_preview_suffix }
+poke_stat         =  { "hp" | "atk" | "def" | "spa" | "spd" | "spe" | "accuracy" }
+poke_nickname     =  { (LETTER | NUMBER | SPACE_SEPARATOR | SHOWDOWN_NICKNAME_SYMBOL)+ }
+poke_name         =  { poke_nickname }
+poke_level_prefix = _{ "L" }
+poke_level        =  { NUMBER+ }
+poke_gender       =  { "M" | "F" }
+poke_details      =  { poke_name ~ ("," ~ SPACE_SEPARATOR* ~ poke_level_prefix ~ poke_level)? ~ ("," ~ SPACE_SEPARATOR* ~ poke_gender)? ~ ("," ~ SPACE_SEPARATOR* ~ teratype)? }
 
-prelude_section = {
-    (username_prefix ~ username ~ NEWLINE)
+team_preview_prefix      = _{ "|clearpoke" ~ NEWLINE }
+team_preview_suffix      = _{ "|teampreview" ~ NEWLINE }
+team_preview_poke_prefix = _{ "|poke|" }
+team_preview_poke_item   =  { "item" }
+team_preview_poke        =  { team_preview_poke_prefix ~ player_index ~ "|" ~ poke_details ~ "|" ~ team_preview_poke_item* }
+team_preview             =  { team_preview_prefix ~ (team_preview_poke ~ NEWLINE+)* ~ team_preview_suffix }
+
+prelude_section = _{
+    (join_prefix ~ username ~ NEWLINE)
+  | (leave_prefix ~ username ~ NEWLINE)
   | (timestamp_prefix ~ timestamp ~ NEWLINE)
   | (gametype_prefix ~ gametype ~ NEWLINE)
   | (player_prefix ~ player ~ NEWLINE)
@@ -58,6 +82,463 @@ prelude_section = {
 
 prelude = { prelude_section+ ~ EMPTY_LINE }
 
-battle = _{ prelude ~ ANY* }
+start = { "|start" ~ NEWLINE }
+
+field_position =  { player_index ~ ("a" | "b" | "c")? }
+poke_cur_hp    =  { NUMBER+ }
+poke_max_hp    =  { NUMBER+ }
+poke_hp_status = _{ (poke_cur_hp ~ "/" ~ poke_max_hp ~ effect_common?) | ("0 fnt") }
+
+poke_common      = _{ field_position ~ ":" ~ SPACE_SEPARATOR* ~ poke_nickname }
+switch_from      =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+switch_common    = _{ poke_common ~ "|" ~ poke_details ~ ("|" ~ poke_hp_status)? ~ ("|" ~ switch_from)? }
+effect_common    =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+side_common      = _{ player_index ~ ":" ~ SPACE_SEPARATOR* ~ username }
+item_common      =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+ability_common   =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+megastone_common =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+species_common   =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+type_common      =  {
+    ^"normal"
+  | ^"fire"
+  | ^"fighting"
+  | ^"water"
+  | ^"flying"
+  | ^"grass"
+  | ^"poison"
+  | ^"electric"
+  | ^"ground"
+  | ^"psychic"
+  | ^"rock"
+  | ^"ice"
+  | ^"bug"
+  | ^"dragon"
+  | ^"ghost"
+  | ^"dark"
+  | ^"steel"
+  | ^"fairy"
+  | ^"stellar"
+}
+teratype         =  { "tera:" ~ type_common }
+
+switch_prefix = _{ "|switch|" }
+switch        =  { switch_prefix ~ switch_common }
+
+drag_prefix = _{ "|drag|" }
+drag        =  { drag_prefix ~ switch_common }
+
+detailschange_prefix = _{ "|detailschange|" }
+detailschange        =  { detailschange_prefix ~ switch_common }
+
+formechange_prefix = _{ "|-formechange|" }
+formechange        =  { formechange_prefix ~ switch_common }
+
+replace_prefix = _{ "|replace|" }
+replace        =  { replace_prefix ~ switch_common }
+
+turn_prefix = _{ "|turn|" }
+turn_number =  { NUMBER+ }
+
+inactive_prefix  = _{ "|inactive|" }
+inactive_message =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+
+move_prefix       = _{ "|move|" }
+move_name         =  { (LETTER | NUMBER | SPACE_SEPARATOR | OTHER_SYMBOL | "-")+ }
+move_source       =  { poke_common }
+move_target       =  { poke_common }
+move_status       =  { "[miss]" | "[still]" | "[notarget]" }
+move_anim_prefix  =  { "[anim]" }
+move_anim_message =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+move_from         =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+move_of           =  { "[of]" ~ SPACE_SEPARATOR* ~ effect_common }
+move_details      =  {
+    move_source ~ "|" ~ move_name ~ "|" ~ move_target? ~ ("|" ~ move_from ~ ("|" ~ move_of)?)? ~ ("|" ~ (move_status | (move_anim_prefix ~ SPACE_SEPARATOR* ~ move_anim_message))?)?
+}
+
+swap_prefix = _{ "|swap|" }
+swap_source =  { poke_common }
+swap        =  { swap_prefix ~ swap_source ~ "|" ~ field_position }
+
+cant_prefix = _{ "|cant|" }
+cant_reason =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+cant_source =  { poke_common }
+cant        =  { cant_prefix ~ cant_source ~ "|" ~ cant_reason ~ ("|" ~ move_name)? }
+
+faint_prefix = _{ "|faint|" }
+faint_target =  { poke_common }
+faint        =  { faint_prefix ~ faint_target }
+
+upkeep = { "|upkeep" ~ NEWLINE }
+
+fail_prefix = _{ "|-fail|" }
+fail_reason =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+fail_target =  { poke_common }
+fail        =  { fail_prefix ~ fail_target ~ ("|" ~ fail_reason)? }
+
+block_prefix   = _{ "|-block|" }
+block_effect   =  { effect_common }
+block_attacker =  { poke_common }
+block          =  { block_prefix ~ poke_common ~ "|" ~ block_effect ~ ("|" ~ move_name ~ "|" ~ block_attacker)? }
+
+notarget_prefix = _{ "|-notarget|" }
+notarget_target =  { poke_common }
+notarget        =  { notarget_prefix ~ notarget_target }
+
+miss_prefix = _{ "|-miss|" }
+miss_source =  { poke_common }
+miss_target =  { poke_common }
+miss        =  { miss_prefix ~ miss_source ~ "|" ~ miss_target }
+
+damage_prefix    = _{ "|-damage|" }
+damage_target    =  { poke_common }
+damage_hp_status =  { poke_hp_status }
+damage_from      =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+damage_of        =  { "[of]" ~ SPACE_SEPARATOR* ~ effect_common }
+damage_reason    =  { "[partiallytrapped]" }
+damage           =  { damage_prefix ~ damage_target ~ "|" ~ damage_hp_status ~ ("|" ~ damage_from ~ ("|" ~ damage_of)?)? ~ ("|" ~ damage_reason)? }
+
+heal_prefix    = _{ "|-heal|" }
+heal_target    =  { poke_common }
+heal_hp_status =  { poke_hp_status }
+heal_from      =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+heal_of        =  { "[of]" ~ SPACE_SEPARATOR* ~ poke_common }
+heal_reason    =  { "[silent]" | ("[wisher]" ~ poke_nickname) }
+heal           =  { heal_prefix ~ heal_target ~ "|" ~ heal_hp_status ~ ("|" ~ heal_from ~ ("|" ~ heal_of)?)? ~ ("|" ~ heal_reason)? }
+
+sethp_prefix = _{ "|-sethp|" }
+sethp_target =  { poke_common }
+sethp        =  { sethp_prefix ~ sethp_target ~ "|" ~ poke_cur_hp }
+
+status_prefix = _{ "|-status|" }
+status_name   =  { "brn" | "fnt" | "frz" | "par" | "psn" | "slp" | "tox" }
+status_target =  { poke_common }
+status_from   =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+status_of     =  { "[of]" ~ SPACE_SEPARATOR* ~ effect_common }
+status        =  { status_prefix ~ status_target ~ "|" ~ status_name ~ ("|" ~ status_from ~ ("|" ~ status_of)?)? }
+
+curestatus_prefix = _{ "|-curestatus|" }
+curestatus_target =  { poke_common }
+curestatus        =  { curestatus_prefix ~ curestatus_target ~ "|" ~ status_name ~ ("|" ~ "[msg]")? }
+
+cureteam_prefix = _{ "|-cureteam|" }
+cureteam_source =  { poke_common }
+cureteam        =  { cureteam_prefix ~ cureteam_source }
+
+boost_prefix = _{ "|-boost|" }
+boost_amount =  { NUMBER }
+boost_target =  { poke_common }
+boost_from   =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+boost_of     =  { "[of]" ~ SPACE_SEPARATOR* ~ effect_common }
+boost        =  { boost_prefix ~ boost_target ~ "|" ~ poke_stat ~ "|" ~ boost_amount ~ ("|" ~ boost_from ~ ("|" ~ boost_of)?)? }
+
+unboost_prefix = _{ "|-unboost|" }
+unboost_target =  { poke_common }
+unboost        =  { unboost_prefix ~ unboost_target ~ "|" ~ poke_stat ~ "|" ~ boost_amount }
+
+setboost_prefix = _{ "|-setboost|" }
+setboost_target =  { poke_common }
+setboost_from   =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+setboost        =  { setboost_prefix ~ setboost_target ~ "|" ~ poke_stat ~ "|" ~ boost_amount ~ ("|" ~ setboost_from)? }
+
+swapboost_prefix = _{ "|-swapboost|" }
+swapboost_source =  { poke_common }
+swapboost_target =  { poke_common }
+swapboost        =  { swapboost_prefix ~ swapboost_source ~ "|" ~ swapboost_target ~ "|" ~ poke_stat ~ ("," ~ SPACE_SEPARATOR* ~ poke_stat)* }
+
+invertboost_prefix = _{ "|-invertboost|" }
+invertboost_target =  { poke_common }
+invertboost        =  { invertboost_prefix ~ invertboost_target }
+
+clearboost_prefix = _{ "|-clearboost|" }
+clearboost_target =  { poke_common }
+clearboost        =  { clearboost_prefix ~ clearboost_target }
+
+clearallboost = _{ "|-clearallboost" }
+
+clearpositiveboost_prefix = _{ "|-clearpositiveboost|" }
+clearpositiveboost_target =  { poke_common }
+clearpositiveboost_source =  { poke_common }
+clearpositiveboost_effect =  { effect_common }
+clearpositiveboost        =  { clearpositiveboost_prefix ~ clearpositiveboost_target ~ "|" ~ clearpositiveboost_source ~ "|" ~ clearpositiveboost_effect }
+
+clearnnegativeboost_prefix = _{ "|-clearnegativeboost|" }
+clearnegativeboost_target  =  { poke_common }
+clearnegativeboost         =  { clearnnegativeboost_prefix ~ clearnegativeboost_target }
+
+copyboost_prefix = _{ "|-copyboost|" }
+copyboost_source =  { poke_common }
+copyboost_target =  { poke_common }
+copyboost        =  { copyboost_prefix ~ copyboost_source ~ copyboost_target }
+
+weather_prefix = _{ "|-weather|" }
+weather_from   =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+weather_of     =  { "[of]" ~ SPACE_SEPARATOR* ~ effect_common }
+weather_upkeep =  { "[upkeep]" }
+weather_type   =  {
+    ^"none"
+  | ^"desolateLand"
+  | ^"deltastream"
+  | ^"hail"
+  | ^"primordialSea"
+  | ^"rainDance"
+  | ^"sandstorm"
+  | ^"snow"
+  | ^"sunnyday"
+}
+weather        =  { weather_prefix ~ weather_type ~ ("|" ~ (weather_upkeep | weather_from ~ ("|" ~ weather_of)?))? }
+
+field_condition = {
+    ^"electric terrain"
+  | ^"grassy terrain"
+  | ^"misty terrain"
+  | ^"psychic terrain"
+  | ^"magic room"
+  | ^"trick room"
+  | ^"wonder room"
+  | ^"mud sport"
+  | ^"water sport"
+  | ^"gravity"
+  | ^"heal block"
+}
+
+fieldstart_prefix = _{ "|-fieldstart|" }
+fieldstart_move   =  { "move" ~ ":" ~ SPACE_SEPARATOR* ~ field_condition }
+fieldstart_from   =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+fieldstart_of     =  { "[of]" ~ SPACE_SEPARATOR* ~ effect_common }
+fieldstart        =  { fieldstart_prefix ~ fieldstart_move ~ ("|" ~ fieldstart_from ~ ("|" ~ fieldstart_of)?)? }
+
+fieldend_prefix = _{ "|-fieldend|" }
+fieldend_move   =  { "move:" ~ SPACE_SEPARATOR* ~ field_condition }
+fieldend        =  { fieldend_prefix ~ fieldend_move }
+
+sidestart_prefix = _{ "|-sidestart|" }
+sidestart_side   =  { side_common }
+sidestart        =  { sidestart_prefix ~ sidestart_side ~ "|" ~ (field_condition | (("move:" ~ SPACE_SEPARATOR*)? ~ move_name)) }
+
+sideend_prefix = _{ "|-sideend|" }
+sideend_side   =  { side_common }
+sideend_from   =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+sideend_of     =  { "[of]" ~ SPACE_SEPARATOR* ~ effect_common }
+sideend        =  { sideend_prefix ~ sideend_side ~ "|" ~ (field_condition | effect_common) ~ ("|" ~ sideend_from ~ ("|" ~ sideend_of)?)? }
+
+swapsideconditions = _{ "|-swapsideconditions" }
+
+volatile_status = { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)+ }
+
+start_status_prefix = _{ "|-start|" }
+start_status_target =  { poke_common }
+start_status_from   =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+start_status_of     =  { "[of]" ~ SPACE_SEPARATOR* ~ poke_common }
+start_status_move   =  { ("move:" ~ SPACE_SEPARATOR*)? ~ move_name }
+start_status_reason =  { "[fatigue]" | "[silent]" }
+start_status        =  { start_status_prefix ~ start_status_target ~ "|" ~ volatile_status ~ ("|" ~ (start_status_move | start_status_reason))? ~ ("|" ~ start_status_from)? ~ ("|" ~ start_status_of)? }
+
+end_status_prefix = _{ "|-end|" }
+end_status_target =  { poke_common }
+end_status_reason =  { "[silent]" | "[partiallytrapped]" }
+end_status        =  { end_status_prefix ~ end_status_target ~ "|" ~ volatile_status ~ ("|" ~ end_status_reason)* }
+
+crit_prefix = _{ "|-crit|" }
+crit_target =  { poke_common }
+crit        =  { crit_prefix ~ crit_target }
+
+supereffective_prefix = _{ "|-supereffective|" }
+supereffective_target =  { poke_common }
+supereffective        =  { supereffective_prefix ~ supereffective_target }
+
+resisted_prefix = _{ "|-resisted|" }
+resisted_target =  { poke_common }
+resisted        =  { resisted_prefix ~ resisted_target }
+
+immune_prefix = _{ "|-immune|" }
+immune_target =  { poke_common }
+immune_from   =  { "[from]" ~ effect_common }
+immune        =  { immune_prefix ~ immune_target ~ ("|" ~ immune_from)? }
+
+item_prefix = _{ "|-item|" }
+item_holder =  { poke_common }
+item_name   =  { item_common }
+item_from   =  { "[from]" ~ effect_common }
+item        =  { item_prefix ~ item_holder ~ "|" ~ item_name ~ ("|" ~ item_from)? }
+
+enditem_prefix = _{ "|-enditem|" }
+enditem_holder =  { poke_common }
+enditem_name   =  { item_common }
+enditem_from   =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+enditem_of     =  { "[of]" ~ SPACE_SEPARATOR* ~ effect_common }
+enditem_reason =  { "[eat]" }
+enditem        =  { enditem_prefix ~ enditem_holder ~ "|" ~ enditem_name ~ ("|" ~ enditem_from ~ ("|" ~ enditem_of)?)? ~ ("|" ~ enditem_reason)? }
+
+ability_prefix = _{ "|-ability|" }
+ability_target =  { poke_common }
+ability_name   =  { ability_common }
+ability_from   =  { "[from]"? ~ effect_common }
+ability        =  { ability_prefix ~ ability_target ~ "|" ~ ability_name ~ ("|" ~ ability_from)? }
+
+abilityend_prefix = _{ "|-endability|" }
+abilityend_target =  { poke_common }
+abilityend        =  { abilityend_prefix ~ abilityend_target }
+
+transform_prefix = _{ "|-transform|" }
+transform_target =  { poke_common }
+transform        =  { transform_prefix ~ transform_target }
+
+mega_prefix    = _{ "|-mega|" }
+mega_target    =  { poke_common }
+megastone_name =  { megastone_common }
+mega           =  { mega_prefix ~ mega_target ~ "|" ~ megastone_name }
+
+primal_prefix = _{ "|-primal|" }
+primal_target =  { poke_common }
+primal        =  { primal_prefix ~ primal_target }
+
+burst_prefix  = _{ "|-burst|" }
+burst_target  =  { poke_common }
+burst_species =  { species_common }
+burst_item    =  { item_common }
+burst         =  { burst_prefix ~ burst_target ~ "|" ~ burst_species ~ "|" ~ burst_item }
+
+zpower_prefix = _{ "|-zpower|" }
+zpower_target =  { poke_common }
+zpower        =  { zpower_prefix ~ zpower_target }
+
+terastallize_prefix = _{ "|-terastallize|" }
+terastallize_target =  { poke_common }
+terastallize_type   =  { type_common }
+terastallize        =  { terastallize_prefix ~ terastallize_target ~ "|" ~ terastallize_type }
+
+activate_prefix = _{ "|-activate|" }
+activate_target =  { poke_common }
+activate_effect =  { ("move:" ~ SPACE_SEPARATOR* ~ move_name) | effect_common }
+activate_from   =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
+activate_of     =  { "[of]" ~ SPACE_SEPARATOR* ~ effect_common }
+activate        =  { activate_prefix ~ activate_target ~ "|" ~ activate_effect ~ ("|" ~ activate_from)? ~ ("|" ~ activate_of)? }
+
+hint_prefix  = _{ "|-hint|" }
+hint_message =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+hint         =  { hint_prefix ~ hint_message }
+
+center = _{ "|-center" }
+
+message_prefix   = _{ "|-message|" }
+message_contents =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION | OTHER_SYMBOL)* }
+message          =  { message_prefix ~ message_contents }
+
+combine = _{ "|-combine" }
+
+waiting_prefix = _{ "|-waiting|" }
+waiting_source =  { poke_common }
+waiting_target =  { poke_common }
+waiting        =  { waiting_prefix ~ waiting_source ~ "|" ~ waiting_target }
+
+prepare_prefix   = _{ "|-prepare|" }
+prepare_attacker =  { poke_common }
+prepare_move     =  { move_name }
+prepare_defender =  { poke_common }
+prepare          =  { prepare_prefix ~ prepare_attacker ~ "|" ~ prepare_move ~ ("|" ~ prepare_defender)? }
+
+mustrecharge_prefix = _{ "|-mustrecharge|" }
+mustrecharge_target =  { poke_common }
+mustregarge         =  { mustrecharge_prefix ~ mustrecharge_target }
+
+hitcount_prefix = _{ "|-hitcount|" }
+hitcount_target =  { poke_common }
+hitcount_num    =  { NUMBER+ }
+hitcount        =  { hitcount_prefix ~ hitcount_target ~ "|" ~ hitcount_num }
+
+singlemove_prefix = _{ "|-singlemove|" }
+singlemove_source =  { poke_common }
+singlemove_move   =  { move_name }
+singlemove        =  { singlemove_prefix ~ singlemove_source ~ "|" ~ singlemove_move }
+
+singleturn_prefix = _{ "|-singleturn|" }
+singleturn_source =  { poke_common }
+singleturn_move   =  { ("move:" ~ SPACE_SEPARATOR*)? ~ move_name }
+singleturn        =  { singleturn_prefix ~ singleturn_source ~ "|" ~ singleturn_move }
+
+comment_prefix  = _{ "|c|" }
+comment_user    =  { username }
+comment_message =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
+comment         =  { comment_prefix ~ comment_user ~ "|" ~ comment_message }
+
+turn_section = {
+    EMPTY_LINE
+  | upkeep
+  | (switch ~ NEWLINE)
+  | (drag ~ NEWLINE)
+  | (detailschange ~ NEWLINE)
+  | (formechange ~ NEWLINE)
+  | (replace ~ NEWLINE)
+  | (swap ~ NEWLINE)
+  | (cant ~ NEWLINE)
+  | (faint ~ NEWLINE)
+  | (fail ~ NEWLINE)
+  | (block ~ NEWLINE)
+  | (notarget ~ NEWLINE)
+  | (miss ~ NEWLINE)
+  | (damage ~ NEWLINE)
+  | (heal ~ NEWLINE)
+  | (sethp ~ NEWLINE)
+  | (status ~ NEWLINE)
+  | (curestatus ~ NEWLINE)
+  | (cureteam ~ NEWLINE)
+  | (boost ~ NEWLINE)
+  | (unboost ~ NEWLINE)
+  | (setboost ~ NEWLINE)
+  | (swapboost ~ NEWLINE)
+  | (invertboost ~ NEWLINE)
+  | (clearboost ~ NEWLINE)
+  | (clearallboost ~ NEWLINE)
+  | (clearpositiveboost ~ NEWLINE)
+  | (clearnegativeboost ~ NEWLINE)
+  | (copyboost ~ NEWLINE)
+  | (weather ~ NEWLINE)
+  | (fieldstart ~ NEWLINE)
+  | (fieldend ~ NEWLINE)
+  | (sidestart ~ NEWLINE)
+  | (sideend ~ NEWLINE)
+  | (swapsideconditions ~ NEWLINE)
+  | (start_status ~ NEWLINE)
+  | (end_status ~ NEWLINE)
+  | (crit ~ NEWLINE)
+  | (supereffective ~ NEWLINE)
+  | (resisted ~ NEWLINE)
+  | (immune ~ NEWLINE)
+  | (item ~ NEWLINE)
+  | (enditem ~ NEWLINE)
+  | (ability ~ NEWLINE)
+  | (abilityend ~ NEWLINE)
+  | (transform ~ NEWLINE)
+  | (mega ~ NEWLINE)
+  | (primal ~ NEWLINE)
+  | (burst ~ NEWLINE)
+  | (zpower ~ NEWLINE)
+  | (terastallize ~ NEWLINE)
+  | (activate ~ NEWLINE)
+  | (hint ~ NEWLINE)
+  | (center ~ NEWLINE)
+  | (message ~ NEWLINE)
+  | (combine ~ NEWLINE)
+  | (waiting ~ NEWLINE)
+  | (prepare ~ NEWLINE)
+  | (mustregarge ~ NEWLINE)
+  | (hitcount ~ NEWLINE)
+  | (singlemove ~ NEWLINE)
+  | (singleturn ~ NEWLINE)
+  | (comment ~ NEWLINE)
+  | (timestamp_prefix ~ timestamp ~ NEWLINE)
+  | (turn_prefix ~ turn_number ~ NEWLINE)
+  | (inactive_prefix ~ inactive_message ~ NEWLINE)
+  | (move_prefix ~ move_details ~ NEWLINE)
+  | (join_prefix ~ username ~ NEWLINE)
+  | (leave_prefix ~ username ~ NEWLINE)
+  | (player_prefix ~ player ~ NEWLINE)
+}
+
+win = { "|win|" }
+tie = { "|tie" }
+end = { ((win ~ username) | tie) ~ NEWLINE }
+
+battle = _{ prelude ~ (timestamp_prefix ~ timestamp ~ NEWLINE)? ~ start ~ (!end ~ turn_section)* ~ end ~ ANY_LINE* }
 
 file = _{ SOI ~ battle ~ EOI }

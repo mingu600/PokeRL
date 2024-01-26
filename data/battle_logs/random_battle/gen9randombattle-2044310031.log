@@ -1,0 +1,312 @@
+|j|☆biteofbile
+|j|☆Miximaxart
+|t:|1706242982
+|gametype|singles
+|player|p1|biteofbile|101|1127
+|player|p2|Miximaxart|barry|1145
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706242982
+|start
+|switch|p1a: Roaring Moon|Roaring Moon, L73|274/274
+|switch|p2a: Magmortar|Magmortar, L87, M|272/272
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Miximaxart)
+|
+|t:|1706243024
+|move|p1a: Roaring Moon|Earthquake|p2a: Magmortar
+|-supereffective|p2a: Magmortar
+|-damage|p2a: Magmortar|110/272
+|move|p2a: Magmortar|Focus Blast|p1a: Roaring Moon|[miss]
+|-miss|p2a: Magmortar|p1a: Roaring Moon
+|
+|upkeep
+|turn|2
+|
+|t:|1706243044
+|move|p1a: Roaring Moon|Earthquake|p2a: Magmortar
+|-supereffective|p2a: Magmortar
+|-damage|p2a: Magmortar|0 fnt
+|faint|p2a: Magmortar
+|
+|upkeep
+|
+|t:|1706243048
+|switch|p2a: Heracross|Heracross, L80, M|259/259
+|turn|3
+|
+|t:|1706243065
+|-end|p1a: Roaring Moon|Protosynthesis|[silent]
+|switch|p1a: Swanna|Swanna, L88, F|275/275
+|move|p2a: Heracross|Close Combat|p1a: Swanna
+|-resisted|p1a: Swanna
+|-damage|p1a: Swanna|189/275
+|-unboost|p2a: Heracross|def|1
+|-unboost|p2a: Heracross|spd|1
+|
+|-status|p2a: Heracross|brn|[from] item: Flame Orb
+|upkeep
+|turn|4
+|
+|t:|1706243079
+|switch|p2a: Metagross|Metagross, L80|259/259
+|move|p1a: Swanna|Brave Bird|p2a: Metagross
+|-resisted|p2a: Metagross
+|-damage|p2a: Metagross|211/259
+|-damage|p1a: Swanna|173/275|[from] Recoil
+|
+|upkeep
+|turn|5
+|
+|t:|1706243088
+|move|p1a: Swanna|Hydro Pump|p2a: Metagross
+|-damage|p2a: Metagross|84/259
+|move|p2a: Metagross|Agility|p2a: Metagross
+|-boost|p2a: Metagross|spe|2
+|
+|upkeep
+|turn|6
+|
+|t:|1706243094
+|move|p2a: Metagross|Heavy Slam|p1a: Swanna
+|-resisted|p1a: Swanna
+|-damage|p1a: Swanna|83/275
+|move|p1a: Swanna|Hydro Pump|p2a: Metagross|[miss]
+|-miss|p1a: Swanna|p2a: Metagross
+|
+|upkeep
+|turn|7
+|
+|t:|1706243109
+|move|p2a: Metagross|Knock Off|p1a: Swanna
+|-damage|p1a: Swanna|0 fnt
+|-enditem|p1a: Swanna|Heavy-Duty Boots|[from] move: Knock Off|[of] p2a: Metagross
+|faint|p1a: Swanna
+|
+|upkeep
+|
+|t:|1706243125
+|switch|p1a: Mesprit|Mesprit, L85|275/275
+|turn|8
+|
+|t:|1706243131
+|move|p2a: Metagross|Knock Off|p1a: Mesprit
+|-supereffective|p1a: Mesprit
+|-damage|p1a: Mesprit|131/275
+|-enditem|p1a: Mesprit|Leftovers|[from] move: Knock Off|[of] p2a: Metagross
+|move|p1a: Mesprit|Thunder Wave|p2a: Metagross
+|-status|p2a: Metagross|par
+|
+|upkeep
+|turn|9
+|
+|t:|1706243141
+|move|p1a: Mesprit|Knock Off|p2a: Metagross
+|-supereffective|p2a: Metagross
+|-damage|p2a: Metagross|0 fnt
+|-enditem|p2a: Metagross|Weakness Policy|[from] move: Knock Off|[of] p1a: Mesprit
+|faint|p2a: Metagross
+|
+|upkeep
+|
+|t:|1706243148
+|switch|p2a: Magcargo|Magcargo, L93, M|262/262
+|turn|10
+|
+|t:|1706243155
+|move|p1a: Mesprit|Stealth Rock|p2a: Magcargo
+|-sidestart|p2: Miximaxart|move: Stealth Rock
+|move|p2a: Magcargo|Shell Smash|p2a: Magcargo
+|-unboost|p2a: Magcargo|def|1
+|-unboost|p2a: Magcargo|spd|1
+|-boost|p2a: Magcargo|atk|2
+|-boost|p2a: Magcargo|spa|2
+|-boost|p2a: Magcargo|spe|2
+|
+|upkeep
+|turn|11
+|
+|t:|1706243168
+|move|p2a: Magcargo|Power Gem|p1a: Mesprit
+|-damage|p1a: Mesprit|0 fnt
+|faint|p1a: Mesprit
+|
+|upkeep
+|
+|t:|1706243175
+|switch|p1a: Hitmonchan|Hitmonchan, L87, M|229/229
+|turn|12
+|
+|t:|1706243189
+|move|p2a: Magcargo|Fire Blast|p1a: Hitmonchan|[miss]
+|-miss|p2a: Magcargo|p1a: Hitmonchan
+|move|p1a: Hitmonchan|Drain Punch|p2a: Magcargo
+|-supereffective|p2a: Magcargo
+|-damage|p2a: Magcargo|40/262
+|-ability|p2a: Magcargo|Weak Armor|boost
+|-unboost|p2a: Magcargo|def|1
+|-boost|p2a: Magcargo|spe|2
+|
+|upkeep
+|turn|13
+|
+|t:|1706243202
+|move|p2a: Magcargo|Fire Blast|p1a: Hitmonchan
+|-damage|p1a: Hitmonchan|7/229
+|move|p1a: Hitmonchan|Drain Punch|p2a: Magcargo
+|-supereffective|p2a: Magcargo
+|-damage|p2a: Magcargo|0 fnt
+|-heal|p1a: Hitmonchan|27/229|[from] drain|[of] p2a: Magcargo
+|faint|p2a: Magcargo
+|
+|-heal|p1a: Hitmonchan|41/229|[from] item: Leftovers
+|upkeep
+|
+|t:|1706243215
+|switch|p2a: Trevenant|Trevenant, L88, M|293/293
+|-damage|p2a: Trevenant|257/293|[from] Stealth Rock
+|turn|14
+|
+|t:|1706243224
+|move|p1a: Hitmonchan|Poison Jab|p2a: Trevenant
+|-damage|p2a: Trevenant|188/293
+|move|p2a: Trevenant|Drain Punch|p1a: Hitmonchan
+|-damage|p1a: Hitmonchan|0 fnt
+|-heal|p2a: Trevenant|209/293|[from] drain|[of] p1a: Hitmonchan
+|faint|p1a: Hitmonchan
+|
+|upkeep
+|
+|t:|1706243233
+|switch|p1a: Iron Bundle|Iron Bundle, L76|210/210
+|turn|15
+|
+|t:|1706243242
+|move|p2a: Trevenant|Protect|p2a: Trevenant
+|-singleturn|p2a: Trevenant|Protect
+|move|p1a: Iron Bundle|Freeze-Dry|p2a: Trevenant
+|-activate|p2a: Trevenant|move: Protect
+|
+|upkeep
+|turn|16
+|
+|t:|1706243249
+|switch|p2a: Dewgong|Dewgong, L91, F|312/312
+|move|p1a: Iron Bundle|Freeze-Dry|p2a: Dewgong
+|-damage|p2a: Dewgong|276/312
+|
+|upkeep
+|turn|17
+|
+|t:|1706243264
+|-end|p1a: Iron Bundle|Quark Drive|[silent]
+|switch|p1a: Granbull|Granbull, L88, M|302/302
+|-ability|p1a: Granbull|Intimidate|boost
+|-unboost|p2a: Dewgong|atk|1
+|move|p2a: Dewgong|Ice Beam|p1a: Granbull
+|-damage|p1a: Granbull|196/302
+|
+|-heal|p1a: Granbull|214/302|[from] item: Leftovers
+|upkeep
+|turn|18
+|
+|t:|1706243274
+|move|p2a: Dewgong|Hydro Pump|p1a: Granbull|[miss]
+|-miss|p2a: Dewgong|p1a: Granbull
+|move|p1a: Granbull|Thunder Wave|p2a: Dewgong
+|-status|p2a: Dewgong|par
+|
+|-heal|p1a: Granbull|232/302|[from] item: Leftovers
+|upkeep
+|turn|19
+|
+|t:|1706243284
+|move|p1a: Granbull|Play Rough|p2a: Dewgong|[miss]
+|-miss|p1a: Granbull|p2a: Dewgong
+|move|p2a: Dewgong|Hydro Pump|p1a: Granbull
+|-damage|p1a: Granbull|88/302
+|
+|-heal|p1a: Granbull|106/302|[from] item: Leftovers
+|upkeep
+|turn|20
+|
+|t:|1706243293
+|move|p1a: Granbull|Play Rough|p2a: Dewgong
+|-damage|p2a: Dewgong|150/312 par
+|cant|p2a: Dewgong|par
+|
+|-heal|p1a: Granbull|124/302|[from] item: Leftovers
+|upkeep
+|turn|21
+|
+|t:|1706243301
+|move|p1a: Granbull|Play Rough|p2a: Dewgong
+|-damage|p2a: Dewgong|36/312 par
+|cant|p2a: Dewgong|par
+|
+|-heal|p1a: Granbull|142/302|[from] item: Leftovers
+|upkeep
+|turn|22
+|
+|t:|1706243309
+|move|p1a: Granbull|Play Rough|p2a: Dewgong
+|-damage|p2a: Dewgong|0 fnt
+|faint|p2a: Dewgong
+|
+|-heal|p1a: Granbull|160/302|[from] item: Leftovers
+|upkeep
+|
+|t:|1706243312
+|switch|p2a: Heracross|Heracross, L80, M|259/259 brn
+|-damage|p2a: Heracross|227/259 brn|[from] Stealth Rock
+|turn|23
+|
+|t:|1706243323
+|-terastallize|p2a: Heracross|Normal
+|move|p2a: Heracross|Facade|p1a: Granbull
+|-damage|p1a: Granbull|0 fnt
+|faint|p1a: Granbull
+|
+|-damage|p2a: Heracross|211/259 brn|[from] brn
+|upkeep
+|
+|t:|1706243336
+|switch|p1a: Roaring Moon|Roaring Moon, L73|274/274
+|turn|24
+|
+|t:|1706243342
+|-terastallize|p1a: Roaring Moon|Ground
+|move|p1a: Roaring Moon|Outrage|p2a: Heracross
+|-damage|p2a: Heracross|57/259 brn
+|move|p2a: Heracross|Facade|p1a: Roaring Moon
+|-damage|p1a: Roaring Moon|0 fnt
+|faint|p1a: Roaring Moon
+|-end|p1a: Roaring Moon|Protosynthesis|[silent]
+|
+|-damage|p2a: Heracross|41/259 brn|[from] brn
+|upkeep
+|
+|t:|1706243352
+|switch|p1a: Iron Bundle|Iron Bundle, L76|210/210
+|turn|25
+|
+|t:|1706243364
+|move|p1a: Iron Bundle|Hydro Pump|p2a: Heracross|[miss]
+|-miss|p1a: Iron Bundle|p2a: Heracross
+|move|p2a: Heracross|Facade|p1a: Iron Bundle
+|-crit|p1a: Iron Bundle
+|-damage|p1a: Iron Bundle|0 fnt
+|faint|p1a: Iron Bundle
+|-end|p1a: Iron Bundle|Quark Drive|[silent]
+|
+|win|Miximaxart
+|raw|biteofbile's rating: 1127 &rarr; <strong>1101</strong><br />(-26 for losing)
+|raw|Miximaxart's rating: 1119 &rarr; <strong>1145</strong><br />(+26 for winning)

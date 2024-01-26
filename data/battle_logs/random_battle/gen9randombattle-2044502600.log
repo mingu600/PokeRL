@@ -1,0 +1,344 @@
+|j|☆Aleaus
+|j|☆Algaearmy
+|t:|1706270545
+|gametype|singles
+|player|p1|Aleaus|hilbert|1291
+|player|p2|Algaearmy|barry|1349
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706270545
+|start
+|switch|p1a: Politoed|Politoed, L88, F|302/302
+|switch|p2a: Uxie|Uxie, L83|260/260
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Politoed
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Aleaus)
+|inactive|Algaearmy also wants the timer to be on.
+|
+|t:|1706270562
+|move|p2a: Uxie|Light Screen|p2a: Uxie
+|-sidestart|p2: Algaearmy|move: Light Screen
+|move|p1a: Politoed|Hydro Pump|p2a: Uxie
+|-crit|p2a: Uxie
+|-damage|p2a: Uxie|56/260
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|2
+|
+|t:|1706270579
+|move|p2a: Uxie|Yawn|p1a: Politoed
+|-start|p1a: Politoed|move: Yawn|[of] p2a: Uxie
+|move|p1a: Politoed|Hydro Pump|p2a: Uxie
+|-damage|p2a: Uxie|0 fnt
+|faint|p2a: Uxie
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|inactive|Algaearmy has 120 seconds left.
+|
+|t:|1706270619
+|switch|p2a: Bellibolt|Bellibolt, L84, F|320/320
+|turn|3
+|l|☆Algaearmy
+|inactive|Algaearmy disconnected and has a minute to reconnect!
+|player|p2|
+|j|☆Algaearmy
+|inactive|Algaearmy reconnected and has 90 seconds left.
+|player|p2|Algaearmy|barry
+|
+|t:|1706270646
+|switch|p1a: Arcanine|Arcanine, L84, F|288/288
+|-ability|p1a: Arcanine|Intimidate|boost
+|-unboost|p2a: Bellibolt|atk|1
+|move|p2a: Bellibolt|Thunderbolt|p1a: Arcanine
+|-damage|p1a: Arcanine|177/288
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|4
+|inactive|Algaearmy has 90 seconds left.
+|
+|t:|1706270656
+|switch|p1a: Suicune|Suicune, L82|298/298
+|-ability|p1a: Suicune|Pressure
+|move|p2a: Bellibolt|Muddy Water|p1a: Suicune
+|-resisted|p1a: Suicune
+|-damage|p1a: Suicune|258/298
+|-unboost|p1a: Suicune|accuracy|1
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1a: Suicune|276/298|[from] item: Leftovers
+|upkeep
+|turn|5
+|inactive|Algaearmy has 90 seconds left.
+|
+|t:|1706270671
+|move|p1a: Suicune|Calm Mind|p1a: Suicune
+|-boost|p1a: Suicune|spa|1
+|-boost|p1a: Suicune|spd|1
+|move|p2a: Bellibolt|Toxic|p1a: Suicune
+|-status|p1a: Suicune|tox
+|
+|-weather|none
+|-heal|p1a: Suicune|294/298 tox|[from] item: Leftovers
+|-damage|p1a: Suicune|276/298 tox|[from] psn
+|upkeep
+|turn|6
+|inactive|Algaearmy has 90 seconds left.
+|
+|t:|1706270683
+|switch|p2a: Volcarona|Volcarona, L77, F|257/257
+|move|p1a: Suicune|Scald|p2a: Volcarona
+|-supereffective|p2a: Volcarona
+|-damage|p2a: Volcarona|145/257
+|
+|-heal|p1a: Suicune|294/298 tox|[from] item: Leftovers
+|-damage|p1a: Suicune|258/298 tox|[from] psn
+|upkeep
+|turn|7
+|inactive|Algaearmy has 90 seconds left.
+|
+|t:|1706270695
+|move|p2a: Volcarona|Quiver Dance|p2a: Volcarona
+|-boost|p2a: Volcarona|spa|1
+|-boost|p2a: Volcarona|spd|1
+|-boost|p2a: Volcarona|spe|1
+|move|p1a: Suicune|Scald|p2a: Volcarona
+|-supereffective|p2a: Volcarona
+|-damage|p2a: Volcarona|66/257
+|
+|-heal|p1a: Suicune|276/298 tox|[from] item: Leftovers
+|-damage|p1a: Suicune|222/298 tox|[from] psn
+|upkeep
+|turn|8
+|inactive|Algaearmy has 90 seconds left.
+|
+|t:|1706270711
+|-terastallize|p2a: Volcarona|Water
+|move|p2a: Volcarona|Quiver Dance|p2a: Volcarona
+|-boost|p2a: Volcarona|spa|1
+|-boost|p2a: Volcarona|spd|1
+|-boost|p2a: Volcarona|spe|1
+|move|p1a: Suicune|Scald|p2a: Volcarona|[miss]
+|-miss|p1a: Suicune|p2a: Volcarona
+|
+|-heal|p1a: Suicune|240/298 tox|[from] item: Leftovers
+|-damage|p1a: Suicune|168/298 tox|[from] psn
+|-sideend|p2: Algaearmy|move: Light Screen
+|upkeep
+|turn|9
+|inactive|Algaearmy has 90 seconds left.
+|
+|t:|1706270724
+|move|p2a: Volcarona|Bug Buzz|p1a: Suicune
+|-damage|p1a: Suicune|60/298 tox
+|move|p1a: Suicune|Scald|p2a: Volcarona
+|-resisted|p2a: Volcarona
+|-damage|p2a: Volcarona|38/257
+|-status|p2a: Volcarona|brn
+|
+|-heal|p1a: Suicune|78/298 tox|[from] item: Leftovers
+|-damage|p1a: Suicune|0 fnt|[from] psn
+|faint|p1a: Suicune
+|-damage|p2a: Volcarona|22/257 brn|[from] brn
+|upkeep
+|
+|t:|1706270737
+|switch|p1a: Arcanine|Arcanine, L84, F|177/288
+|-ability|p1a: Arcanine|Intimidate|boost
+|-unboost|p2a: Volcarona|atk|1
+|turn|10
+|
+|t:|1706270744
+|switch|p2a: Bellibolt|Bellibolt, L84, F|320/320
+|move|p1a: Arcanine|Extreme Speed|p2a: Bellibolt
+|-damage|p2a: Bellibolt|254/320
+|-start|p2a: Bellibolt|Charge|Extreme Speed|[from] ability: Electromorphosis
+|
+|-heal|p2a: Bellibolt|274/320|[from] item: Leftovers
+|upkeep
+|turn|11
+|
+|t:|1706270755
+|move|p1a: Arcanine|Flare Blitz|p2a: Bellibolt
+|-damage|p2a: Bellibolt|142/320
+|-start|p2a: Bellibolt|Charge|Flare Blitz|[from] ability: Electromorphosis
+|-damage|p1a: Arcanine|133/288|[from] Recoil
+|move|p2a: Bellibolt|Thunderbolt|p1a: Arcanine
+|-damage|p1a: Arcanine|0 fnt
+|faint|p1a: Arcanine
+|-end|p2a: Bellibolt|Charge|[silent]
+|
+|-heal|p2a: Bellibolt|162/320|[from] item: Leftovers
+|upkeep
+|
+|t:|1706270762
+|switch|p1a: Magearna|Magearna, L78|253/253
+|turn|12
+|
+|t:|1706270770
+|move|p1a: Magearna|Calm Mind|p1a: Magearna
+|-boost|p1a: Magearna|spa|1
+|-boost|p1a: Magearna|spd|1
+|move|p2a: Bellibolt|Muddy Water|p1a: Magearna
+|-damage|p1a: Magearna|217/253
+|
+|-heal|p1a: Magearna|232/253|[from] item: Leftovers
+|-heal|p2a: Bellibolt|182/320|[from] item: Leftovers
+|upkeep
+|turn|13
+|
+|t:|1706270782
+|move|p1a: Magearna|Calm Mind|p1a: Magearna
+|-boost|p1a: Magearna|spa|1
+|-boost|p1a: Magearna|spd|1
+|move|p2a: Bellibolt|Muddy Water|p1a: Magearna
+|-damage|p1a: Magearna|203/253
+|
+|-heal|p1a: Magearna|218/253|[from] item: Leftovers
+|-heal|p2a: Bellibolt|202/320|[from] item: Leftovers
+|upkeep
+|turn|14
+|
+|t:|1706270803
+|switch|p2a: Gothitelle|Gothitelle, L90, M|272/272
+|move|p1a: Magearna|Shift Gear|p1a: Magearna
+|-boost|p1a: Magearna|spe|2
+|-boost|p1a: Magearna|atk|1
+|
+|-heal|p1a: Magearna|233/253|[from] item: Leftovers
+|upkeep
+|turn|15
+|
+|t:|1706270813
+|move|p1a: Magearna|Flash Cannon|p2a: Gothitelle
+|-damage|p2a: Gothitelle|115/272
+|-unboost|p2a: Gothitelle|spd|1
+|move|p2a: Gothitelle|Trick|p1a: Magearna
+|-activate|p2a: Gothitelle|move: Trick|[of] p1a: Magearna
+|-item|p1a: Magearna|Choice Scarf|[from] move: Trick
+|-item|p2a: Gothitelle|Leftovers|[from] move: Trick
+|
+|-heal|p2a: Gothitelle|132/272|[from] item: Leftovers
+|upkeep
+|turn|16
+|
+|t:|1706270825
+|switch|p2a: Volcarona|Volcarona, L77, F, tera:Water|22/257 brn
+|move|p1a: Magearna|Flash Cannon|p2a: Volcarona
+|-resisted|p2a: Volcarona
+|-crit|p2a: Volcarona
+|-damage|p2a: Volcarona|0 fnt
+|faint|p2a: Volcarona
+|-ability|p1a: Magearna|Soul-Heart|boost
+|-boost|p1a: Magearna|spa|1
+|
+|upkeep
+|inactive|Algaearmy has 90 seconds left.
+|
+|t:|1706270856
+|switch|p2a: Incineroar|Incineroar, L84, F|297/297
+|-ability|p2a: Incineroar|Intimidate|boost
+|-unboost|p1a: Magearna|atk|1
+|turn|17
+|
+|t:|1706270863
+|-terastallize|p1a: Magearna|Water
+|move|p1a: Magearna|Flash Cannon|p2a: Incineroar
+|-resisted|p2a: Incineroar
+|-damage|p2a: Incineroar|216/297
+|move|p2a: Incineroar|Knock Off|p1a: Magearna
+|-damage|p1a: Magearna|124/253
+|-enditem|p1a: Magearna|Choice Scarf|[from] move: Knock Off|[of] p2a: Incineroar
+|
+|upkeep
+|turn|18
+|
+|t:|1706270874
+|move|p1a: Magearna|Fleur Cannon|p2a: Incineroar
+|-damage|p2a: Incineroar|0 fnt
+|-unboost|p1a: Magearna|spa|2
+|faint|p2a: Incineroar
+|-ability|p1a: Magearna|Soul-Heart|boost
+|-boost|p1a: Magearna|spa|1
+|
+|upkeep
+|
+|t:|1706270883
+|switch|p2a: Barraskewda|Barraskewda, L82, M|234/234
+|turn|19
+|
+|t:|1706270893
+|move|p1a: Magearna|Fleur Cannon|p2a: Barraskewda
+|-damage|p2a: Barraskewda|0 fnt
+|-unboost|p1a: Magearna|spa|2
+|faint|p2a: Barraskewda
+|-ability|p1a: Magearna|Soul-Heart|boost
+|-boost|p1a: Magearna|spa|1
+|
+|upkeep
+|inactive|Algaearmy has 90 seconds left.
+|
+|t:|1706270901
+|switch|p2a: Bellibolt|Bellibolt, L84, F|202/320
+|turn|20
+|
+|t:|1706270911
+|move|p1a: Magearna|Calm Mind|p1a: Magearna
+|-boost|p1a: Magearna|spa|1
+|-boost|p1a: Magearna|spd|1
+|move|p2a: Bellibolt|Toxic|p1a: Magearna
+|-status|p1a: Magearna|tox
+|
+|-heal|p2a: Bellibolt|222/320|[from] item: Leftovers
+|-damage|p1a: Magearna|109/253 tox|[from] psn
+|upkeep
+|turn|21
+|
+|t:|1706270925
+|move|p1a: Magearna|Flash Cannon|p2a: Bellibolt
+|-resisted|p2a: Bellibolt
+|-damage|p2a: Bellibolt|126/320
+|-start|p2a: Bellibolt|Charge|Flash Cannon|[from] ability: Electromorphosis
+|move|p2a: Bellibolt|Slack Off|p2a: Bellibolt
+|-heal|p2a: Bellibolt|286/320
+|
+|-heal|p2a: Bellibolt|306/320|[from] item: Leftovers
+|-damage|p1a: Magearna|79/253 tox|[from] psn
+|upkeep
+|turn|22
+|
+|t:|1706270936
+|move|p1a: Magearna|Fleur Cannon|p2a: Bellibolt
+|-damage|p2a: Bellibolt|0 fnt
+|-unboost|p1a: Magearna|spa|2
+|faint|p2a: Bellibolt
+|-ability|p1a: Magearna|Soul-Heart|boost
+|-boost|p1a: Magearna|spa|1
+|
+|-damage|p1a: Magearna|34/253 tox|[from] psn
+|upkeep
+|
+|t:|1706270946
+|switch|p2a: Gothitelle|Gothitelle, L90, M|132/272
+|turn|23
+|
+|t:|1706270955
+|move|p1a: Magearna|Fleur Cannon|p2a: Gothitelle
+|-damage|p2a: Gothitelle|0 fnt
+|-unboost|p1a: Magearna|spa|2
+|faint|p2a: Gothitelle
+|
+|win|Aleaus
+|raw|Aleaus's rating: 1291 &rarr; <strong>1320</strong><br />(+29 for winning)
+|raw|Algaearmy's rating: 1349 &rarr; <strong>1326</strong><br />(-23 for losing)
+|c|☆Algaearmy|Gg

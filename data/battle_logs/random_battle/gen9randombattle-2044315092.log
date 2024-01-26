@@ -1,0 +1,384 @@
+|j|☆Antareja77
+|j|☆Shade n Void
+|t:|1706243604
+|gametype|singles
+|player|p1|Antareja77|swimmer-gen4dp|1166
+|player|p2|Shade n Void|n|1181
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706243604
+|start
+|switch|p1a: Flapple|Flapple, L88, F|266/266
+|switch|p2a: Iron Crown|Iron Crown, L79|272/272
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Antareja77)
+|
+|t:|1706243620
+|-end|p2a: Iron Crown|Quark Drive|[silent]
+|switch|p2a: Revavroom|Revavroom, L79, F|256/256
+|move|p1a: Flapple|U-turn|p2a: Revavroom
+|-resisted|p2a: Revavroom
+|-damage|p2a: Revavroom|220/256
+|
+|t:|1706243634
+|switch|p1a: Ambipom|Ambipom, L85, F|266/266|[from] U-turn
+|
+|upkeep
+|turn|2
+|
+|t:|1706243653
+|move|p1a: Ambipom|Fake Out|p2a: Revavroom
+|-resisted|p2a: Revavroom
+|-damage|p2a: Revavroom|180/256
+|cant|p2a: Revavroom|flinch
+|
+|upkeep
+|turn|3
+|
+|t:|1706243663
+|switch|p1a: Bellibolt|Bellibolt, L84, M|320/320
+|move|p2a: Revavroom|Shift Gear|p2a: Revavroom
+|-boost|p2a: Revavroom|spe|2
+|-boost|p2a: Revavroom|atk|1
+|
+|upkeep
+|turn|4
+|
+|t:|1706243669
+|move|p2a: Revavroom|High Horsepower|p1a: Bellibolt
+|-supereffective|p1a: Bellibolt
+|-damage|p1a: Bellibolt|65/320
+|-start|p1a: Bellibolt|Charge|High Horsepower|[from] ability: Electromorphosis
+|-damage|p2a: Revavroom|155/256|[from] item: Life Orb
+|move|p1a: Bellibolt|Thunderbolt|p2a: Revavroom
+|-damage|p2a: Revavroom|0 fnt
+|faint|p2a: Revavroom
+|-end|p1a: Bellibolt|Charge|[silent]
+|
+|-heal|p1a: Bellibolt|85/320|[from] item: Leftovers
+|upkeep
+|
+|t:|1706243679
+|switch|p2a: Leafeon|Leafeon, L88, F|258/258
+|turn|5
+|
+|t:|1706243690
+|move|p2a: Leafeon|Substitute|p2a: Leafeon
+|-start|p2a: Leafeon|Substitute
+|-damage|p2a: Leafeon|194/258
+|move|p1a: Bellibolt|Slack Off|p1a: Bellibolt
+|-heal|p1a: Bellibolt|245/320
+|
+|-heal|p2a: Leafeon|210/258|[from] item: Leftovers
+|-heal|p1a: Bellibolt|265/320|[from] item: Leftovers
+|upkeep
+|turn|6
+|
+|t:|1706243708
+|switch|p1a: Ambipom|Ambipom, L85, F|266/266
+|move|p2a: Leafeon|Swords Dance|p2a: Leafeon
+|-boost|p2a: Leafeon|atk|2
+|
+|-heal|p2a: Leafeon|226/258|[from] item: Leftovers
+|upkeep
+|turn|7
+|
+|t:|1706243713
+|move|p1a: Ambipom|Double-Edge|p2a: Leafeon
+|-end|p2a: Leafeon|Substitute
+|-damage|p1a: Ambipom|245/266|[from] Recoil|[of] p2a: Leafeon
+|move|p2a: Leafeon|Leaf Blade|p1a: Ambipom
+|-crit|p1a: Ambipom
+|-damage|p1a: Ambipom|0 fnt
+|faint|p1a: Ambipom
+|
+|-heal|p2a: Leafeon|242/258|[from] item: Leftovers
+|upkeep
+|
+|t:|1706243724
+|switch|p1a: Flapple|Flapple, L88, F|266/266
+|turn|8
+|
+|t:|1706243727
+|move|p2a: Leafeon|Double-Edge|p1a: Flapple
+|-damage|p1a: Flapple|54/266
+|-damage|p2a: Leafeon|172/258|[from] Recoil
+|move|p1a: Flapple|U-turn|p2a: Leafeon
+|-supereffective|p2a: Leafeon
+|-damage|p2a: Leafeon|0 fnt
+|faint|p2a: Leafeon
+|
+|t:|1706243737
+|switch|p1a: Mimikyu|Mimikyu, L79, F|216/216|[from] U-turn
+|
+|upkeep
+|
+|t:|1706243741
+|switch|p2a: Iron Crown|Iron Crown, L79|272/272
+|turn|9
+|
+|t:|1706243749
+|switch|p1a: Flapple|Flapple, L88, F|54/266
+|move|p2a: Iron Crown|Tachyon Cutter|p1a: Flapple
+|-damage|p1a: Flapple|0 fnt
+|faint|p1a: Flapple
+|-hitcount|p1: Flapple|1
+|
+|upkeep
+|
+|t:|1706243753
+|switch|p1a: Bellibolt|Bellibolt, L84, M|265/320
+|turn|10
+|
+|t:|1706243758
+|move|p2a: Iron Crown|Calm Mind|p2a: Iron Crown
+|-boost|p2a: Iron Crown|spa|1
+|-boost|p2a: Iron Crown|spd|1
+|move|p1a: Bellibolt|Thunderbolt|p2a: Iron Crown
+|-damage|p2a: Iron Crown|206/272
+|
+|-heal|p2a: Iron Crown|223/272|[from] item: Leftovers
+|-heal|p1a: Bellibolt|285/320|[from] item: Leftovers
+|upkeep
+|turn|11
+|
+|t:|1706243784
+|move|p2a: Iron Crown|Psyshock|p1a: Bellibolt
+|-damage|p1a: Bellibolt|156/320
+|-start|p1a: Bellibolt|Charge|Psyshock|[from] ability: Electromorphosis
+|move|p1a: Bellibolt|Thunderbolt|p2a: Iron Crown
+|-damage|p2a: Iron Crown|109/272
+|-end|p1a: Bellibolt|Charge|[silent]
+|
+|-heal|p2a: Iron Crown|126/272|[from] item: Leftovers
+|-heal|p1a: Bellibolt|176/320|[from] item: Leftovers
+|upkeep
+|turn|12
+|inactive|Shade n Void has 120 seconds left.
+|
+|t:|1706243817
+|move|p2a: Iron Crown|Calm Mind|p2a: Iron Crown
+|-boost|p2a: Iron Crown|spa|1
+|-boost|p2a: Iron Crown|spd|1
+|move|p1a: Bellibolt|Slack Off|p1a: Bellibolt
+|-heal|p1a: Bellibolt|320/320
+|
+|-heal|p2a: Iron Crown|143/272|[from] item: Leftovers
+|upkeep
+|turn|13
+|
+|t:|1706243826
+|move|p2a: Iron Crown|Tachyon Cutter|p1a: Bellibolt
+|-resisted|p1a: Bellibolt
+|-damage|p1a: Bellibolt|261/320
+|-start|p1a: Bellibolt|Charge|Tachyon Cutter|[from] ability: Electromorphosis
+|-resisted|p1a: Bellibolt
+|-damage|p1a: Bellibolt|199/320
+|-start|p1a: Bellibolt|Charge|Tachyon Cutter|[from] ability: Electromorphosis
+|-hitcount|p1a: Bellibolt|2
+|move|p1a: Bellibolt|Thunderbolt|p2a: Iron Crown
+|-damage|p2a: Iron Crown|47/272
+|-end|p1a: Bellibolt|Charge|[silent]
+|
+|-heal|p2a: Iron Crown|64/272|[from] item: Leftovers
+|-heal|p1a: Bellibolt|219/320|[from] item: Leftovers
+|upkeep
+|turn|14
+|inactive|Shade n Void has 120 seconds left.
+|
+|t:|1706243836
+|move|p2a: Iron Crown|Focus Blast|p1a: Bellibolt
+|-damage|p1a: Bellibolt|22/320
+|-start|p1a: Bellibolt|Charge|Focus Blast|[from] ability: Electromorphosis
+|move|p1a: Bellibolt|Thunderbolt|p2a: Iron Crown
+|-damage|p2a: Iron Crown|0 fnt
+|faint|p2a: Iron Crown
+|-end|p2a: Iron Crown|Quark Drive|[silent]
+|-end|p1a: Bellibolt|Charge|[silent]
+|
+|-heal|p1a: Bellibolt|42/320|[from] item: Leftovers
+|upkeep
+|inactive|Shade n Void has 120 seconds left.
+|
+|t:|1706243847
+|switch|p2a: Roaring Moon|Roaring Moon, L73|274/274
+|turn|15
+|
+|t:|1706243851
+|move|p2a: Roaring Moon|Dragon Dance|p2a: Roaring Moon
+|-boost|p2a: Roaring Moon|atk|1
+|-boost|p2a: Roaring Moon|spe|1
+|move|p1a: Bellibolt|Thunderbolt|p2a: Roaring Moon
+|-resisted|p2a: Roaring Moon
+|-damage|p2a: Roaring Moon|225/274
+|
+|-heal|p1a: Bellibolt|62/320|[from] item: Leftovers
+|upkeep
+|turn|16
+|inactive|Shade n Void has 120 seconds left.
+|
+|t:|1706243890
+|move|p2a: Roaring Moon|Earthquake|p1a: Bellibolt
+|-supereffective|p1a: Bellibolt
+|-damage|p1a: Bellibolt|0 fnt
+|faint|p1a: Bellibolt
+|
+|upkeep
+|
+|t:|1706243895
+|switch|p1a: Mimikyu|Mimikyu, L79, F|216/216
+|turn|17
+|
+|t:|1706243911
+|move|p2a: Roaring Moon|Knock Off|p1a: Mimikyu
+|-activate|p1a: Mimikyu|ability: Disguise
+|-damage|p1a: Mimikyu|216/216
+|-enditem|p1a: Mimikyu|Life Orb|[from] move: Knock Off|[of] p2a: Roaring Moon
+|detailschange|p1a: Mimikyu|Mimikyu-Busted, L79, F
+|-damage|p1a: Mimikyu|189/216|[from] pokemon: Mimikyu-Busted
+|move|p1a: Mimikyu|Play Rough|p2a: Roaring Moon
+|-supereffective|p2a: Roaring Moon
+|-damage|p2a: Roaring Moon|0 fnt
+|faint|p2a: Roaring Moon
+|-end|p2a: Roaring Moon|Protosynthesis|[silent]
+|
+|upkeep
+|
+|t:|1706243920
+|switch|p2a: Zacian|Zacian, L69|241/241
+|-ability|p2a: Zacian|Intrepid Sword|boost
+|-boost|p2a: Zacian|atk|1
+|turn|18
+|
+|t:|1706243931
+|move|p2a: Zacian|Play Rough|p1a: Mimikyu
+|-damage|p1a: Mimikyu|0 fnt
+|faint|p1a: Mimikyu
+|
+|upkeep
+|
+|t:|1706243938
+|switch|p1a: Wigglytuff|Wigglytuff, L96, M|424/424
+|turn|19
+|
+|t:|1706243946
+|move|p2a: Zacian|Play Rough|p1a: Wigglytuff
+|-damage|p1a: Wigglytuff|202/424
+|move|p1a: Wigglytuff|Alluring Voice|p2a: Zacian
+|-damage|p2a: Zacian|142/241
+|
+|-heal|p1a: Wigglytuff|228/424|[from] item: Leftovers
+|upkeep
+|turn|20
+|inactive|Shade n Void has 120 seconds left.
+|
+|t:|1706243988
+|move|p1a: Wigglytuff|Protect|p1a: Wigglytuff
+|-singleturn|p1a: Wigglytuff|Protect
+|move|p2a: Zacian|Play Rough|p1a: Wigglytuff
+|-activate|p1a: Wigglytuff|move: Protect
+|
+|-heal|p1a: Wigglytuff|254/424|[from] item: Leftovers
+|upkeep
+|turn|21
+|
+|t:|1706244001
+|move|p2a: Zacian|Play Rough|p1a: Wigglytuff
+|-damage|p1a: Wigglytuff|8/424
+|move|p1a: Wigglytuff|Alluring Voice|p2a: Zacian
+|-damage|p2a: Zacian|48/241
+|
+|-heal|p1a: Wigglytuff|34/424|[from] item: Leftovers
+|upkeep
+|turn|22
+|
+|t:|1706244017
+|move|p1a: Wigglytuff|Protect|p1a: Wigglytuff
+|-singleturn|p1a: Wigglytuff|Protect
+|move|p2a: Zacian|Play Rough|p1a: Wigglytuff
+|-activate|p1a: Wigglytuff|move: Protect
+|
+|-heal|p1a: Wigglytuff|60/424|[from] item: Leftovers
+|upkeep
+|turn|23
+|
+|t:|1706244026
+|move|p2a: Zacian|Play Rough|p1a: Wigglytuff
+|-damage|p1a: Wigglytuff|0 fnt
+|faint|p1a: Wigglytuff
+|
+|upkeep
+|
+|t:|1706244030
+|switch|p1a: Vaporeon|Vaporeon, L85, M|360/360
+|turn|24
+|inactive|Shade n Void has 120 seconds left.
+|
+|t:|1706244052
+|move|p2a: Zacian|Play Rough|p1a: Vaporeon
+|-damage|p1a: Vaporeon|117/360
+|-unboost|p1a: Vaporeon|atk|1
+|move|p1a: Vaporeon|Scald|p2a: Zacian
+|-damage|p2a: Zacian|0 fnt
+|faint|p2a: Zacian
+|
+|-heal|p1a: Vaporeon|139/360|[from] item: Leftovers
+|upkeep
+|
+|t:|1706244055
+|switch|p2a: Iron Moth|Iron Moth, L78|253/253
+|turn|25
+|
+|t:|1706244067
+|-terastallize|p2a: Iron Moth|Fire
+|move|p1a: Vaporeon|Protect|p1a: Vaporeon
+|-singleturn|p1a: Vaporeon|Protect
+|move|p2a: Iron Moth|Energy Ball|p1a: Vaporeon
+|-activate|p1a: Vaporeon|move: Protect
+|
+|-heal|p1a: Vaporeon|161/360|[from] item: Leftovers
+|upkeep
+|turn|26
+|inactive|Shade n Void has 120 seconds left.
+|
+|t:|1706244090
+|move|p2a: Iron Moth|Energy Ball|p1a: Vaporeon
+|-supereffective|p1a: Vaporeon
+|-damage|p1a: Vaporeon|33/360
+|move|p1a: Vaporeon|Scald|p2a: Iron Moth
+|-supereffective|p2a: Iron Moth
+|-damage|p2a: Iron Moth|61/253
+|
+|-heal|p1a: Vaporeon|55/360|[from] item: Leftovers
+|upkeep
+|turn|27
+|
+|t:|1706244102
+|move|p1a: Vaporeon|Protect|p1a: Vaporeon
+|-singleturn|p1a: Vaporeon|Protect
+|move|p2a: Iron Moth|Energy Ball|p1a: Vaporeon
+|-activate|p1a: Vaporeon|move: Protect
+|
+|-heal|p1a: Vaporeon|77/360|[from] item: Leftovers
+|upkeep
+|turn|28
+|
+|t:|1706244110
+|move|p2a: Iron Moth|Energy Ball|p1a: Vaporeon
+|-supereffective|p1a: Vaporeon
+|-damage|p1a: Vaporeon|0 fnt
+|faint|p1a: Vaporeon
+|
+|win|Shade n Void
+|raw|Antareja77's rating: 1197 &rarr; <strong>1171</strong><br />(-26 for losing)
+|raw|Shade n Void's rating: 1181 &rarr; <strong>1207</strong><br />(+26 for winning)
+|l|☆Antareja77
+|player|p1|

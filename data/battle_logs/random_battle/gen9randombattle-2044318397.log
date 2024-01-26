@@ -1,0 +1,209 @@
+|j|☆ihatesnailsandcats
+|j|☆sgfsbvnb
+|t:|1706244021
+|gametype|singles
+|player|p1|ihatesnailsandcats|sabrina|1040
+|player|p2|sgfsbvnb|1|1000
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706244021
+|start
+|switch|p1a: Hatterene|Hatterene, L86, F|238/238
+|switch|p2a: Regirock|Regirock, L86|278/278
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ihatesnailsandcats)
+|inactive|ihatesnailsandcats has 120 seconds left.
+|
+|t:|1706244065
+|move|p2a: Regirock|Stone Edge|p1a: Hatterene
+|-damage|p1a: Hatterene|132/238
+|move|p1a: Hatterene|Calm Mind|p1a: Hatterene
+|-boost|p1a: Hatterene|spa|1
+|-boost|p1a: Hatterene|spd|1
+|
+|-heal|p1a: Hatterene|146/238|[from] item: Leftovers
+|upkeep
+|turn|2
+|
+|t:|1706244074
+|move|p2a: Regirock|Curse|p2a: Regirock
+|-unboost|p2a: Regirock|spe|1
+|-boost|p2a: Regirock|atk|1
+|-boost|p2a: Regirock|def|1
+|move|p1a: Hatterene|Psychic|p2a: Regirock
+|-damage|p2a: Regirock|115/278
+|
+|-heal|p1a: Hatterene|160/238|[from] item: Leftovers
+|upkeep
+|turn|3
+|
+|t:|1706244087
+|move|p1a: Hatterene|Psychic|p2a: Regirock
+|-damage|p2a: Regirock|0 fnt
+|faint|p2a: Regirock
+|
+|-heal|p1a: Hatterene|174/238|[from] item: Leftovers
+|upkeep
+|c|☆ihatesnailsandcats|lmao
+|c|☆ihatesnailsandcats|who let him cook
+|
+|t:|1706244098
+|switch|p2a: Oricorio|Oricorio-Sensu, L85, F|266/266
+|turn|4
+|
+|t:|1706244119
+|switch|p1a: Rotom|Rotom-Frost, L86|226/226
+|move|p2a: Oricorio|Hurricane|p1a: Rotom
+|-resisted|p1a: Rotom
+|-damage|p1a: Rotom|175/226
+|-start|p1a: Rotom|confusion
+|
+|upkeep
+|turn|5
+|
+|t:|1706244128
+|switch|p2a: Sandy Shocks|Sandy Shocks, L80|267/267
+|-activate|p1a: Rotom|confusion
+|move|p1a: Rotom|Nasty Plot|p1a: Rotom
+|-boost|p1a: Rotom|spa|2
+|
+|upkeep
+|turn|6
+|
+|t:|1706244139
+|move|p2a: Sandy Shocks|Earth Power|p1a: Rotom
+|-immune|p1a: Rotom|[from] ability: Levitate
+|-end|p1a: Rotom|confusion
+|move|p1a: Rotom|Blizzard|p2a: Sandy Shocks
+|-supereffective|p2a: Sandy Shocks
+|-damage|p2a: Sandy Shocks|0 fnt
+|faint|p2a: Sandy Shocks
+|-end|p2a: Sandy Shocks|Protosynthesis|[silent]
+|
+|upkeep
+|c|☆ihatesnailsandcats|LMAOOOOO
+|
+|t:|1706244147
+|switch|p2a: Chandelure|Chandelure, L83, M|235/235
+|turn|7
+|c|☆ihatesnailsandcats|WHO LET HIM COOK!!??
+|c|☆ihatesnailsandcats|ggez fr
+|
+|t:|1706244173
+|-terastallize|p1a: Rotom|Electric
+|move|p1a: Rotom|Thunderbolt|p2a: Chandelure
+|-damage|p2a: Chandelure|0 fnt
+|faint|p2a: Chandelure
+|
+|upkeep
+|
+|t:|1706244178
+|switch|p2a: Granbull|Granbull, L88, F|302/302
+|-ability|p2a: Granbull|Intimidate|boost
+|-unboost|p1a: Rotom|atk|1
+|turn|8
+|c|☆ihatesnailsandcats|bye bye!
+|c|☆ihatesnailsandcats|just ff
+|
+|t:|1706244188
+|-terastallize|p2a: Granbull|Ground
+|move|p1a: Rotom|Will-O-Wisp|p2a: Granbull
+|-status|p2a: Granbull|brn
+|move|p2a: Granbull|Play Rough|p1a: Rotom
+|-damage|p1a: Rotom|121/226
+|-unboost|p1a: Rotom|atk|1
+|
+|-damage|p2a: Granbull|284/302 brn|[from] brn
+|upkeep
+|turn|9
+|
+|t:|1706244195
+|move|p1a: Rotom|Blizzard|p2a: Granbull
+|-supereffective|p2a: Granbull
+|-damage|p2a: Granbull|0 fnt
+|faint|p2a: Granbull
+|
+|upkeep
+|c|☆ihatesnailsandcats|HAHAHAHA
+|
+|t:|1706244199
+|switch|p2a: Oricorio|Oricorio-Sensu, L85, F|266/266
+|turn|10
+|
+|t:|1706244204
+|move|p2a: Oricorio|Hurricane|p1a: Rotom
+|-resisted|p1a: Rotom
+|-damage|p1a: Rotom|70/226
+|move|p1a: Rotom|Thunderbolt|p2a: Oricorio
+|-supereffective|p2a: Oricorio
+|-crit|p2a: Oricorio
+|-damage|p2a: Oricorio|0 fnt
+|faint|p2a: Oricorio
+|
+|upkeep
+|c|☆ihatesnailsandcats|ez pickings
+|
+|t:|1706244212
+|switch|p2a: Iron Valiant|Iron Valiant, L79|247/247
+|turn|11
+|c|☆ihatesnailsandcats|flawless victory!
+|
+|t:|1706244218
+|switch|p1a: Clefable|Clefable, L83, M|293/293
+|move|p2a: Iron Valiant|Close Combat|p1a: Clefable
+|-resisted|p1a: Clefable
+|-crit|p1a: Clefable
+|-damage|p1a: Clefable|140/293
+|-unboost|p2a: Iron Valiant|def|1
+|-unboost|p2a: Iron Valiant|spd|1
+|-damage|p2a: Iron Valiant|223/247|[from] item: Life Orb
+|
+|-heal|p1a: Clefable|158/293|[from] item: Leftovers
+|upkeep
+|turn|12
+|
+|t:|1706244224
+|move|p2a: Iron Valiant|Close Combat|p1a: Clefable
+|-resisted|p1a: Clefable
+|-damage|p1a: Clefable|42/293
+|-unboost|p2a: Iron Valiant|def|1
+|-unboost|p2a: Iron Valiant|spd|1
+|-damage|p2a: Iron Valiant|199/247|[from] item: Life Orb
+|move|p1a: Clefable|Thunder Wave|p2a: Iron Valiant
+|-status|p2a: Iron Valiant|par
+|
+|-heal|p1a: Clefable|60/293|[from] item: Leftovers
+|upkeep
+|turn|13
+|
+|t:|1706244239
+|switch|p1a: Hatterene|Hatterene, L86, F|174/238
+|cant|p2a: Iron Valiant|par
+|
+|-heal|p1a: Hatterene|188/238|[from] item: Leftovers
+|upkeep
+|turn|14
+|c|☆ihatesnailsandcats|ggez
+|
+|t:|1706244249
+|move|p2a: Iron Valiant|Spirit Break|p1a: Hatterene
+|-damage|p1a: Hatterene|81/238
+|-unboost|p1a: Hatterene|spa|1
+|-damage|p2a: Iron Valiant|175/247 par|[from] item: Life Orb
+|move|p1a: Hatterene|Psychic|p2a: Iron Valiant
+|-supereffective|p2a: Iron Valiant
+|-damage|p2a: Iron Valiant|0 fnt
+|faint|p2a: Iron Valiant
+|-end|p2a: Iron Valiant|Quark Drive|[silent]
+|
+|win|ihatesnailsandcats
+|raw|ihatesnailsandcats's rating: 1040 &rarr; <strong>1070</strong><br />(+30 for winning)
+|raw|sgfsbvnb's rating: 1000 &rarr; <strong>1000</strong><br />(+0 for losing)

@@ -1,7 +1,8 @@
 use crate::constants;
 
-use std::{collections::HashMap, error::Error, fs::File, path::Path};
+use std::{collections::HashMap, fs::File, path::Path};
 
+use anyhow::Result;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
@@ -104,7 +105,7 @@ pub struct Dexes {
 }
 
 #[allow(dead_code)]
-pub fn dex_data() -> Result<Dexes, Box<dyn Error>> {
+pub fn dex_data() -> Result<Dexes> {
     let data_path = Path::new(constants::DATA_DIR);
 
     let ability_dex_path = data_path.join("ability_dex.json");

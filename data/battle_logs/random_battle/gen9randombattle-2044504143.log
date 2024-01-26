@@ -1,0 +1,502 @@
+|j|☆ENGLAND lS MY ClTY
+|j|☆Joshwaitforit
+|t:|1706270750
+|gametype|singles
+|player|p1|ENGLAND lS MY ClTY|sailor|2084
+|player|p2|Joshwaitforit|n|1999
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706270751
+|start
+|switch|p1a: Eternatus|Eternatus, L69|308/308
+|switch|p2a: Solgaleo|Solgaleo, L74|325/325
+|-ability|p1a: Eternatus|Pressure
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Joshwaitforit)
+|
+|t:|1706270765
+|switch|p1a: Mandibuzz|Mandibuzz, L84, F|322/322
+|move|p2a: Solgaleo|Knock Off|p1a: Mandibuzz
+|-resisted|p1a: Mandibuzz
+|-damage|p1a: Mandibuzz|278/322
+|-enditem|p1a: Mandibuzz|Heavy-Duty Boots|[from] move: Knock Off|[of] p2a: Solgaleo
+|
+|upkeep
+|turn|2
+|
+|t:|1706270788
+|switch|p2a: Hatterene|Hatterene, L86, F|238/238
+|move|p1a: Mandibuzz|Knock Off|p2a: Hatterene
+|-damage|p2a: Hatterene|163/238
+|-enditem|p2a: Hatterene|Assault Vest|[from] move: Knock Off|[of] p1a: Mandibuzz
+|
+|upkeep
+|turn|3
+|
+|t:|1706270813
+|switch|p1a: Iron Crown|Iron Crown, L79|272/272
+|move|p2a: Hatterene|Nuzzle|p1a: Iron Crown
+|-damage|p1a: Iron Crown|256/272
+|-status|p1a: Iron Crown|par
+|
+|-heal|p1a: Iron Crown|272/272 par|[from] item: Leftovers
+|upkeep
+|turn|4
+|
+|t:|1706270828
+|switch|p2a: Solgaleo|Solgaleo, L74|325/325
+|move|p1a: Iron Crown|Tachyon Cutter|p2a: Solgaleo
+|-resisted|p2a: Solgaleo
+|-damage|p2a: Solgaleo|296/325
+|-resisted|p2a: Solgaleo
+|-damage|p2a: Solgaleo|262/325
+|-hitcount|p2a: Solgaleo|2
+|
+|upkeep
+|turn|5
+|
+|t:|1706270834
+|-end|p1a: Iron Crown|Quark Drive|[silent]
+|switch|p1a: Mandibuzz|Mandibuzz, L84, F|278/322
+|move|p2a: Solgaleo|Flare Blitz|p1a: Mandibuzz
+|-damage|p1a: Mandibuzz|173/322
+|-damage|p2a: Solgaleo|227/325|[from] Recoil
+|
+|upkeep
+|turn|6
+|
+|t:|1706270849
+|switch|p2a: Hatterene|Hatterene, L86, F|163/238
+|move|p1a: Mandibuzz|Roost|p1a: Mandibuzz
+|-heal|p1a: Mandibuzz|322/322
+|-singleturn|p1a: Mandibuzz|move: Roost
+|
+|upkeep
+|turn|7
+|
+|t:|1706270856
+|switch|p1a: Iron Crown|Iron Crown, L79|272/272 par
+|move|p2a: Hatterene|Mystical Fire|p1a: Iron Crown
+|-supereffective|p1a: Iron Crown
+|-damage|p1a: Iron Crown|128/272 par
+|-unboost|p1a: Iron Crown|spa|1
+|
+|-heal|p1a: Iron Crown|145/272 par|[from] item: Leftovers
+|upkeep
+|turn|8
+|
+|t:|1706270874
+|-end|p1a: Iron Crown|Quark Drive|[silent]
+|switch|p1a: Grumpig|Grumpig, L92, M|297/297
+|switch|p2a: Solgaleo|Solgaleo, L74|227/325
+|
+|upkeep
+|turn|9
+|
+|t:|1706270883
+|move|p1a: Grumpig|Nasty Plot|p1a: Grumpig
+|-boost|p1a: Grumpig|spa|2
+|move|p2a: Solgaleo|Knock Off|p1a: Grumpig
+|-supereffective|p1a: Grumpig
+|-damage|p1a: Grumpig|71/297
+|-enditem|p1a: Grumpig|Leftovers|[from] move: Knock Off|[of] p2a: Solgaleo
+|
+|upkeep
+|turn|10
+|
+|t:|1706270896
+|switch|p2a: Persian|Persian, L93, M|272/272
+|move|p1a: Grumpig|Shadow Ball|p2a: Persian
+|-immune|p2a: Persian
+|
+|upkeep
+|turn|11
+|
+|t:|1706270902
+|switch|p1a: Mandibuzz|Mandibuzz, L84, F|322/322
+|move|p2a: Persian|Knock Off|p1a: Mandibuzz
+|-resisted|p1a: Mandibuzz
+|-damage|p1a: Mandibuzz|294/322
+|
+|upkeep
+|turn|12
+|
+|t:|1706270909
+|switch|p2a: Hatterene|Hatterene, L86, F|163/238
+|move|p1a: Mandibuzz|Brave Bird|p2a: Hatterene
+|-damage|p2a: Hatterene|84/238
+|-damage|p1a: Mandibuzz|268/322|[from] Recoil
+|
+|upkeep
+|turn|13
+|
+|t:|1706270923
+|switch|p1a: Iron Crown|Iron Crown, L79|145/272 par
+|move|p2a: Hatterene|Draining Kiss|p1a: Iron Crown
+|-resisted|p1a: Iron Crown
+|-damage|p1a: Iron Crown|109/272 par
+|-heal|p2a: Hatterene|111/238|[from] drain|[of] p1a: Iron Crown
+|
+|-heal|p1a: Iron Crown|126/272 par|[from] item: Leftovers
+|upkeep
+|turn|14
+|
+|t:|1706270934
+|switch|p2a: Solgaleo|Solgaleo, L74|227/325
+|cant|p1a: Iron Crown|par
+|
+|-heal|p1a: Iron Crown|143/272 par|[from] item: Leftovers
+|upkeep
+|turn|15
+|
+|t:|1706270940
+|-end|p1a: Iron Crown|Quark Drive|[silent]
+|switch|p1a: Mandibuzz|Mandibuzz, L84, F|268/322
+|move|p2a: Solgaleo|Knock Off|p1a: Mandibuzz
+|-resisted|p1a: Mandibuzz
+|-damage|p1a: Mandibuzz|240/322
+|
+|upkeep
+|turn|16
+|
+|t:|1706270946
+|switch|p2a: Persian|Persian, L93, M|272/272
+|move|p1a: Mandibuzz|Knock Off|p2a: Persian
+|-crit|p2a: Persian
+|-damage|p2a: Persian|122/272
+|-enditem|p2a: Persian|Choice Band|[from] move: Knock Off|[of] p1a: Mandibuzz
+|
+|upkeep
+|turn|17
+|
+|t:|1706270954
+|move|p2a: Persian|Double-Edge|p1a: Mandibuzz
+|-crit|p1a: Mandibuzz
+|-damage|p1a: Mandibuzz|77/322
+|-damage|p2a: Persian|68/272|[from] Recoil
+|move|p1a: Mandibuzz|Roost|p1a: Mandibuzz
+|-heal|p1a: Mandibuzz|238/322
+|-singleturn|p1a: Mandibuzz|move: Roost
+|
+|upkeep
+|turn|18
+|
+|t:|1706270962
+|move|p2a: Persian|Gunk Shot|p1a: Mandibuzz|[miss]
+|-miss|p2a: Persian|p1a: Mandibuzz
+|move|p1a: Mandibuzz|Knock Off|p2a: Persian
+|-damage|p2a: Persian|10/272
+|
+|upkeep
+|turn|19
+|
+|t:|1706270966
+|switch|p1a: Iron Crown|Iron Crown, L79|143/272 par
+|move|p2a: Persian|Double-Edge|p1a: Iron Crown
+|-resisted|p1a: Iron Crown
+|-damage|p1a: Iron Crown|80/272 par
+|-damage|p2a: Persian|0 fnt|[from] Recoil
+|faint|p2a: Persian
+|
+|-heal|p1a: Iron Crown|97/272 par|[from] item: Leftovers
+|upkeep
+|
+|t:|1706270974
+|switch|p2a: Wugtrio|Wugtrio, L91, M|212/212
+|turn|20
+|
+|t:|1706270978
+|-end|p1a: Iron Crown|Quark Drive|[silent]
+|switch|p1a: Dipplin|Dipplin, L88, F|284/284
+|move|p2a: Wugtrio|Liquidation|p1a: Dipplin
+|-resisted|p1a: Dipplin
+|-damage|p1a: Dipplin|263/284
+|-unboost|p1a: Dipplin|def|1
+|
+|upkeep
+|turn|21
+|
+|t:|1706270987
+|switch|p2a: Solgaleo|Solgaleo, L74|227/325
+|move|p1a: Dipplin|Infestation|p2a: Solgaleo
+|-damage|p2a: Solgaleo|210/325
+|-activate|p2a: Solgaleo|move: Infestation|[of] p1a: Dipplin
+|
+|-damage|p2a: Solgaleo|170/325|[from] move: Infestation|[partiallytrapped]
+|upkeep
+|turn|22
+|
+|t:|1706271001
+|move|p2a: Solgaleo|Sunsteel Strike|p1a: Dipplin
+|-damage|p1a: Dipplin|134/284
+|move|p1a: Dipplin|Recover|p1a: Dipplin
+|-heal|p1a: Dipplin|276/284
+|
+|-damage|p2a: Solgaleo|130/325|[from] move: Infestation|[partiallytrapped]
+|upkeep
+|turn|23
+|
+|t:|1706271009
+|move|p2a: Solgaleo|Sunsteel Strike|p1a: Dipplin
+|-damage|p1a: Dipplin|147/284
+|move|p1a: Dipplin|Recover|p1a: Dipplin
+|-heal|p1a: Dipplin|284/284
+|
+|-damage|p2a: Solgaleo|90/325|[from] move: Infestation|[partiallytrapped]
+|upkeep
+|turn|24
+|
+|t:|1706271015
+|move|p2a: Solgaleo|Sunsteel Strike|p1a: Dipplin
+|-damage|p1a: Dipplin|157/284
+|move|p1a: Dipplin|Recover|p1a: Dipplin
+|-heal|p1a: Dipplin|284/284
+|
+|-damage|p2a: Solgaleo|50/325|[from] move: Infestation|[partiallytrapped]
+|upkeep
+|turn|25
+|
+|t:|1706271022
+|move|p2a: Solgaleo|Sunsteel Strike|p1a: Dipplin
+|-damage|p1a: Dipplin|158/284
+|move|p1a: Dipplin|Recover|p1a: Dipplin
+|-heal|p1a: Dipplin|284/284
+|
+|-end|p2a: Solgaleo|Infestation|[partiallytrapped]
+|upkeep
+|turn|26
+|
+|t:|1706271027
+|switch|p1a: Mandibuzz|Mandibuzz, L84, F|238/322
+|move|p2a: Solgaleo|Sunsteel Strike|p1a: Mandibuzz
+|-damage|p1a: Mandibuzz|93/322
+|
+|upkeep
+|turn|27
+|
+|t:|1706271036
+|switch|p1a: Iron Crown|Iron Crown, L79|97/272 par
+|move|p2a: Solgaleo|Sunsteel Strike|p1a: Iron Crown
+|-resisted|p1a: Iron Crown
+|-damage|p1a: Iron Crown|24/272 par
+|
+|-heal|p1a: Iron Crown|41/272 par|[from] item: Leftovers
+|upkeep
+|turn|28
+|
+|t:|1706271045
+|move|p2a: Solgaleo|Sunsteel Strike|p1a: Iron Crown
+|-resisted|p1a: Iron Crown
+|-damage|p1a: Iron Crown|0 fnt
+|faint|p1a: Iron Crown
+|-end|p1a: Iron Crown|Quark Drive|[silent]
+|
+|upkeep
+|
+|t:|1706271047
+|switch|p1a: Grumpig|Grumpig, L92, M|71/297
+|turn|29
+|
+|t:|1706271068
+|switch|p2a: Wugtrio|Wugtrio, L91, M|212/212
+|move|p1a: Grumpig|Shadow Ball|p2a: Wugtrio
+|-damage|p2a: Wugtrio|146/212
+|
+|upkeep
+|turn|30
+|
+|t:|1706271080
+|switch|p1a: Dipplin|Dipplin, L88, F|284/284
+|move|p2a: Wugtrio|Throat Chop|p1a: Dipplin
+|-damage|p1a: Dipplin|229/284
+|-start|p1a: Dipplin|Throat Chop|[silent]
+|
+|upkeep
+|turn|31
+|
+|t:|1706271085
+|switch|p2a: Hatterene|Hatterene, L86, F|111/238
+|move|p1a: Dipplin|Infestation|p2a: Hatterene
+|-damage|p2a: Hatterene|97/238
+|-activate|p2a: Hatterene|move: Infestation|[of] p1a: Dipplin
+|
+|-damage|p2a: Hatterene|68/238|[from] move: Infestation|[partiallytrapped]
+|-end|p1a: Dipplin|Throat Chop|[silent]
+|upkeep
+|turn|32
+|
+|t:|1706271106
+|switch|p1a: Grumpig|Grumpig, L92, M|71/297
+|move|p2a: Hatterene|Nuzzle|p1a: Grumpig
+|-damage|p1a: Grumpig|53/297
+|-status|p1a: Grumpig|par
+|
+|-end|p2a: Hatterene|Infestation|[partiallytrapped]|[silent]
+|upkeep
+|turn|33
+|
+|t:|1706271119
+|switch|p2a: Mightyena|Mightyena, L95, M|287/287
+|-ability|p2a: Mightyena|Intimidate|boost
+|-unboost|p1a: Grumpig|atk|1
+|move|p1a: Grumpig|Shadow Ball|p2a: Mightyena
+|-resisted|p2a: Mightyena
+|-damage|p2a: Mightyena|253/287
+|-unboost|p2a: Mightyena|spd|1
+|
+|upkeep
+|turn|34
+|
+|t:|1706271135
+|move|p2a: Mightyena|Poison Fang|p1a: Grumpig
+|-damage|p1a: Grumpig|0 fnt
+|faint|p1a: Grumpig
+|-damage|p2a: Mightyena|225/287|[from] item: Life Orb
+|
+|upkeep
+|
+|t:|1706271143
+|switch|p1a: Eternatus|Eternatus, L69|308/308
+|-ability|p1a: Eternatus|Pressure
+|turn|35
+|
+|t:|1706271152
+|switch|p2a: Alcremie|Alcremie-Salted-Cream, L89, F|260/260
+|move|p1a: Eternatus|Sludge Bomb|p2a: Alcremie
+|-supereffective|p2a: Alcremie
+|-damage|p2a: Alcremie|132/260
+|-status|p2a: Alcremie|psn
+|
+|-heal|p2a: Alcremie|148/260 psn|[from] item: Leftovers
+|-damage|p2a: Alcremie|116/260 psn|[from] psn
+|upkeep
+|turn|36
+|
+|t:|1706271162
+|-terastallize|p2a: Alcremie|Steel
+|move|p1a: Eternatus|Sludge Bomb|p2a: Alcremie
+|-immune|p2a: Alcremie
+|move|p2a: Alcremie|Psychic|p1a: Eternatus
+|-supereffective|p1a: Eternatus
+|-damage|p1a: Eternatus|136/308
+|
+|-heal|p1a: Eternatus|155/308|[from] item: Leftovers
+|-heal|p2a: Alcremie|132/260 psn|[from] item: Leftovers
+|-damage|p2a: Alcremie|100/260 psn|[from] psn
+|upkeep
+|turn|37
+|
+|t:|1706271169
+|move|p1a: Eternatus|Fire Blast|p2a: Alcremie
+|-supereffective|p2a: Alcremie
+|-damage|p2a: Alcremie|0 fnt
+|faint|p2a: Alcremie
+|
+|-heal|p1a: Eternatus|174/308|[from] item: Leftovers
+|upkeep
+|
+|t:|1706271176
+|switch|p2a: Wugtrio|Wugtrio, L91, M|146/212
+|turn|38
+|
+|t:|1706271180
+|switch|p1a: Dipplin|Dipplin, L88, F|229/284
+|move|p2a: Wugtrio|Throat Chop|p1a: Dipplin
+|-damage|p1a: Dipplin|173/284
+|-start|p1a: Dipplin|Throat Chop|[silent]
+|
+|upkeep
+|turn|39
+|
+|t:|1706271187
+|switch|p2a: Hatterene|Hatterene, L86, F|68/238
+|move|p1a: Dipplin|Giga Drain|p2a: Hatterene
+|-damage|p2a: Hatterene|0 fnt
+|-heal|p1a: Dipplin|207/284|[from] drain|[of] p2a: Hatterene
+|faint|p2a: Hatterene
+|
+|-end|p1a: Dipplin|Throat Chop|[silent]
+|upkeep
+|
+|t:|1706271195
+|switch|p2a: Mightyena|Mightyena, L95, M|225/287
+|-ability|p2a: Mightyena|Intimidate|boost
+|-unboost|p1a: Dipplin|atk|1
+|turn|40
+|
+|t:|1706271201
+|switch|p1a: Mandibuzz|Mandibuzz, L84, F|93/322
+|move|p2a: Mightyena|Crunch|p1a: Mandibuzz
+|-resisted|p1a: Mandibuzz
+|-damage|p1a: Mandibuzz|32/322
+|-damage|p2a: Mightyena|197/287|[from] item: Life Orb
+|
+|upkeep
+|turn|41
+|
+|t:|1706271206
+|move|p2a: Mightyena|Poison Fang|p1a: Mandibuzz
+|-damage|p1a: Mandibuzz|0 fnt
+|faint|p1a: Mandibuzz
+|-damage|p2a: Mightyena|169/287|[from] item: Life Orb
+|
+|upkeep
+|
+|t:|1706271212
+|switch|p1a: Blaziken|Blaziken, L76, F|247/247
+|turn|42
+|
+|t:|1706271227
+|switch|p2a: Wugtrio|Wugtrio, L91, M|146/212
+|move|p1a: Blaziken|Close Combat|p2a: Wugtrio
+|-damage|p2a: Wugtrio|0 fnt
+|-unboost|p1a: Blaziken|def|1
+|-unboost|p1a: Blaziken|spd|1
+|-ability|p2a: Wugtrio|Gooey
+|-unboost|p1a: Blaziken|spe|1
+|faint|p2a: Wugtrio
+|
+|-ability|p1a: Blaziken|Speed Boost|boost
+|-boost|p1a: Blaziken|spe|1
+|upkeep
+|
+|t:|1706271235
+|switch|p2a: Solgaleo|Solgaleo, L74|50/325
+|turn|43
+|
+|t:|1706271244
+|move|p1a: Blaziken|Protect|p1a: Blaziken
+|-singleturn|p1a: Blaziken|Protect
+|move|p2a: Solgaleo|Close Combat|p1a: Blaziken
+|-activate|p1a: Blaziken|move: Protect
+|
+|-ability|p1a: Blaziken|Speed Boost|boost
+|-boost|p1a: Blaziken|spe|1
+|upkeep
+|turn|44
+|
+|t:|1706271249
+|move|p1a: Blaziken|Knock Off|p2a: Solgaleo
+|-supereffective|p2a: Solgaleo
+|-damage|p2a: Solgaleo|0 fnt
+|-enditem|p2a: Solgaleo|Choice Band|[from] move: Knock Off|[of] p1a: Blaziken
+|faint|p2a: Solgaleo
+|
+|-ability|p1a: Blaziken|Speed Boost|boost
+|-boost|p1a: Blaziken|spe|1
+|upkeep
+|-message|Joshwaitforit forfeited.
+|
+|win|ENGLAND lS MY ClTY
+|raw|ENGLAND lS MY ClTY's rating: 2084 &rarr; <strong>2099</strong><br />(+15 for winning)
+|raw|Joshwaitforit's rating: 1999 &rarr; <strong>1984</strong><br />(-15 for losing)
+|l|☆Joshwaitforit
+|player|p2|

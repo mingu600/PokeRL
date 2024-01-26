@@ -1,0 +1,88 @@
+|j|☆Jtxhob
+|j|☆IVAN LEADS
+|t:|1706272582
+|gametype|singles
+|player|p1|Jtxhob|swimmerf|1174
+|player|p2|IVAN LEADS|265|1116
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706272582
+|start
+|switch|p1a: Giratina|Giratina, L75|349/349
+|switch|p2a: Glimmora|Glimmora, L76, F|251/251
+|-ability|p1a: Giratina|Pressure
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Jtxhob)
+|
+|t:|1706272594
+|move|p1a: Giratina|Calm Mind|p1a: Giratina
+|-boost|p1a: Giratina|spa|1
+|-boost|p1a: Giratina|spd|1
+|move|p2a: Glimmora|Toxic|p1a: Giratina
+|-status|p1a: Giratina|tox
+|
+|-damage|p1a: Giratina|328/349 tox|[from] psn
+|upkeep
+|turn|2
+|
+|t:|1706272606
+|move|p1a: Giratina|Dragon Pulse|p2a: Glimmora
+|-damage|p2a: Glimmora|127/251
+|move|p2a: Glimmora|Sludge Wave|p1a: Giratina
+|-resisted|p1a: Giratina
+|-damage|p1a: Giratina|299/349 tox
+|
+|-heal|p1a: Giratina|320/349 tox|[from] item: Leftovers
+|-damage|p1a: Giratina|278/349 tox|[from] psn
+|upkeep
+|turn|3
+|
+|t:|1706272616
+|move|p1a: Giratina|Calm Mind|p1a: Giratina
+|-boost|p1a: Giratina|spa|1
+|-boost|p1a: Giratina|spd|1
+|move|p2a: Glimmora|Power Gem|p1a: Giratina
+|-damage|p1a: Giratina|238/349 tox
+|
+|-heal|p1a: Giratina|259/349 tox|[from] item: Leftovers
+|-damage|p1a: Giratina|196/349 tox|[from] psn
+|upkeep
+|turn|4
+|
+|t:|1706272636
+|move|p1a: Giratina|Dragon Pulse|p2a: Glimmora
+|-damage|p2a: Glimmora|0 fnt
+|faint|p2a: Glimmora
+|
+|-heal|p1a: Giratina|217/349 tox|[from] item: Leftovers
+|-damage|p1a: Giratina|133/349 tox|[from] psn
+|upkeep
+|
+|t:|1706272645
+|switch|p2a: Dragalge|Dragalge, L87, M|255/255
+|turn|5
+|
+|t:|1706272650
+|move|p1a: Giratina|Rest|p1a: Giratina
+|-status|p1a: Giratina|slp|[from] move: Rest
+|-heal|p1a: Giratina|349/349 slp|[silent]
+|move|p2a: Dragalge|Draco Meteor|p1a: Giratina|[miss]
+|-miss|p2a: Dragalge|p1a: Giratina
+|
+|upkeep
+|turn|6
+|-message|IVAN LEADS forfeited.
+|
+|win|Jtxhob
+|raw|Jtxhob's rating: 1174 &rarr; <strong>1195</strong><br />(+21 for winning)
+|raw|IVAN LEADS's rating: 1116 &rarr; <strong>1095</strong><br />(-21 for losing)
+|l|☆IVAN LEADS
+|player|p2|

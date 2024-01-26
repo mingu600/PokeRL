@@ -1,0 +1,377 @@
+|j|☆KanekiDT
+|j|☆eldestructorrxd
+|t:|1706243582
+|gametype|singles
+|player|p1|KanekiDT|riley|1238
+|player|p2|eldestructorrxd|lucas|1310
+|teamsize|p1|6
+|teamsize|p2|6
+|gen|9
+|tier|[Gen 9] Random Battle
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|HP Percentage Mod: HP is shown in percentages
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Illusion Level Mod: Illusion disguises the Pokémon's true level
+|
+|t:|1706243582
+|start
+|switch|p1a: Electrode|Electrode, L92|260/260
+|switch|p2a: Dodrio|Dodrio, L85, F|241/241
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by eldestructorrxd)
+|
+|t:|1706243601
+|switch|p2a: Iron Leaves|Iron Leaves, L80|275/275
+|move|p1a: Electrode|Volt Switch|p2a: Iron Leaves
+|-resisted|p2a: Iron Leaves
+|-damage|p2a: Iron Leaves|228/275
+|-damage|p1a: Electrode|234/260|[from] item: Life Orb
+|
+|t:|1706243616
+|switch|p1a: Drifblim|Drifblim, L86, F|398/398|[from] Volt Switch
+|
+|upkeep
+|turn|2
+|
+|t:|1706243630
+|-end|p2a: Iron Leaves|Quark Drive|[silent]
+|switch|p2a: Dewgong|Dewgong, L91, M|312/312
+|move|p1a: Drifblim|Shadow Ball|p2a: Dewgong
+|-damage|p2a: Dewgong|234/312
+|
+|upkeep
+|turn|3
+|
+|t:|1706243647
+|switch|p1a: Kyogre|Kyogre, L71|259/259
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Kyogre
+|move|p2a: Dewgong|Knock Off|p1a: Kyogre
+|-damage|p1a: Kyogre|183/259
+|-enditem|p1a: Kyogre|Leftovers|[from] move: Knock Off|[of] p2a: Dewgong
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|4
+|
+|t:|1706243659
+|switch|p2a: Iron Leaves|Iron Leaves, L80|228/275
+|move|p1a: Kyogre|Thunder|p2a: Iron Leaves
+|-resisted|p2a: Iron Leaves
+|-damage|p2a: Iron Leaves|192/275
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|5
+|
+|t:|1706243681
+|switch|p1a: Drifblim|Drifblim, L86, F|398/398
+|move|p2a: Iron Leaves|Leaf Blade|p1a: Drifblim
+|-resisted|p1a: Drifblim
+|-crit|p1a: Drifblim
+|-damage|p1a: Drifblim|226/398
+|-damage|p2a: Iron Leaves|165/275|[from] item: Life Orb
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|6
+|
+|t:|1706243700
+|-end|p2a: Iron Leaves|Quark Drive|[silent]
+|switch|p2a: Dewgong|Dewgong, L91, M|234/312
+|move|p1a: Drifblim|Strength Sap|p2a: Dewgong
+|-unboost|p2a: Dewgong|atk|1
+|-heal|p1a: Drifblim|398/398
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|7
+|inactive|KanekiDT has 120 seconds left.
+|
+|t:|1706243717
+|switch|p1a: Electrode|Electrode, L92|234/260
+|move|p2a: Dewgong|Triple Axel|p1a: Electrode|[miss]
+|-miss|p2a: Dewgong|p1a: Electrode
+|
+|-weather|none
+|upkeep
+|turn|8
+|inactive|KanekiDT has 120 seconds left.
+|
+|t:|1706243729
+|switch|p2a: Iron Leaves|Iron Leaves, L80|165/275
+|move|p1a: Electrode|Thunderbolt|p2a: Iron Leaves
+|-resisted|p2a: Iron Leaves
+|-damage|p2a: Iron Leaves|108/275
+|-damage|p1a: Electrode|208/260|[from] item: Life Orb
+|
+|upkeep
+|turn|9
+|
+|t:|1706243740
+|switch|p1a: Drifblim|Drifblim, L86, F|398/398
+|move|p2a: Iron Leaves|Close Combat|p1a: Drifblim
+|-immune|p1a: Drifblim
+|
+|upkeep
+|turn|10
+|
+|t:|1706243750
+|-end|p2a: Iron Leaves|Quark Drive|[silent]
+|switch|p2a: Dewgong|Dewgong, L91, M|234/312
+|move|p1a: Drifblim|Shadow Ball|p2a: Dewgong
+|-damage|p2a: Dewgong|156/312
+|
+|upkeep
+|turn|11
+|
+|t:|1706243761
+|switch|p1a: Electrode|Electrode, L92|208/260
+|move|p2a: Dewgong|Triple Axel|p1a: Electrode
+|-damage|p1a: Electrode|183/260
+|-damage|p1a: Electrode|143/260
+|-hitcount|p1a: Electrode|2
+|
+|upkeep
+|turn|12
+|
+|t:|1706243770
+|move|p1a: Electrode|Thunderbolt|p2a: Dewgong
+|-supereffective|p2a: Dewgong
+|-damage|p2a: Dewgong|0 fnt
+|faint|p2a: Dewgong
+|-damage|p1a: Electrode|117/260|[from] item: Life Orb
+|
+|upkeep
+|
+|t:|1706243774
+|switch|p2a: Iron Leaves|Iron Leaves, L80|108/275
+|turn|13
+|
+|t:|1706243786
+|switch|p1a: Drifblim|Drifblim, L86, F|398/398
+|move|p2a: Iron Leaves|Psyblade|p1a: Drifblim
+|-damage|p1a: Drifblim|191/398
+|-damage|p2a: Iron Leaves|81/275|[from] item: Life Orb
+|
+|upkeep
+|turn|14
+|
+|t:|1706243795
+|move|p2a: Iron Leaves|Psyblade|p1a: Drifblim
+|-damage|p1a: Drifblim|0 fnt
+|-damage|p2a: Iron Leaves|13/275|[from] ability: Aftermath|[of] p1a: Drifblim
+|faint|p1a: Drifblim
+|-damage|p2a: Iron Leaves|0 fnt|[from] item: Life Orb
+|faint|p2a: Iron Leaves
+|-end|p2a: Iron Leaves|Quark Drive|[silent]
+|
+|upkeep
+|
+|t:|1706243810
+|switch|p2a: Dodrio|Dodrio, L85, F|241/241
+|switch|p1a: Kyogre|Kyogre, L71|183/259
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Kyogre
+|turn|15
+|
+|t:|1706243830
+|-terastallize|p2a: Dodrio|Ground
+|move|p2a: Dodrio|Double-Edge|p1a: Kyogre
+|-damage|p1a: Kyogre|27/259
+|-damage|p2a: Dodrio|190/241|[from] Recoil
+|move|p1a: Kyogre|Thunder|p2a: Dodrio
+|-immune|p2a: Dodrio
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|16
+|
+|t:|1706243838
+|move|p2a: Dodrio|Double-Edge|p1a: Kyogre
+|-damage|p1a: Kyogre|0 fnt
+|faint|p1a: Kyogre
+|-damage|p2a: Dodrio|181/241|[from] Recoil
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|inactive|KanekiDT has 120 seconds left.
+|
+|t:|1706243873
+|switch|p1a: Wyrdeer|Wyrdeer, L87, M|321/321
+|-ability|p1a: Wyrdeer|Intimidate|boost
+|-unboost|p2a: Dodrio|atk|1
+|turn|17
+|inactive|KanekiDT has 120 seconds left.
+|
+|t:|1706243890
+|move|p2a: Dodrio|Double-Edge|p1a: Wyrdeer
+|-damage|p1a: Wyrdeer|203/321
+|-damage|p2a: Dodrio|142/241|[from] Recoil
+|move|p1a: Wyrdeer|Body Slam|p2a: Dodrio
+|-damage|p2a: Dodrio|21/241
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1a: Wyrdeer|223/321|[from] item: Leftovers
+|upkeep
+|turn|18
+|inactive|KanekiDT has 120 seconds left.
+|
+|t:|1706243900
+|move|p2a: Dodrio|Brave Bird|p1a: Wyrdeer
+|-damage|p1a: Wyrdeer|115/321
+|-damage|p2a: Dodrio|0 fnt|[from] Recoil
+|faint|p2a: Dodrio
+|move|p1a: Wyrdeer|Psychic Noise|p2: Dodrio|[notarget]
+|-fail|p1a: Wyrdeer
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1a: Wyrdeer|135/321|[from] item: Leftovers
+|upkeep
+|
+|t:|1706243911
+|switch|p2a: Sableye|Sableye, L90, M|236/236
+|turn|19
+|inactive|KanekiDT has 120 seconds left.
+|
+|t:|1706243925
+|move|p1a: Wyrdeer|Thunder Wave|p2a: Sableye
+|-status|p2a: Sableye|par
+|move|p2a: Sableye|Knock Off|p1a: Wyrdeer
+|-supereffective|p1a: Wyrdeer
+|-damage|p1a: Wyrdeer|0 fnt
+|-enditem|p1a: Wyrdeer|Leftovers|[from] move: Knock Off|[of] p2a: Sableye
+|faint|p1a: Wyrdeer
+|
+|-weather|none
+|upkeep
+|inactive|KanekiDT has 120 seconds left.
+|
+|t:|1706243941
+|switch|p1a: Electrode|Electrode, L92|117/260
+|turn|20
+|
+|t:|1706243947
+|move|p1a: Electrode|Thunderbolt|p2a: Sableye
+|-damage|p2a: Sableye|96/236 par
+|-damage|p1a: Electrode|91/260|[from] item: Life Orb
+|move|p2a: Sableye|Knock Off|p1a: Electrode
+|-damage|p1a: Electrode|0 fnt
+|-enditem|p1a: Electrode|Life Orb|[from] move: Knock Off|[of] p2a: Sableye
+|faint|p1a: Electrode
+|
+|-heal|p2a: Sableye|110/236 par|[from] item: Leftovers
+|upkeep
+|
+|t:|1706243952
+|switch|p1a: Haxorus|Haxorus, L77, M|244/244
+|-ability|p1a: Haxorus|Mold Breaker
+|turn|21
+|
+|t:|1706243961
+|move|p2a: Sableye|Thunder Wave|p1a: Haxorus
+|-status|p1a: Haxorus|par
+|-enditem|p1a: Haxorus|Lum Berry|[eat]
+|-curestatus|p1a: Haxorus|par|[msg]
+|move|p1a: Haxorus|Dragon Dance|p1a: Haxorus
+|-boost|p1a: Haxorus|atk|1
+|-boost|p1a: Haxorus|spe|1
+|
+|-heal|p2a: Sableye|124/236 par|[from] item: Leftovers
+|upkeep
+|turn|22
+|
+|t:|1706243974
+|cant|p2a: Sableye|par
+|move|p1a: Haxorus|Outrage|p2a: Sableye
+|-damage|p2a: Sableye|0 fnt
+|faint|p2a: Sableye
+|
+|upkeep
+|
+|t:|1706243977
+|switch|p2a: Vigoroth|Vigoroth, L85, F|275/275
+|turn|23
+|
+|t:|1706243984
+|move|p1a: Haxorus|Outrage|p2a: Vigoroth|[from]lockedmove
+|-damage|p2a: Vigoroth|107/275
+|-start|p1a: Haxorus|confusion|[fatigue]
+|move|p2a: Vigoroth|Body Slam|p1a: Haxorus
+|-damage|p1a: Haxorus|165/244
+|
+|upkeep
+|turn|24
+|l|☆eldestructorrxd
+|inactive|eldestructorrxd disconnected and has a minute to reconnect!
+|player|p2|
+|j|☆eldestructorrxd
+|inactive|eldestructorrxd reconnected and has 135 seconds left.
+|player|p2|eldestructorrxd|lucas
+|
+|t:|1706244008
+|switch|p1a: Toxicroak|Toxicroak, L85, F|280/280
+|move|p2a: Vigoroth|Body Slam|p1a: Toxicroak
+|-crit|p1a: Toxicroak
+|-damage|p1a: Toxicroak|127/280
+|
+|upkeep
+|turn|25
+|
+|t:|1706244023
+|move|p1a: Toxicroak|Sucker Punch|p2a: Vigoroth
+|-damage|p2a: Vigoroth|60/275
+|-damage|p1a: Toxicroak|99/280|[from] item: Life Orb
+|move|p2a: Vigoroth|Body Slam|p1a: Toxicroak
+|-damage|p1a: Toxicroak|6/280
+|
+|upkeep
+|turn|26
+|
+|t:|1706244039
+|move|p1a: Toxicroak|Sucker Punch|p2a: Vigoroth
+|-damage|p2a: Vigoroth|5/275
+|-damage|p1a: Toxicroak|0 fnt|[from] item: Life Orb
+|faint|p1a: Toxicroak
+|move|p2a: Vigoroth|Body Slam|p1: Toxicroak|[notarget]
+|-fail|p2a: Vigoroth
+|
+|upkeep
+|
+|t:|1706244043
+|switch|p1a: Haxorus|Haxorus, L77, M|165/244
+|-ability|p1a: Haxorus|Mold Breaker
+|turn|27
+|
+|t:|1706244058
+|move|p2a: Vigoroth|Body Slam|p1a: Haxorus
+|-damage|p1a: Haxorus|72/244
+|move|p1a: Haxorus|Dragon Dance|p1a: Haxorus
+|-boost|p1a: Haxorus|atk|1
+|-boost|p1a: Haxorus|spe|1
+|
+|upkeep
+|turn|28
+|
+|t:|1706244080
+|move|p1a: Haxorus|Earthquake|p2a: Vigoroth
+|-damage|p2a: Vigoroth|0 fnt
+|faint|p2a: Vigoroth
+|
+|upkeep
+|
+|t:|1706244089
+|switch|p2a: Iron Jugulis|Iron Jugulis, L78|275/275
+|turn|29
+|
+|t:|1706244109
+|move|p1a: Haxorus|Iron Head|p2a: Iron Jugulis
+|-damage|p2a: Iron Jugulis|170/275
+|move|p2a: Iron Jugulis|Dark Pulse|p1a: Haxorus
+|-damage|p1a: Haxorus|0 fnt
+|faint|p1a: Haxorus
+|
+|win|eldestructorrxd
+|raw|KanekiDT's rating: 1238 &rarr; <strong>1218</strong><br />(-20 for losing)
+|raw|eldestructorrxd's rating: 1310 &rarr; <strong>1326</strong><br />(+16 for winning)
+|l|☆KanekiDT
+|player|p1|

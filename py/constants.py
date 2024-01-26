@@ -1,8 +1,11 @@
 import json
 import requests
+import os
 
 data_dir = '../data'
-game = open(f'{data_dir}/random_battle.txt', 'r').read().splitlines()
+battle_log_dir = os.path.join(data_dir + '/battle_logs')
+random_battle_dir = os.path.join(battle_log_dir + '/random_battle')
+game = open(f'{random_battle_dir}/random_battle.txt', 'r').read().splitlines()
 move_dex = json.load(open(f'{data_dir}/moves_dex.json'))
 # data = json.load(open('data/data.json'))
 species_dex = json.load(open(f'{data_dir}/species_dex.json'))

@@ -16,11 +16,8 @@ fn main() -> Result<()> {
         let mut game_string = String::new();
 
         BufReader::new(game_file).read_to_string(&mut game_string)?;
-        let random_battle = battle::parse(&game_string)?;
-
-        // for pair in random_battle {
-        //     println!("{pair:#?}");
-        // }
+        let _random_battle = battle::Battle::new(&game_string)?;
+        return Ok(());
     }
 
     // let dex_data = parse::dex_data()?;

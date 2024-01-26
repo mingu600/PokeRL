@@ -5,8 +5,10 @@ import json
 from collections import defaultdict
 import requests
 import random
+import sys
 
 damage_convert = {0: 0, 1: 1, 2: -1, 3: -10}
+
 
 def norm_name(name):
     return name\
@@ -23,11 +25,14 @@ def norm_name(name):
         .encode('ascii', 'ignore')\
         .decode('utf-8')
 
+
 def get_effectiveness(attack_type, species):
     result = 0
     for mon_type in species['types']:
-        result += damage_convert[int(typechart[norm_name(mon_type)]['damageTaken'][attack_type])]
+        result += damage_convert[int(typechart[norm_name(mon_type)]
+                                     ['damageTaken'][attack_type])]
     return result
+
 
 def get_move_type(move, species, abilities, tera_type) -> str:
     if move['id'] == 'terablast':
@@ -63,38 +68,40 @@ def get_move_type(move, species, abilities, tera_type) -> str:
             return 'Ice'
     return move_type
 
+
 def serene_grace_benefits(move) -> bool:
     return move['secondary'].get('chance', 0) and 20 < move['secondary']['chance'] < 100
 
+
 def query_moves(
-    moves: Optional[Set[str]],
-    species: Dict,
-    tera_type: str,
-    abilities: Set[str] = set()):
+        moves: Optional[Set[str]],
+        species: Dict,
+        tera_type: str,
+        abilities: Set[str] = set()):
     counter = {
-            'damage': 0,
-            'technician': 0,
-            'skilllink': 0,
-            'recoil': 0,
-            'drain': 0,
-            'stab': 0,
-            'stabtera': 0,
-            'strongjaw': 0,
-            'ironFist': 0,
-            'sound': 0,
-            'priority': 0,
-            'sheerforce': 0,
-            'serenegrace': 0,
-            'inaccurate': 0,
-            'recovery': 0,
-            'contrary': 0,
-            'physicalsetup': 0,
-            'specialsetup': 0,
-            'mixedsetup': 0,
-            'speedsetup': 0,
-            'setup': 0,
-            'hazards': 0,
-        }
+        'damage': 0,
+        'technician': 0,
+        'skilllink': 0,
+        'recoil': 0,
+        'drain': 0,
+        'stab': 0,
+        'stabtera': 0,
+        'strongjaw': 0,
+        'ironFist': 0,
+        'sound': 0,
+        'priority': 0,
+        'sheerforce': 0,
+        'serenegrace': 0,
+        'inaccurate': 0,
+        'recovery': 0,
+        'contrary': 0,
+        'physicalsetup': 0,
+        'specialsetup': 0,
+        'mixedsetup': 0,
+        'speedsetup': 0,
+        'setup': 0,
+        'hazards': 0,
+    }
     counter['damaging_moves'] = []
     types = species['types']
     if not moves:
@@ -113,7 +120,8 @@ def query_moves(
             categories[move['category']] += 1
 
         if moveid == 'lowkick' or (
-            move.get('basePower') and move['basePower'] <= 60 and moveid != 'rapidspin'
+            move.get(
+                'basePower') and move['basePower'] <= 60 and moveid != 'rapidspin'
         ):
             counter['technician'] += 1
 
@@ -190,6 +198,7 @@ def query_moves(
 
     return counter
 
+
 def incompatible_moves(moves, move_pool, moves_a, moves_b):
 
     if len(moves) + len(move_pool) <= MAX_MOVE_COUNT:
@@ -197,7 +206,7 @@ def incompatible_moves(moves, move_pool, moves_a, moves_b):
 
     move_array_a = moves_a if isinstance(moves_a, list) else [moves_a]
     move_array_b = moves_b if isinstance(moves_b, list) else [moves_b]
-    
+
     for moveid1 in moves:
 
         if moveid1 in move_array_b:
@@ -216,7 +225,7 @@ def incompatible_moves(moves, move_pool, moves_a, moves_b):
 
 
 def cull_move_pool(types: List[str], moves: Set[str], abilities: Set[str], counter,
-                move_pool: List[str], team_details, species,tera_type: str, role) -> None:
+                   move_pool: List[str], team_details, species, tera_type: str, role) -> None:
 
     MAX_MOVE_COUNT = 4
     if len(moves) + len(move_pool) <= MAX_MOVE_COUNT:
@@ -294,7 +303,8 @@ def cull_move_pool(types: List[str], moves: Set[str], abilities: Set[str], count
         ['aquajet', 'flipturn'],
         ['gigadrain', 'leafstorm'],
         ['powerwhip', 'hornleech'],
-        [['airslash', 'bravebird', 'hurricane'], ['airslash', 'bravebird', 'hurricane']],
+        [['airslash', 'bravebird', 'hurricane'], [
+            'airslash', 'bravebird', 'hurricane']],
         ['knockoff', 'foulplay'],
         ['throatchop', ['crunch', 'lashout']],
         ['doubleedge', ['bodyslam', 'headbutt']],
@@ -327,7 +337,8 @@ def cull_move_pool(types: List[str], moves: Set[str], abilities: Set[str], count
         incompatible_moves(moves, move_pool, 'thunderwave', 'yawn')
 
     if species['id'] == 'luvdisc':
-        incompatible_moves(moves, move_pool, ['charm', 'flipturn', 'icebeam'], ['charm', 'flipturn'])
+        incompatible_moves(moves, move_pool, ['charm', 'flipturn', 'icebeam'], [
+                           'charm', 'flipturn'])
 
     if species['id'] == "cyclizar":
         incompatible_moves(moves, move_pool, 'taunt', 'knockoff')
@@ -338,17 +349,21 @@ def cull_move_pool(types: List[str], moves: Set[str], abilities: Set[str], count
     if species['id'] == 'mesprit':
         incompatible_moves(moves, move_pool, 'healingwish', 'uturn')
 
-def add_move(move, moves, types, abilities, teamDetails, species, movePool, teraType,role):
+
+def add_move(move, moves, types, abilities, teamDetails, species, movePool, teraType, role):
     moves.add(move)
     movePool.remove(move)
     counter = query_moves(moves, species, teraType, abilities)
-    cull_move_pool(types, moves, abilities, counter, movePool, teamDetails, species, teraType, role)
+    cull_move_pool(types, moves, abilities, counter, movePool,
+                   teamDetails, species, teraType, role)
     return counter
+
 
 def random_moveset(types: List[str], abilities: Set[str], team_details: Dict, species: Dict, move_pool: List[str], tera_type: str, role: str) -> Set[str]:
     moves = set()
     counter = query_moves(moves, species, tera_type, abilities)
-    cull_move_pool(types, moves, abilities, counter, move_pool, team_details, species, tera_type, role)
+    cull_move_pool(types, moves, abilities, counter, move_pool,
+                   team_details, species, tera_type, role)
 
     # If there are only four moves, add all moves and return early
     if len(move_pool) <= MAX_MOVE_COUNT:
@@ -402,49 +417,58 @@ def random_moveset(types: List[str], abilities: Set[str], team_details: Dict, sp
             return False  # Handle other types or return a default value
 
     if role == 'Tera Blast user':
-        counter = add_move('terablast', moves, types, abilities, team_details, species, 
-                                move_pool, tera_type, role)
+        counter = add_move('terablast', moves, types, abilities, team_details, species,
+                           move_pool, tera_type, role)
     # Add required move (e.g., Relic Song for Meloetta-P)
     if species.get('requiredMove'):
         move = move_dex.get(species['requiredMove'])['id']
-        counter = add_move(move, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+        counter = add_move(move, moves, types, abilities,
+                           team_details, species, move_pool, tera_type, role)
 
     # Add other moves you really want to have, e.g., STAB, recovery, setup.
 
     # Enforce Facade if Guts is a possible ability
     if 'facade' in move_pool and 'Guts' in abilities:
-        counter = add_move('facade', moves, types, abilities, team_details, species, move_pool, tera_type, role)
+        counter = add_move('facade', moves, types, abilities,
+                           team_details, species, move_pool, tera_type, role)
 
     # Enforce Night Shade, Revelation Dance, Revival Blessing, and Sticky Web
     for moveid in ['nightshade', 'revelationdance', 'revivalblessing', 'stickyweb']:
         if moveid in move_pool:
-            counter = add_move(moveid, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move(moveid, moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce Trick Room on Doubles Wallbreaker
     if 'trickroom' in move_pool and role == 'Doubles Wallbreaker':
-        counter = add_move('trickroom', moves, types, abilities, team_details, species, move_pool, tera_type, role)
+        counter = add_move('trickroom', moves, types, abilities,
+                           team_details, species, move_pool, tera_type, role)
 
     # Enforce hazard removal on Bulky Support if the team doesn't already have it
     if role == 'Bulky Support' and not team_details.get('defog') and not team_details.get('rapidSpin'):
         if 'rapidspin' in move_pool:
-            counter = add_move('rapidspin', moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move('rapidspin', moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
         if 'defog' in move_pool:
-            counter = add_move('defog', moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move('defog', moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce Knock Off on pure Normal- and Fighting-types in singles
     if len(types) == 1 and ('Normal' in types or 'Fighting' in types):
         if 'knockoff' in move_pool:
-            counter = add_move('knockoff', moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move('knockoff', moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce Flip Turn on pure Water-type Wallbreakers
     if len(types) == 1 and 'Water' in types and role == 'Wallbreaker':
         if 'flipturn' in move_pool:
-            counter = add_move('flipturn', moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move('flipturn', moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce Spore on Smeargle
     if species.get('id') == 'smeargle':
         if 'spore' in move_pool:
-            counter = add_move('spore', moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move('spore', moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce STAB priority
     if role in ['Bulky Attacker', 'Bulky Setup', 'Wallbreaker', 'Doubles Wallbreaker'] or \
@@ -454,83 +478,95 @@ def random_moveset(types: List[str], abilities: Set[str], team_details: Dict, sp
             move = move_dex.get(moveid)
             move_type = get_move_type(move, species, abilities, tera_type)
             if types and move_type in types and (move.get('priority', 0) > 0 or
-                                                    (moveid == 'grassyglide' and 'Grassy Surge' in abilities)) and (
+                                                 (moveid == 'grassyglide' and 'Grassy Surge' in abilities)) and (
                     move.get('basePower') or move.get('basePowerCallback')):
                 priority_moves.append(moveid)
         if priority_moves:
             moveid = random.choice(priority_moves)
-            counter = add_move(moveid, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move(moveid, moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce STAB
     for move_type in types:
         # Check if a STAB move of that type should be required
         stab_moves = [moveid for moveid in move_pool if not moveid in NO_STAB and
-                        (move_dex.get(moveid).get('basePower') or
-                        move_dex.get(moveid).get('basePowerCallback')) and
-                        get_move_type(move_dex.get(moveid), species, abilities, tera_type) == move_type]
+                      (move_dex.get(moveid).get('basePower') or
+                       move_dex.get(moveid).get('basePowerCallback')) and
+                      get_move_type(move_dex.get(moveid), species, abilities, tera_type) == move_type]
         while move_enforcement_checker(move_type, move_pool, moves, abilities, types, counter, species, team_details):
             if not stab_moves:
                 break
             random.shuffle(stab_moves)
             moveid = stab_moves.pop()
-            counter = add_move(moveid, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move(moveid, moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce Tera STAB
     if not counter.get('stabtera') and role not in ['Bulky Support', 'Doubles Support']:
         stab_moves = [moveid for moveid in move_pool if not moveid in NO_STAB and
-                        (move_dex.get(moveid).get('basePower') or
-                        move_dex.get(moveid).get('basePowerCallback')) and
-                        get_move_type(move_dex.get(moveid), species, abilities, tera_type) == tera_type]
+                      (move_dex.get(moveid).get('basePower') or
+                       move_dex.get(moveid).get('basePowerCallback')) and
+                      get_move_type(move_dex.get(moveid), species, abilities, tera_type) == tera_type]
         if stab_moves:
             moveid = random.choice(stab_moves)
-            counter = add_move(moveid, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move(moveid, moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # If no STAB move was added, add a STAB move
     if not counter.get('stab'):
         stab_moves = [moveid for moveid in move_pool if not moveid in NO_STAB and
-                        (move_dex.get(moveid).get('basePower') or
-                        move_dex.get(moveid).get('basePowerCallback')) and
-                        get_move_type(move_dex.get(moveid), species, abilities, tera_type) in types]
+                      (move_dex.get(moveid).get('basePower') or
+                       move_dex.get(moveid).get('basePowerCallback')) and
+                      get_move_type(move_dex.get(moveid), species, abilities, tera_type) in types]
         if stab_moves:
             moveid = random.choice(stab_moves)
-            counter = add_move(moveid, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move(moveid, moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce recovery
     if role in ['Bulky Support', 'Bulky Attacker', 'Bulky Setup']:
-        recovery_moves = [moveid for moveid in move_pool if moveid in RECOVERY_MOVES]
+        recovery_moves = [
+            moveid for moveid in move_pool if moveid in RECOVERY_MOVES]
         if recovery_moves:
             moveid = random.choice(recovery_moves)
-            counter = add_move(moveid, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move(moveid, moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce setup
     if role and ('Setup' in role or role == 'Tera Blast user'):
         # First, try to add a non-Speed setup move
-        non_speed_setup_moves = [moveid for moveid in move_pool if moveid in SETUP and moveid not in SPEED_SETUP]
+        non_speed_setup_moves = [
+            moveid for moveid in move_pool if moveid in SETUP and moveid not in SPEED_SETUP]
         if non_speed_setup_moves:
             moveid = random.choice(non_speed_setup_moves)
-            counter = add_move(moveid, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move(moveid, moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
         else:
             # No non-Speed setup moves, so add any (Speed) setup move
             setup_moves = [moveid for moveid in move_pool if moveid in SETUP]
             if setup_moves:
                 moveid = random.choice(setup_moves)
-                counter = add_move(moveid, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+                counter = add_move(moveid, moves, types, abilities,
+                                   team_details, species, move_pool, tera_type, role)
 
     # Enforce Protect
     if 'Protect' in role:
-        protect_moves = [moveid for moveid in move_pool if moveid in PROTECT_MOVES]
+        protect_moves = [
+            moveid for moveid in move_pool if moveid in PROTECT_MOVES]
         if protect_moves:
             moveid = random.choice(protect_moves)
-            counter = add_move(moveid, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move(moveid, moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce a move not on the noSTAB list
     if not counter.get('damaging_moves'):
         # Choose an attacking move
         attacking_moves = [moveid for moveid in move_pool if not moveid in NO_STAB and
-                            (move_dex.get(moveid).get('category') != 'Status')]
+                           (move_dex.get(moveid).get('category') != 'Status')]
         if attacking_moves:
             moveid = random.choice(attacking_moves)
-            counter = add_move(moveid, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+            counter = add_move(moveid, moves, types, abilities,
+                               team_details, species, move_pool, tera_type, role)
 
     # Enforce coverage move
     if role not in ['AV Pivot', 'Fast Support', 'Bulky Support', 'Bulky Protect', 'Doubles Support']:
@@ -547,7 +583,8 @@ def random_moveset(types: List[str], abilities: Set[str], team_details: Dict, sp
                         coverage_moves.append(move_id)
             if coverage_moves:
                 move_id = random.choice(coverage_moves)
-                counter = add_move(move_id, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+                counter = add_move(move_id, moves, types, abilities,
+                                   team_details, species, move_pool, tera_type, role)
 
     # Add (len(moves) < self.MAX_MOVE_COUNT) as a condition if moves is getting larger than 4 moves.
     # If you want moves to be favored but not required, add something like "and self.random_chance(1, 2)" to your condition.
@@ -558,12 +595,15 @@ def random_moveset(types: List[str], abilities: Set[str], team_details: Dict, sp
             moves.update(move_pool)
             break
         move_id = random.choice(move_pool)
-        counter = add_move(move_id, moves, types, abilities, team_details, species, move_pool, tera_type, role)
+        counter = add_move(move_id, moves, types, abilities,
+                           team_details, species, move_pool, tera_type, role)
         for pair in MOVE_PAIRS:
             if move_id == pair[0] and pair[1] in move_pool:
-                counter = add_move(pair[1], moves, types, abilities, team_details, species, move_pool, tera_type, role)
+                counter = add_move(
+                    pair[1], moves, types, abilities, team_details, species, move_pool, tera_type, role)
             elif move_id == pair[1] and pair[0] in move_pool:
-                counter = add_move(pair[0], moves, types, abilities, team_details, species, move_pool, tera_type, role)
+                counter = add_move(
+                    pair[0], moves, types, abilities, team_details, species, move_pool, tera_type, role)
 
     return moves
 
@@ -645,7 +685,8 @@ def should_cull_ability(ability, types, moves, abilities, counter, team_details,
     elif ability == 'Seed Sower':
         return role == 'Bulky Support'
     elif ability == 'Sheer Force':
-        braviary_case = species['id'] == 'braviaryhisui' and (role == 'Wallbreaker' or role == 'Bulky Protect')
+        braviary_case = species['id'] == 'braviaryhisui' and (
+            role == 'Wallbreaker' or role == 'Bulky Protect')
         abilities_case = 'Guts' in abilities or 'Sharpness' in abilities
         moves_case = 'bellydrum' in moves or 'flamecharge' in moves
         return not counter.get('sheerforce') or braviary_case or abilities_case or moves_case
@@ -668,7 +709,8 @@ def should_cull_ability(ability, types, moves, abilities, counter, team_details,
     elif ability == 'Technician':
         return not counter.get('technician') or 'Punk Rock' in abilities or 'Fur Coat' in abilities
     elif ability == 'Tinted Lens':
-        hbraviary_case = species['id'] == 'braviaryhisui' and (role == 'Setup Sweeper' or role == 'Doubles Wallbreaker')
+        hbraviary_case = species['id'] == 'braviaryhisui' and (
+            role == 'Setup Sweeper' or role == 'Doubles Wallbreaker')
         yanmega_case = species['id'] == 'yanmega' and 'protect' in moves
         return yanmega_case or hbraviary_case or species['id'] == 'illumise'
     elif ability == 'Unaware':
@@ -765,7 +807,7 @@ def get_ability(types: List[str], moves: Set[str], abilities: Set[str], counter,
     if 'Slush Rush' in abilities and 'snowscape' in moves:
         return 'Slush Rush'
     if 'Soundproof' in abilities and ('substitute' in moves or counter.get('setup')):
-            return 'Soundproof'
+        return 'Soundproof'
 
     ability_allowed = []
     # Obtain a list of abilities that are allowed (not culled)
@@ -813,8 +855,6 @@ def get_ability(types: List[str], moves: Set[str], abilities: Set[str], counter,
     # After sorting, choose the first ability
     return ability_allowed[0]['name']
 
-
-import random
 
 def get_priority_item(ability, types, moves, counter, team_details, species, tera_type, role):
     def sample(items):
@@ -906,8 +946,6 @@ def get_priority_item(ability, types, moves, counter, team_details, species, ter
         return 'Heavy-Duty Boots'
 
 
-import random
-
 def get_item(ability, types, moves, counter, team_details, species, tera_type, role):
     def random_chance(numerator, denominator):
         return random.random() < numerator / denominator
@@ -916,21 +954,23 @@ def get_item(ability, types, moves, counter, team_details, species, tera_type, r
         return 'Silk Scarf'
 
     if species['id'] != 'jirachi' and counter.get('Physical') >= 4 and all(m not in moves for m in
-                                                                         ['fakeout', 'firstimpression', 'flamecharge', 'rapidspin', 'ruination', 'superfang']):
+                                                                           ['fakeout', 'firstimpression', 'flamecharge', 'rapidspin', 'ruination', 'superfang']):
         scarf_reqs = (
-                role != 'Wallbreaker' and
-                (species['baseStats']['atk'] >= 100 or ability == 'Huge Power' or ability == 'Pure Power') and
-                60 <= species['baseStats']['spe'] <= 108 and
-                ability != 'Speed Boost' and not counter.get('priority') and 'aquastep' not in moves
+            role != 'Wallbreaker' and
+            (species['baseStats']['atk'] >= 100 or ability == 'Huge Power' or ability == 'Pure Power') and
+            60 <= species['baseStats']['spe'] <= 108 and
+            ability != 'Speed Boost' and not counter.get(
+                'priority') and 'aquastep' not in moves
         )
         return 'Choice Scarf' if scarf_reqs and random_chance(1, 2) else 'Choice Band'
 
     if counter.get('Special') >= 4 or (counter.get('Special') >= 3 and any(m in moves for m in ['flipturn', 'partingshot', 'uturn'])):
         scarf_reqs = (
-                role != 'Wallbreaker' and
-                species['baseStats']['spa'] >= 100 and
-                60 <= species['baseStats']['spe'] <= 108 and
-                ability != 'Speed Boost' and ability != 'Tinted Lens' and not counter.get('Physical')
+            role != 'Wallbreaker' and
+            species['baseStats']['spa'] >= 100 and
+            60 <= species['baseStats']['spe'] <= 108 and
+            ability != 'Speed Boost' and ability != 'Tinted Lens' and not counter.get(
+                'Physical')
         )
         return 'Choice Scarf' if scarf_reqs and random_chance(1, 2) else 'Choice Specs'
 
@@ -969,8 +1009,9 @@ def get_item(ability, types, moves, counter, team_details, species, tera_type, r
     if (
             (species['id'] == 'garchomp' and role == 'Fast Support') or (
             ability == 'Regenerator' and (role == 'Bulky Support' or role == 'Bulky Attacker') and
-            (species['baseStats']['hp'] + species['baseStats']['def']) >= 180 and random_chance(1, 2)
-    )):
+            (species['baseStats']['hp'] + species['baseStats']
+             ['def']) >= 180 and random_chance(1, 2)
+            )):
         return 'Rocky Helmet'
 
     if 'outrage' in moves:
@@ -1013,12 +1054,12 @@ def get_item(ability, types, moves, counter, team_details, species, tera_type, r
 
     if (
             all(m not in moves for m in ['flamecharge', 'rapidspin', 'trailblaze']) and
-            role in ['Fast Attacker', 'Setup Sweeper', 'Tera Blast user', 'Wallbreaker']
+            role in ['Fast Attacker', 'Setup Sweeper',
+                     'Tera Blast user', 'Wallbreaker']
     ):
         return 'Life Orb'
 
     return 'Leftovers'
-
 
 
 def random_set(mon, team_details):
@@ -1052,17 +1093,21 @@ def random_set(mon, team_details):
         abilities.remove(species['abilities']['H'])
 
     # Get moves
-    moves = random_moveset(types, abilities, team_details, species, move_pool, tera_type, role)
+    moves = random_moveset(types, abilities, team_details,
+                           species, move_pool, tera_type, role)
     counter = query_moves(moves, species, tera_type, abilities)
 
     # Get ability
-    ability = get_ability(types, moves, abilities, counter, team_details, species, tera_type, role)
+    ability = get_ability(types, moves, abilities, counter,
+                          team_details, species, tera_type, role)
 
     # Get items
     # First, the priority items
-    item = get_priority_item(ability, types, moves, counter, team_details, species, tera_type, role)
+    item = get_priority_item(ability, types, moves,
+                             counter, team_details, species, tera_type, role)
     if item is None:
-        item = get_item(ability, types, moves, counter, team_details, species, tera_type, role)
+        item = get_item(ability, types, moves, counter,
+                        team_details, species, tera_type, role)
 
     # Shuffle moves to add more randomness to camomons
     shuffled_moves = list(moves)
@@ -1078,11 +1123,11 @@ def random_set(mon, team_details):
         'role': role
     }
 
+
 def random_team(team):
     pokemon = []
 
     team_details = {}
-
 
     for mon in team:
         moveset = random_set(team[mon], team_details)
@@ -1099,7 +1144,8 @@ def random_team(team):
         if 'spikes' in moveset['moves'] or 'ceaselessedge' in moveset['moves']:
             team_details['spikes'] = team_details.get('spikes', 0) + 1
         if 'toxicspikes' in moveset['moves'] or moveset['ability'] == 'Toxic Debris':
-            team_details['toxicSpikes'] = team_details.get('toxicSpikes', 0) + 1
+            team_details['toxicSpikes'] = team_details.get(
+                'toxicSpikes', 0) + 1
         if 'stealthrock' in moveset['moves'] or 'stoneaxe' in moveset['moves']:
             team_details['stealthRock'] = 1
         if 'stickyweb' in moveset['moves']:

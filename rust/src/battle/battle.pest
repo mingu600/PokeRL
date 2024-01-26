@@ -35,7 +35,8 @@ player_avatar =  { (LETTER | NUMBER | PUNCTUATION)+ }
 player        =  { player_index ~ "|" ~ (username ~ "|")? ~ (player_avatar ~ "|"?)? ~ player_rating? }
 
 teamsize_prefix = _{ "|teamsize|" }
-teamsize        =  { player_index ~ "|" ~ NUMBER }
+teamsize_number =  { NUMBER }
+teamsize        =  { player_index ~ "|" ~ teamsize_number }
 
 gen_prefix = _{ "|gen|" }
 gen        =  { NUMBER+ }
@@ -44,12 +45,13 @@ tier_prefix = _{ "|tier|" }
 tier_gen    =  { "[" ~ (LETTER | NUMBER | SPACE_SEPARATOR)+ ~ "]" }
 tier        =  { (LETTER | NUMBER | SPACE_SEPARATOR)+ }
 
-rated_prefix  = _{ "|rated|" }
+rated         = _{ "|rated|" }
 rated_message =  { (LETTER | NUMBER | SPACE_SEPARATOR)* }
 
 rule_prefix      = _{ "|rule|" }
 rule_name        =  { (LETTER | NUMBER | SPACE_SEPARATOR)+ }
 rule_description =  { (LETTER | NUMBER | PUNCTUATION | SPACE_SEPARATOR)* }
+showdown_rule    =  { rule_name ~ ": " ~ rule_description }
 
 poke_stat         =  { "hp" | "atk" | "def" | "spa" | "spd" | "spe" | "accuracy" }
 poke_nickname     =  { (LETTER | NUMBER | SPACE_SEPARATOR | SHOWDOWN_NICKNAME_SYMBOL)+ }
@@ -75,8 +77,8 @@ prelude_section = _{
   | (teamsize_prefix ~ teamsize ~ NEWLINE)
   | (gen_prefix ~ gen ~ NEWLINE)
   | (tier_prefix ~ tier_gen ~ SPACE_SEPARATOR ~ tier ~ NEWLINE)
-  | (rated_prefix ~ rated_message ~ NEWLINE)
-  | (rule_prefix ~ rule_name ~ ": " ~ rule_description ~ NEWLINE)
+  | (rated ~ rated_message ~ NEWLINE)
+  | (rule_prefix ~ showdown_rule ~ NEWLINE)
   | team_preview
 }
 
@@ -461,7 +463,7 @@ comment_user    =  { username }
 comment_message =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
 comment         =  { comment_prefix ~ comment_user ~ "|" ~ comment_message }
 
-turn_section = {
+turn_line = {
     EMPTY_LINE
   | upkeep
   | (switch ~ NEWLINE)
@@ -527,7 +529,6 @@ turn_section = {
   | (singleturn ~ NEWLINE)
   | (comment ~ NEWLINE)
   | (timestamp_prefix ~ timestamp ~ NEWLINE)
-  | (turn_prefix ~ turn_number ~ NEWLINE)
   | (inactive_prefix ~ inactive_message ~ NEWLINE)
   | (move_prefix ~ move_details ~ NEWLINE)
   | (join_prefix ~ username ~ NEWLINE)
@@ -539,6 +540,10 @@ win = { "|win|" }
 tie = { "|tie" }
 end = { ((win ~ username) | tie) ~ NEWLINE }
 
-battle = _{ prelude ~ (timestamp_prefix ~ timestamp ~ NEWLINE)? ~ start ~ (!end ~ turn_section)* ~ end ~ ANY_LINE* }
+turn_start   = { turn_prefix ~ turn_number ~ NEWLINE }
+turn_section = { turn_line* ~ turn_start ~ turn_line* }
+turns        = { start ~ (!end ~ turn_section*) ~ end }
+
+battle = _{ prelude ~ (timestamp_prefix ~ timestamp ~ NEWLINE)? ~ turns ~ ANY_LINE* }
 
 file = _{ SOI ~ battle ~ EOI }

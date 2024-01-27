@@ -13,7 +13,11 @@ use serde_json::Value;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-pub struct Ability {}
+pub struct Ability {
+    pub name: String,
+    pub num: i16,
+    pub gen: u8,
+}
 
 #[derive(Serialize, Deserialize, Debug)]
 struct AbilityDex {

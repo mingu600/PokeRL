@@ -75,14 +75,22 @@ struct Prelude {
 }
 
 #[derive(Debug)]
-struct Switch {
+struct SwitchEvent {
     field_position: String,
     pokemon: Pokemon,
 }
 
 #[derive(Debug)]
+struct AbilityEvent {
+    field_position: String,
+    target_nickname: String,
+    ability_name: String,
+}
+
+#[derive(Debug)]
 enum TurnEvent {
-    Switch(Switch),
+    Switch(SwitchEvent),
+    Ability(AbilityEvent),
 }
 
 #[derive(Debug)]
@@ -181,7 +189,7 @@ impl Battle {
         })
     }
 
-    fn parse_species<S: AsRef<str>>(name: &S) -> Result<(String, Option<String>)> {
+    fn lookup_species<S: AsRef<str>>(name: &S) -> Result<(String, Option<String>)> {
         let dexes = dex::Dexes::new()?;
         let dex_entry = {
             dexes
@@ -205,7 +213,7 @@ impl Battle {
         ))
     }
 
-    fn parse_switch(switch_line: Pairs<'_, Rule>) -> Result<Switch> {
+    fn parse_switch(switch_line: Pairs<'_, Rule>) -> Result<SwitchEvent> {
         let base_not_found = format!("not found in switch line: `{}`", switch_line.as_str());
 
         let mut field_position: Result<String> = Err(anyhow!("Field position {base_not_found}"));
@@ -232,7 +240,7 @@ impl Battle {
                         match detail.as_rule() {
                             Rule::poke_name => {
                                 let (parsed_species, parsed_forme) =
-                                    Self::parse_species(&detail.as_str())?;
+                                    Self::lookup_species(&detail.as_str())?;
 
                                 species = Ok(parsed_species);
                                 forme = parsed_forme;
@@ -266,7 +274,7 @@ impl Battle {
             }
         }
 
-        Ok(Switch {
+        Ok(SwitchEvent {
             field_position: field_position?,
             pokemon: Pokemon {
                 nickname: nickname?,
@@ -281,6 +289,49 @@ impl Battle {
         })
     }
 
+    fn lookup_ability<S: AsRef<str>>(name: &S) -> Result<String> {
+        let dexes = dex::Dexes::new()?;
+        let dex_entry = dexes
+            .ability
+            .get(&name.as_ref().to_lowercase().replace(['-', ' '], ""))
+            .ok_or_else(|| anyhow!("Ability not found in ability dex: {}", name.as_ref()))?;
+
+        Ok(dex_entry.name.clone())
+    }
+
+    fn parse_ability(ability_line: Pairs<'_, Rule>) -> Result<AbilityEvent> {
+        let mut field_position: Result<String> =
+            Err(anyhow!("Player index not found in ability line"));
+        let mut nickname: Result<String> =
+            Err(anyhow!("Target nickname not found in ability line"));
+        let mut ability_name: Result<String> =
+            Err(anyhow!("Ability name not found in ability line"));
+
+        for ability in ability_line {
+            match ability.as_rule() {
+                Rule::ability_target => {
+                    for target_part in ability.into_inner() {
+                        match target_part.as_rule() {
+                            Rule::field_position => {
+                                field_position = Ok(target_part.as_str().to_string())
+                            }
+                            Rule::poke_nickname => nickname = Ok(target_part.as_str().to_string()),
+                            _ => (),
+                        }
+                    }
+                }
+                Rule::ability_name => ability_name = Self::lookup_ability(&ability.as_str()),
+                _ => (),
+            }
+        }
+
+        Ok(AbilityEvent {
+            field_position: field_position?,
+            target_nickname: nickname?,
+            ability_name: ability_name?,
+        })
+    }
+
     fn parse_turns(turns: Pairs<'_, Rule>) -> Result<Vec<TurnEvent>> {
         let mut turn_list = vec![];
 
@@ -291,6 +342,13 @@ impl Battle {
                         Rule::switch => {
                             let switched_mon = Self::parse_switch(turn_line.into_inner())?;
                             turn_list.push(TurnEvent::Switch(switched_mon));
+                        }
+                        Rule::ability => {
+                            let ability = Self::parse_ability(turn_line.into_inner())?;
+                            turn_list.push(TurnEvent::Ability(ability));
+                        }
+                        Rule::activate => {
+                            // println!("Activate line: {}", turn_line.as_str());
                         }
                         _ => (),
                     }
@@ -330,8 +388,22 @@ impl Battle {
                         .iter()
                         .any(|p| p.nickname == switch.pokemon.nickname)
                     {
-                        team_pokemon.pokemon.push(switch.pokemon)
+                        team_pokemon.pokemon.push(switch.pokemon);
                     }
+                }
+
+                TurnEvent::Ability(ability) => {
+                    let team_index = Self::parse_player_index(&ability.field_position)?;
+                    let team_pokemon: &mut Team =
+                        teams.get_mut((team_index - 1) as usize).ok_or_else(|| {
+                            anyhow!("Tried to index into team that wasn't found in prelude")
+                        })?;
+
+                    team_pokemon.pokemon.iter_mut().for_each(|p| {
+                        if p.nickname == ability.target_nickname {
+                            p.ability = Some(ability.ability_name.clone());
+                        }
+                    });
                 }
             }
         }

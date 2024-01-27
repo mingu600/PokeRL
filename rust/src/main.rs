@@ -18,9 +18,10 @@ fn main() -> Result<()> {
         let game_file = File::open(log_file?.path())?;
 
         let mut game_string = String::new();
-
         BufReader::new(game_file).read_to_string(&mut game_string)?;
+
         let random_battle = battle::Battle::new(&game_string)?;
+        println!("{:?}", random_battle);
     }
 
     // println!("{:?}", dex_data);

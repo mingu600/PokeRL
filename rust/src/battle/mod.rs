@@ -20,9 +20,6 @@ pub enum Gender {
 }
 
 #[derive(Debug)]
-pub struct Move {}
-
-#[derive(Debug)]
 pub struct HP {
     current: u16,
     max: u16,
@@ -33,7 +30,7 @@ pub struct Pokemon {
     nickname: String,
     species: String,
     forme: Option<String>,
-    moves: Vec<Move>,
+    moves: Vec<String>,
     level: u8,
     gender: Gender,
     ability: Option<String>,
@@ -88,9 +85,17 @@ struct AbilityEvent {
 }
 
 #[derive(Debug)]
+struct MoveEvent {
+    source_field_position: String,
+    source_nickname: String,
+    move_name: String,
+}
+
+#[derive(Debug)]
 enum TurnEvent {
     Switch(SwitchEvent),
     Ability(AbilityEvent),
+    Move(MoveEvent),
 }
 
 #[derive(Debug)]
@@ -332,8 +337,52 @@ impl Battle {
         })
     }
 
+    fn lookup_move<S: AsRef<str>>(name: &S) -> Result<String> {
+        let dexes = dex::Dexes::new()?;
+        let dex_entry = dexes
+            .moves
+            .get(&name.as_ref().to_lowercase().replace(['-', ' '], ""))
+            .ok_or_else(|| anyhow!("Move not found in move dex: {}", name.as_ref()))?;
+
+        Ok(dex_entry.name.clone())
+    }
+
+    fn parse_move(move_line: Pairs<'_, Rule>) -> Result<MoveEvent> {
+        let mut source_field_position: Result<String> =
+            Err(anyhow!("Player index not found in move line"));
+        let mut source_nickname: Result<String> =
+            Err(anyhow!("Target nickname not found in move line"));
+        let mut move_name: Result<String> = Err(anyhow!("move name not found in ability line"));
+
+        for poke_move in move_line {
+            match poke_move.as_rule() {
+                Rule::move_source => {
+                    for source_part in poke_move.into_inner() {
+                        match source_part.as_rule() {
+                            Rule::field_position => {
+                                source_field_position = Ok(source_part.as_str().to_string())
+                            }
+                            Rule::poke_nickname => {
+                                source_nickname = Ok(source_part.as_str().to_string())
+                            }
+                            _ => (),
+                        }
+                    }
+                }
+                Rule::move_name => move_name = Self::lookup_move(&poke_move.as_str()),
+                _ => (),
+            }
+        }
+
+        Ok(MoveEvent {
+            source_field_position: source_field_position?,
+            source_nickname: source_nickname?,
+            move_name: move_name?,
+        })
+    }
+
     fn parse_turns(turns: Pairs<'_, Rule>) -> Result<Vec<TurnEvent>> {
-        let mut turn_list = vec![];
+        let mut turn_events = vec![];
 
         for turn in turns {
             if turn.as_rule() == Rule::turn_section {
@@ -341,14 +390,19 @@ impl Battle {
                     match turn_line.as_rule() {
                         Rule::switch => {
                             let switched_mon = Self::parse_switch(turn_line.into_inner())?;
-                            turn_list.push(TurnEvent::Switch(switched_mon));
+                            turn_events.push(TurnEvent::Switch(switched_mon));
                         }
                         Rule::ability => {
                             let ability = Self::parse_ability(turn_line.into_inner())?;
-                            turn_list.push(TurnEvent::Ability(ability));
+                            turn_events.push(TurnEvent::Ability(ability));
                         }
                         Rule::activate => {
+                            // TODO: add ability detection in activate line
                             // println!("Activate line: {}", turn_line.as_str());
+                        }
+                        Rule::move_details => {
+                            let poke_move = Self::parse_move(turn_line.into_inner())?;
+                            turn_events.push(TurnEvent::Move(poke_move));
                         }
                         _ => (),
                     }
@@ -356,7 +410,7 @@ impl Battle {
             }
         }
 
-        Ok(turn_list)
+        Ok(turn_events)
     }
 
     pub fn new<S: AsRef<str>>(input: &S) -> Result<Self> {
@@ -402,6 +456,19 @@ impl Battle {
                     team_pokemon.pokemon.iter_mut().for_each(|p| {
                         if p.nickname == ability.target_nickname {
                             p.ability = Some(ability.ability_name.clone());
+                        }
+                    });
+                }
+                TurnEvent::Move(poke_move) => {
+                    let team_index = Self::parse_player_index(&poke_move.source_field_position)?;
+                    let team_pokemon: &mut Team =
+                        teams.get_mut((team_index - 1) as usize).ok_or_else(|| {
+                            anyhow!("Tried to index into team that wasn't found in prelude")
+                        })?;
+
+                    team_pokemon.pokemon.iter_mut().for_each(|p| {
+                        if p.nickname == poke_move.source_nickname {
+                            p.moves.push(poke_move.move_name.clone());
                         }
                     });
                 }

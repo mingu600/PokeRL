@@ -86,14 +86,15 @@ prelude = { prelude_section+ ~ EMPTY_LINE }
 
 start = { "|start" ~ NEWLINE }
 
-field_position =  { player_index ~ ("a" | "b" | "c")? }
-poke_cur_hp    =  { NUMBER+ }
-poke_max_hp    =  { NUMBER+ }
-poke_hp_status = _{ (poke_cur_hp ~ "/" ~ poke_max_hp ~ effect_common?) | ("0 fnt") }
+field_position = { player_index ~ ("a" | "b" | "c")? }
+poke_cur_hp    = { NUMBER+ }
+poke_max_hp    = { NUMBER+ }
+poke_hp_status = { (poke_cur_hp ~ "/" ~ poke_max_hp ~ effect_common?) | ("0 fnt") }
 
 poke_common      = _{ field_position ~ ":" ~ SPACE_SEPARATOR* ~ poke_nickname }
 switch_from      =  { "[from]" ~ SPACE_SEPARATOR* ~ effect_common }
-switch_common    = _{ poke_common ~ "|" ~ poke_details ~ ("|" ~ poke_hp_status)? ~ ("|" ~ switch_from)? }
+switch_name      =  { poke_common }
+switch_common    = _{ switch_name ~ "|" ~ poke_details ~ ("|" ~ poke_hp_status)? ~ ("|" ~ switch_from)? }
 effect_common    =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
 side_common      = _{ player_index ~ ":" ~ SPACE_SEPARATOR* ~ username }
 item_common      =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
@@ -463,7 +464,7 @@ comment_user    =  { username }
 comment_message =  { (LETTER | NUMBER | SPACE_SEPARATOR | PUNCTUATION)* }
 comment         =  { comment_prefix ~ comment_user ~ "|" ~ comment_message }
 
-turn_line = {
+turn_line = _{
     EMPTY_LINE
   | upkeep
   | (switch ~ NEWLINE)

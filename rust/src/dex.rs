@@ -3,6 +3,7 @@ use crate::constants;
 use std::{
     collections::{BTreeMap, HashMap},
     fs::File,
+    io::BufReader,
     path::Path,
     sync::OnceLock,
 };
@@ -186,31 +187,38 @@ impl Dexes {
 
             let ability_dex_path = data_path.join("ability_dex.json");
             let ability_dex_file = File::open(ability_dex_path)?;
-            let ability_dex: AbilityDex = serde_json::from_reader(ability_dex_file)?;
+            let ability_dex_reader = BufReader::new(ability_dex_file);
+            let ability_dex: AbilityDex = serde_json::from_reader(ability_dex_reader)?;
 
             let data_dex_path = data_path.join("data_dex.json");
             let data_dex_file = File::open(data_dex_path)?;
-            let data_dex: DataDex = serde_json::from_reader(data_dex_file)?;
+            let data_dex_reader = BufReader::new(data_dex_file);
+            let data_dex: DataDex = serde_json::from_reader(data_dex_reader)?;
 
             let item_dex_path = data_path.join("items_dex.json");
             let item_dex_file = File::open(item_dex_path)?;
-            let item_dex: ItemDex = serde_json::from_reader(item_dex_file)?;
+            let item_dex_reader = BufReader::new(item_dex_file);
+            let item_dex: ItemDex = serde_json::from_reader(item_dex_reader)?;
 
             let learnset_dex_path = data_path.join("learnsets_dex.json");
             let learnset_dex_file = File::open(learnset_dex_path)?;
-            let learnset_dex: LearnsetDex = serde_json::from_reader(learnset_dex_file)?;
+            let learnset_dex_reader = BufReader::new(learnset_dex_file);
+            let learnset_dex: LearnsetDex = serde_json::from_reader(learnset_dex_reader)?;
 
             let move_dex_path = data_path.join("moves_dex.json");
             let move_dex_file = File::open(move_dex_path)?;
-            let move_dex: MoveDex = serde_json::from_reader(move_dex_file)?;
+            let move_dex_reader = BufReader::new(move_dex_file);
+            let move_dex: MoveDex = serde_json::from_reader(move_dex_reader)?;
 
             let species_dex_path = data_path.join("species_dex.json");
             let species_dex_file = File::open(species_dex_path)?;
-            let species_dex: SpeciesDex = serde_json::from_reader(species_dex_file)?;
+            let species_dex_reader = BufReader::new(species_dex_file);
+            let species_dex: SpeciesDex = serde_json::from_reader(species_dex_reader)?;
 
             let typechart_dex_path = data_path.join("typechart_dex.json");
             let typechart_dex_file = File::open(typechart_dex_path)?;
-            let typechart_dex: TypechartDex = serde_json::from_reader(typechart_dex_file)?;
+            let typechart_dex_reader = BufReader::new(typechart_dex_file);
+            let typechart_dex: TypechartDex = serde_json::from_reader(typechart_dex_reader)?;
 
             Ok(Dexes {
                 ability: ability_dex.abilities,

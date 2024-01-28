@@ -186,52 +186,26 @@ impl Dexes {
     /// Subsequent calls refer to the initialzed static.
     pub fn new() -> Result<&'static Self> {
         DEXES.get_or_try_init(|| -> Result<Self> {
+            macro_rules! load_dex {
+                ($t:ty, $s:literal, $f:ident) => {{
+                    let data_path = Path::new(constants::DATA_DIR);
+                    let dex_path = data_path.join($s);
+                    let dex_file = File::open(dex_path)?;
+                    let dex_reader = BufReader::new(dex_file);
+                    let dex: $t = serde_json::from_reader(dex_reader)?;
+                    dex.$f
+                }};
+            }
             info!("Loading dexes");
-            let data_path = Path::new(constants::DATA_DIR);
-
-            let ability_dex_path = data_path.join("ability_dex.json");
-            let ability_dex_file = File::open(ability_dex_path)?;
-            let ability_dex_reader = BufReader::new(ability_dex_file);
-            let ability_dex: AbilityDex = serde_json::from_reader(ability_dex_reader)?;
-
-            let data_dex_path = data_path.join("data_dex.json");
-            let data_dex_file = File::open(data_dex_path)?;
-            let data_dex_reader = BufReader::new(data_dex_file);
-            let data_dex: DataDex = serde_json::from_reader(data_dex_reader)?;
-
-            let item_dex_path = data_path.join("items_dex.json");
-            let item_dex_file = File::open(item_dex_path)?;
-            let item_dex_reader = BufReader::new(item_dex_file);
-            let item_dex: ItemDex = serde_json::from_reader(item_dex_reader)?;
-
-            let learnset_dex_path = data_path.join("learnsets_dex.json");
-            let learnset_dex_file = File::open(learnset_dex_path)?;
-            let learnset_dex_reader = BufReader::new(learnset_dex_file);
-            let learnset_dex: LearnsetDex = serde_json::from_reader(learnset_dex_reader)?;
-
-            let move_dex_path = data_path.join("moves_dex.json");
-            let move_dex_file = File::open(move_dex_path)?;
-            let move_dex_reader = BufReader::new(move_dex_file);
-            let move_dex: MoveDex = serde_json::from_reader(move_dex_reader)?;
-
-            let species_dex_path = data_path.join("species_dex.json");
-            let species_dex_file = File::open(species_dex_path)?;
-            let species_dex_reader = BufReader::new(species_dex_file);
-            let species_dex: SpeciesDex = serde_json::from_reader(species_dex_reader)?;
-
-            let typechart_dex_path = data_path.join("typechart_dex.json");
-            let typechart_dex_file = File::open(typechart_dex_path)?;
-            let typechart_dex_reader = BufReader::new(typechart_dex_file);
-            let typechart_dex: TypechartDex = serde_json::from_reader(typechart_dex_reader)?;
 
             Ok(Self {
-                ability: ability_dex.abilities,
-                data: data_dex.data,
-                item: item_dex.items,
-                learnset: learnset_dex.learnsets,
-                moves: move_dex.moves,
-                species: species_dex.species,
-                typechart: typechart_dex.typecharts,
+                ability: load_dex!(AbilityDex, "ability_dex.json", abilities),
+                data: load_dex!(DataDex, "data_dex.json", data),
+                item: load_dex!(ItemDex, "items_dex.json", items),
+                learnset: load_dex!(LearnsetDex, "learnsets_dex.json", learnsets),
+                moves: load_dex!(MoveDex, "moves_dex.json", moves),
+                species: load_dex!(SpeciesDex, "species_dex.json", species),
+                typechart: load_dex!(TypechartDex, "typechart_dex.json", typecharts),
             })
         })
     }

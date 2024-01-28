@@ -1,3 +1,5 @@
+#![allow(dead_code)] // TODO: remove
+
 use anyhow::{anyhow, Result};
 use pest::{iterators::Pairs, Parser};
 use pest_derive::Parser;
@@ -218,7 +220,7 @@ impl Battle {
         ))
     }
 
-    fn parse_switch(switch_line: Pairs<'_, Rule>) -> Result<SwitchEvent> {
+    fn parse_switch(switch_line: &mut Pairs<'_, Rule>) -> Result<SwitchEvent> {
         let base_not_found = format!("not found in switch line: `{}`", switch_line.as_str());
 
         let mut field_position: Result<String> = Err(anyhow!("Field position {base_not_found}"));
@@ -304,7 +306,7 @@ impl Battle {
         Ok(dex_entry.name.clone())
     }
 
-    fn parse_ability(ability_line: Pairs<'_, Rule>) -> Result<AbilityEvent> {
+    fn parse_ability(ability_line: &mut Pairs<'_, Rule>) -> Result<AbilityEvent> {
         let mut field_position: Result<String> =
             Err(anyhow!("Player index not found in ability line"));
         let mut nickname: Result<String> =
@@ -318,7 +320,7 @@ impl Battle {
                     for target_part in ability.into_inner() {
                         match target_part.as_rule() {
                             Rule::field_position => {
-                                field_position = Ok(target_part.as_str().to_string())
+                                field_position = Ok(target_part.as_str().to_string());
                             }
                             Rule::poke_nickname => nickname = Ok(target_part.as_str().to_string()),
                             _ => (),
@@ -337,6 +339,58 @@ impl Battle {
         })
     }
 
+    // TODO: currently hard coded to only handle abilities
+    fn parse_activate(activate_line: &Pairs<'_, Rule>) -> Result<TurnEvent> {
+        let mut field_position: Result<String> =
+            Err(anyhow!("Player index not found in activate line"));
+        let mut nickname: Result<String> =
+            Err(anyhow!("Target nickname not found in activate line"));
+
+        for activate in activate_line.clone() {
+            match activate.as_rule() {
+                Rule::activate_target => {
+                    for target_part in activate.into_inner() {
+                        match target_part.as_rule() {
+                            Rule::field_position => {
+                                field_position = Ok(target_part.as_str().to_string());
+                            }
+                            Rule::poke_nickname => nickname = Ok(target_part.as_str().to_string()),
+                            _ => (),
+                        }
+                    }
+                }
+                Rule::activate_effect => {
+                    if activate.as_str().contains("ability:") {
+                        let ability_name = Self::lookup_ability(
+                            &activate.as_str().split(':').nth(1).unwrap().trim(),
+                        );
+
+                        return Ok(TurnEvent::Ability(AbilityEvent {
+                            field_position: field_position?,
+                            target_nickname: nickname?,
+                            ability_name: ability_name?,
+                        }));
+                    } else if activate.as_str().contains("move:") {
+                        let move_name =
+                            Self::lookup_move(&activate.as_str().split(':').nth(1).unwrap().trim());
+
+                        return Ok(TurnEvent::Move(MoveEvent {
+                            source_field_position: field_position?,
+                            source_nickname: nickname?,
+                            move_name: move_name?,
+                        }));
+                    }
+                }
+                _ => (),
+            }
+        }
+
+        Err(anyhow!(
+            "Activate for `{}` not handled",
+            activate_line.as_str()
+        ))
+    }
+
     fn lookup_move<S: AsRef<str>>(name: &S) -> Result<String> {
         let dexes = dex::Dexes::new()?;
         let dex_entry = dexes
@@ -347,7 +401,7 @@ impl Battle {
         Ok(dex_entry.name.clone())
     }
 
-    fn parse_move(move_line: Pairs<'_, Rule>) -> Result<MoveEvent> {
+    fn parse_move(move_line: &mut Pairs<'_, Rule>) -> Result<MoveEvent> {
         let mut source_field_position: Result<String> =
             Err(anyhow!("Player index not found in move line"));
         let mut source_nickname: Result<String> =
@@ -360,10 +414,10 @@ impl Battle {
                     for source_part in poke_move.into_inner() {
                         match source_part.as_rule() {
                             Rule::field_position => {
-                                source_field_position = Ok(source_part.as_str().to_string())
+                                source_field_position = Ok(source_part.as_str().to_string());
                             }
                             Rule::poke_nickname => {
-                                source_nickname = Ok(source_part.as_str().to_string())
+                                source_nickname = Ok(source_part.as_str().to_string());
                             }
                             _ => (),
                         }
@@ -389,19 +443,20 @@ impl Battle {
                 for turn_line in turn.into_inner() {
                     match turn_line.as_rule() {
                         Rule::switch => {
-                            let switched_mon = Self::parse_switch(turn_line.into_inner())?;
+                            let switched_mon = Self::parse_switch(&mut turn_line.into_inner())?;
                             turn_events.push(TurnEvent::Switch(switched_mon));
                         }
                         Rule::ability => {
-                            let ability = Self::parse_ability(turn_line.into_inner())?;
+                            let ability = Self::parse_ability(&mut turn_line.into_inner())?;
                             turn_events.push(TurnEvent::Ability(ability));
                         }
                         Rule::activate => {
-                            // TODO: add ability detection in activate line
-                            // println!("Activate line: {}", turn_line.as_str());
+                            if let Ok(activate) = Self::parse_activate(&turn_line.into_inner()) {
+                                turn_events.push(activate);
+                            }
                         }
                         Rule::move_details => {
-                            let poke_move = Self::parse_move(turn_line.into_inner())?;
+                            let poke_move = Self::parse_move(&mut turn_line.into_inner())?;
                             turn_events.push(TurnEvent::Move(poke_move));
                         }
                         _ => (),

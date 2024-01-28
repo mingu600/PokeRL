@@ -1,3 +1,5 @@
+#![allow(dead_code)] // TODO: remove
+
 use crate::constants;
 
 use std::{
@@ -9,6 +11,7 @@ use std::{
 };
 
 use anyhow::Result;
+use log::info;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
@@ -183,6 +186,7 @@ impl Dexes {
     /// Subsequent calls refer to the initialzed static.
     pub fn new() -> Result<&'static Self> {
         DEXES.get_or_try_init(|| -> Result<Self> {
+            info!("Loading dexes");
             let data_path = Path::new(constants::DATA_DIR);
 
             let ability_dex_path = data_path.join("ability_dex.json");
@@ -220,7 +224,7 @@ impl Dexes {
             let typechart_dex_reader = BufReader::new(typechart_dex_file);
             let typechart_dex: TypechartDex = serde_json::from_reader(typechart_dex_reader)?;
 
-            Ok(Dexes {
+            Ok(Self {
                 ability: ability_dex.abilities,
                 data: data_dex.data,
                 item: item_dex.items,
